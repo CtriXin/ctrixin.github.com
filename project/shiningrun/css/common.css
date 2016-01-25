@@ -1,0 +1,16 @@
+﻿@charset "utf-8";
+/* 通用css */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+body{color:#333; min-width:980px; font:14px/1.5 "Microsoft YaHei",Helvetica,Tahoma}
+a{ color:#333;}
+b,h1{ color:#333;}
+a:link,a:visited{ text-decoration:none;}
+a:active,a:hover { text-decoration:none; }
+h1,h2{ font-size:100%; padding:0px; margin:0px;}
+img,p { border:0px;}
+img{ vertical-align:top;}
+ul,li,tr,td,body,img,p,table,span{ margin:0; padding:0;}
+li{ list-style:none; }
+span{ vertical-align:middle;}
+
+

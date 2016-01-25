@@ -1,0 +1,12 @@
+/*Big_Slide样式*/
+#Big_Slide_box{width:100%; overflow:hidden;}
+#Big_Slide{width:900px;position: relative; margin:0 auto; height:535px;}
+#Big_Slide ul li{width:900px; height:535px; position: absolute;}
+#Big_Slide_Last,#Big_Slide_Next{width:46px; height:331px; color:#333; font-size:18px; position: absolute;z-index:9999; cursor:pointer; opacity:0.5;}
+#Big_Slide_Last:hover,#Big_Slide_Next:hover{opacity:0.75;}
+#Big_Slide_Last{left:-10%; background:url(../images/lastIco.png)  no-repeat center;}
+#Big_Slide_Next{right:-10%; background:url(../images/nextIco.png) no-repeat center;}
+#Big_Slide_Tab{position: absolute; bottom:12px; height:1px; margin:0 auto; width:240px;}
+#Big_Slide_Tab a{display:block; background:#000; float:left; height:1px; overflow:hidden; z-index:9999; }
+#Big_Slide_Tab .TabOn{ background:#fff;} 
+#Big_Slide .prev{position:absolute; width:900px; height:535px; background:#7c1f6f; top:0px; z-index:99; opacity:0.7;}

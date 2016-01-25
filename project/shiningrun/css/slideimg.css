@@ -1,0 +1,53 @@
+/*==========================================================================================
+	
+Main theme styles
+This file contains all styles for GIOSS theme
+
+==========================================================================================*/
+
+
+body #carousel .cl-effect-2 a span {background-color:transparent;color:#fff;text-transform:none;font-size:25px;line-height:200%;font-family:'Raleway', sans-serif;}
+body #carousel .cl-effect-2 a span:before {background-color:transparent;text-transform:none;font-size:25px;line-height:200%;font-family:'Raleway', sans-serif;}
+
+/*----------------------------------------------------*/
+/*	Common
+/*----------------------------------------------------*/
+body,html {font-family: 'Open Sans', sans-serif;font-size:14px;}
+
+a {text-decoration:none;}
+
+h2 {margin:30px 0;display:block;width:100%;font-family: 'Raleway', sans-serif;font-weight:500;}
+h3 {font-family: 'Raleway', sans-serif;}
+
+h3.center {text-align:center;width:100%;font-weight:300;font-size:2em;margin:40px 0 20px 0;background: url(../img/sprite.png) no-repeat 50% -46px;}
+
+section {float:left;width:100%;position:relative;margin:0;}
+section.page {margin-top:60px;padding:40px 0;}
+
+
+
+
+
+
+
+/*----------------------------------------------------*/
+/*	Carousel
+/*----------------------------------------------------*/
+#carousel {position:relative;display:block;width:100%;bottom:0;top:0;height:100%;overflow:hidden;height:300px;}
+#carousel .carousel-holder {position:absolute;display:block;width:100%;height:100%;bottom:0;top:0;background-color:#000;overflow:hidden;}
+
+
+.prev1 {top:50%;margin-top:-29px;position:absolute;cursor:pointer;opacity:.5;background:url('../img/sprite.png') no-repeat 0px -39px;-webkit-transition : all 0.2s ease-out;-moz-transition : all 0.2s ease-out;transition : all 0.2s ease-out;left:150px;width:41px;height:81px;z-index:100000;}
+.next1 {top:50%;margin-top:-29px;position:absolute;cursor:pointer;opacity:.5;background:url('../img/sprite.png') no-repeat -48px -39px;-webkit-transition : all 0.2s ease-out;-moz-transition : all 0.2s ease-out;transition : all 0.2s ease-out;right:150px;width:41px;height:81px;z-index:100000;}
+.prev:hover, .next:hover {opacity:1;}
+.prev:active, .next:active {opacity:1;}
+
+.slide-text {position:relative;top:0;}
+.slide-text li {height:21px;}
+
+.main-text {position:absolute;top:50%;margin-top:-55px;width:100%;font-family:'Raleway', sans-serif;text-shadow:0 0 15px rgba(0,0,0,0.3);text-transform:uppercase;text-align:center;font-weight:700;font-size:70px;line-height:70px;color:#ededed;z-index:20;}
+.sub-text {position:absolute;top:50%;margin-top:30px;width:100%;height:21px;overflow:hidden;font-family:'Raleway', sans-serif;text-shadow:0 0 5px rgba(0,0,0,0.3);text-transform:uppercase;text-align:center;font-weight:400;font-size:20px; line-height:20px;color:#fff;z-index:20; }
+
+
+
+

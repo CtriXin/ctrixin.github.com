@@ -1,70 +1,350 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>About me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <!-- Css styles -->
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.4.css"/>
+    <!-- JavaScript lib -->
+    <script src="lib/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="lib/jquery.easytabs.min.js" type="text/javascript"></script>
+    <script src="lib/jquery.quicksand.js" type="text/javascript"></script>
+    <script src="lib/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="lib/jquery.poshytip.min.js" type="text/javascript"></script>
+    <script src="lib/jquery.fancybox-1.3.4.js" type="text/javascript"></script>
+    <script src="lib/jquery.mousewheel-3.0.4.pack.js" type="text/javascript"></script>
+    <script src="lib/jquery.validate.js" type="text/javascript"></script>
+    <script src="lib/custom.js" type="text/javascript"></script>
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Ctrixin.GitHub.com : ">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <!--[if lt IE 8]>
+    <style>
+        /* For IE < 8 (trigger hasLayout) */
+        .clearfix {
+            zoom: 1;
+        }
+    </style>
+    <![endif]-->
 
-    <title>Ctrixin.GitHub.com</title>
-  </head>
+<body>
 
-  <body>
+<!--Page Wrraper-->
+<div id="wrapper" class="clearfix">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/CtriXin">View on GitHub</a>
 
-          <h1 id="project_title">Ctrixin.GitHub.com</h1>
-          <h2 id="project_tagline"></h2>
+    <!--Page Header-->
+    <header id="header" class="clearfix">
+        <figure id="img"><img src="images/img.png" alt=""/>
+            <hgroup>
+                <h1>宋 鑫</h1>
 
-        </header>
-    </div>
+                <h2>前端开发工程师</h2>
+            </hgroup>
+        </figure>
+        <nav id="mainNav">
+            <ul class="tabs clearfix">
+                <li><a class="tab-about" href="#about">关于我</a></li>
+                <li><a class="tab-portfolio" href="#portfolio">作品</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--End Page Header-->
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+    <!-- Tabs Container-->
+    <section id="tabsContainer" class="clearfix">
+        <!--Inner-->
+        <div id="innerBg">
 
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link">fdafafa</span></a>
-<a href="/project/page">tesst</a>
+            <!--About Tab-->
+            <article id="about" class="clearfix">
+                <!-- Introduction -->
+                <section id="introduction" class="clearfix">
+                    <h1>/ About me</h1>
+                    <ul class="info">
+                        <li><span>姓名</span> : 宋鑫</li>
+                        <li><span>生日</span> : 20/09/1989</li>
+                        <li><span>住址</span> : 北京市朝阳区安定路12号院6号楼5单元1205</li>
+                    </ul>
 
-Designer Templates</h3>
+                    <ul class="info">
+                        <li><span>Email</span> : xinsngx@163.com</li>
+                        <li><span>手机号</span> : 185 15999 883</li>
+                        <li><span>个人主页</span> : <a href="#">http://ctrixin.github.io</a></li>
+                    </ul>
+                </section>
+                <!-- End introduction -->
 
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+                <!-- Skills -->
+                <section id="skills" class="clearfix">
+                    <h1>/ 个人技能</h1>
+                    <ul>
+                        <li>精通网页设计工具，有良好的手写代码能力，能迅速的进行开发;</li>
+                        <li>精通HTML、JavaScript、Ajax、CSS等Web开发技术，能手写符合W3C标准、兼容多种浏览器的前端页面代码；熟悉Bootstrap设计开发；</li>
+                        <li>对Node.js系统搭建有了解，可以用Think.js快速搭建前后端系统；</li>
+                        <li>对Web标准和兼容性有良好认识，能够高保真还原设计稿；</li>
+                        <li>熟悉移动端主流浏览器的适配。</li>
 
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
+                        <li>精通2D设计工具，如Adobe PS图象处理软件，Adobe Illustrator。</li>
+                        <li>良好的应用3Ds Max, Adobe Aftereffect, and Adobe Premiere Pro。</li>
+                        <li>良好的品质控制过程。</li>
+                        <li>有强烈的上进心和求知欲，善于学习和运用新知识，善于沟通和逻辑表达，有强烈的团队意识和执行力。</li>
+                    </ul>
+                </section>
+                <!-- End skills -->
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+                <!-- Experience -->
+                <section id="experience">
+                    <h1>/ 工作经历</h1>
+                    <hgroup>
+                        <h4>前端开发工程师 – 北京朗势科技有限公司（北京嗒嗒之星科技有限公司） </h4>
+                        <h6>03 2015 – 至今</h6>
+                    </hgroup>
+                    <p>
+                        负责公司产品，Web App 前端开发；<br>
+                        负责web端产品（PC、PAD、手机、web轻应用）的前端开发；<br>
+                        Web前端用户体验的设计、实现和优化；<br>
+                        参与项目的需求调研讨论，快速制作原型；<br>
+                        与UI设计师、开发人员配合，根据需求调整、修改、优化页面。<br>
+                        负责设计和重构公司后台OAM页面，及其代码实现 <br>
+                        公司产品及宣传所需求的H5
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+                    </p>
+                    <br/>
+                    <hgroup>
+                        <h4>UI/UX Web设计师 (兼职) – WEBSENSE SDN BHD(Malaysia) </h4>
+                        <h6>11 2013 – 09 2014</h6>
+                    </hgroup>
+                    <p>制定计划和工作程序，网页设计与开发，广告设计，logo设计，EDM设计等。<br>
+                        在公司负责产品画册的设计，产品印花的设计与制作，产品配色，产品拍照和产品图片的处理。<br>
+                        制作关于公司的产品广告和公司庆祝页面广告。<br>
+                        参与公司合作公司分配的网页页面设计，网页配色，网页代码优化。<br>
+                        参与公司网站的从新规划与设计，整体网页搭配，布局及代码编辑。<br>
+                        在闲暇时学习了不同的代码编辑，网页设计，色彩搭配。
+                    </p>
+                    <br/>
+                    <hgroup>
+                        <h4>审查编辑员 (兼职) – UDrive Media Sendirian Berhad (UDM)(Malaysia) </h4>
+                        <h6>10 2013 – 01 2015</h6>
+                    </hgroup>
+                    <p>
+                        为公司客户（马来西亚宽带电信公司TM NET旗下hypptv）监控和编辑所有电视台的节目，确保所有内容播出不包含黑屏，色情镜头，并监控其它故障与扭曲失真。<br>
+                        在电视节目播出间隙插播公司广告，同时删除原有广告，删除外来广告，插播付费广告。<br>
+                        在某些色情，暴力等节目播出时，适当的删除不当镜头，不当言语，不当动作与行为。<br>
+                        在电视节目播出时，检测节目是否正常，是否黑屏，噪音，噪点等，如出现问题，做出相应调整。
+                    </p>
+                </section>
+                <!-- End experience -->
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+                <!-- Education -->
+                <section id="education">
+                    <h1>/ 学习经历</h1>
+                    <hgroup>
+                        <h4>多媒体管理工商管理硕士 – 林国荣创意科技大学（Limkokwing University of Creative Technology） </h4>
+                        <h6>2013 - 2014</h6>
+                    </hgroup>
+                    <p>在多媒体设计创作方面进行更深层次的研究，生产力和项目管理。<br>
+                        在网页和多媒体设计及开发、数字媒体行业、调查研究方面进行研究。课程重点围绕多媒体数据如何在信息系统中有效的进行运用和管理作为课题进行展开，在专业的领域提供了当代管理学的能力和知识，并在课余时学习到了包括艺术、电脑科技、电影制作、企业学和工程学等方面的知识。<br>
+                        多媒体管理课程让我了解到核心管理学知识和最新的科技，使我从原有的知识结构中得到更广泛和深层次的提升。在创意方面，我们会研究多媒体设计、制作和项目管理。
+                    </p>
+                    <br/>
+                    <hgroup>
+                        <h4>伦敦全球教室计划 – 林国荣创意科技大学（Limkokwing University of Creative Technology） </h4>
+                        <h6>08.2013 – 10.2013</h6>
+                    </hgroup>
+                    <p>环球课室在一些国家扮演者革命性的角色。在这个全球化的世界，懂得如何如其他国家的人民沟通与交流的人将成为职场上的宠儿。
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+                    </p>
+                    <br/>
+                    <hgroup>
+                        <h4>创意多媒体荣誉学士学位 – 林国荣创意科技大学（Limkokwing University of Creative Technology） </h4>
+                        <h6>2009 - 2013</h6>
+                    </hgroup>
+                    <p>
+                        创意传媒和信息商务永远都是经济发展的重要组成部分，它包括创意和媒体行业的投资，发布和传播重大的公共教育的内容，对外声明等。这些正是人们在连接网络，激活宽带，打开手机或是看电视时所寻找的具有创造性的内容。<br>
+                        学校提供了全面的知识，解读创意多媒体四大组成部分；2D动画和图像，3D模型和动画，视频和动态图像，和互动网页设计。这是一个能够提供我们一个全面的教育原则和实践的多媒体设计、生产、管理和评价的多功能、多学科课程
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
+                    </p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
 
-    
 
-  </body>
-</html>
+                </section>
+                <!-- End education -->
+                <a class="vcardButton" href="#">Download my v-card</a>
+                <!-- End About Tab-->
+            </article>
+            <!--Portfolio Tab-->
+            <article id="portfolio" class="clearfix">
+                <!-- Introduction -->
+                <h1>/ My Works</h1>
+
+                <p>部分大学期间和工作期间的成果</p>
+                <!-- End introduction -->
+
+
+                <!-- Filter nav -->
+                <ul id="category" class="filter">
+                    <li class="current all"><a href="#">All <span>&nbsp;&nbsp;/</span></a></li>
+                    <li class="WebDevelopment"><a href="#">WebDevelopment <span>&nbsp;&nbsp;/</span></a></li>
+                    <li class="3D"><a href="#">3D <span>&nbsp;&nbsp;/</span></a></li>
+                    <li class="Design"><a href="#">Deisgn&nbsp;&nbsp;&nbsp;</a></li>
+                </ul>
+                <!-- End filter nav -->
+
+                <!-- Works list -->
+                <section id="works">
+                    <ul id="items" class="portfolio">
+                        <li data-id="id-1" data-type="WebDevelopment" class="item">
+
+                            <a href="http://www.tataufo.com/company" target="_blank"><img src="images/folioimages/im1.png" alt=""/><span class="border"></span></a>
+
+                            <h3>tataStar 官网<span> / Web</span></h3>
+                        </li>
+                        <li data-id="id-1-1" data-type="WebDevelopment" class="item">
+
+                            <a href="http://www.tataufo.com/" target="_blank"><img src="images/folioimages/im1-1.png" alt=""/><span class="border"></span></a>
+
+                            <h3>tataUFO 官网(web/mobile)<span> / Web</span></h3>
+                        </li>
+                        <li data-id="id-2" data-type="WebDevelopment" class="item">
+
+                            <a href="http://mp.tataufo.com:8998/extra/spring" target="_blank"><img src="images/folioimages/im2.png" alt=""/><span class="border"></span></a>
+
+                            <h3>春节活动 打卡领取拍立得<span> / Web</span></h3>
+                        </li>
+                        <li data-id="id-3" data-type="Design" class="item">
+                            <a class="folio" href="images/folioimages/im3-pre.jpg">
+                                <span class="plus"></span>
+                            </a>
+                            <img src="images/folioimages/im3.png" alt=""/>
+                            <span class="border"></span>
+
+                            <h3>开斋节贺卡<span> / Design</span></h3>
+                        </li>
+                        <li data-id="id-4" data-type="WebDevelopment" class="item">
+
+                            <a href="/project/48hour" target="_blank"><img src="images/folioimages/im4.png" alt=""/><span class="border"></span></a>
+
+                            <h3>48小时极限实习<span> / Web</span></h3>
+                        </li>
+                        <li data-id="id-5" data-type="Design" class="item">
+                            <a class="folio" href="images/folioimages/im5-pre.jpg">
+                                <span class="plus"></span>
+                            </a>
+                            <img src="images/folioimages/im5.png" alt=""/>
+                            <span class="border"></span>
+
+                            <h3>新年贺卡<span> / Design</span></h3>
+                        </li>
+                        <li data-id="id-5-1" data-type="WebDevelopment" class="item">
+
+                            <a href="http://mp.tataufo.com:8998/extra/winter" target="_blank"><img src="images/folioimages/im5-1.png" alt=""/><span class="border"></span></a>
+
+                            <h3>寒假抢火车票<span> / Web</span></h3>
+                        </li>
+                        <li data-id="id-6" data-type="WebDevelopment" class="item">
+
+                            <a href="/project/eater" target="_blank"><img src="images/folioimages/im6.png" alt=""/><span class="border"></span></a>
+
+                            <h3>大胃王挑战赛<span> / Web</span></h3>
+                        </li>
+                        <li data-id="id-7" data-type="WebDevelopment" class="item">
+
+                            <a href="/project/shiningrun" target="_blank"><img src="images/folioimages/im7.png" alt=""/><span class="border"></span></a>
+
+                            <h3>ShiningRun 官网<span> / Web</span></h3>
+                        </li>
+                        <li data-id="id-8" data-type="3D" class="item">
+                            <a class="folio" href="images/folioimages/im8-pre.jpg">
+                                <span class="plus"></span>
+                            </a>
+                            <img src="images/folioimages/im8.png" alt=""/>
+                            <span class="border"></span>
+
+                            <h3>教堂3D模型<span> / Design</span></h3>
+                        </li>
+                        <li data-id="id-9" data-type="WebDevelopment" class="item">
+
+                            <a href="/project/admission" target="_blank"><img src="images/folioimages/im9.png" alt=""/><span class="border"></span></a>
+
+                            <h3>新生入学引导页<span> / Web</span></h3>
+                        </li>
+                        <li data-id="id-10" data-type="WebDevelopment" class="item">
+
+                            <a href="/project/job" target="_blank"><img src="images/folioimages/im10.png" alt=""/><span class="border"></span></a>
+
+                            <h3>2015招聘页面<span> / Web</span></h3>
+                        </li>
+                        <li data-id="id-11" data-type="WebDevelopment" class="item">
+
+                            <a href="/project/social" target="_blank"><img src="images/folioimages/im11.png" alt=""/><span class="border"></span></a>
+
+                            <h3>社团功能介绍页<span> / Web</span></h3>
+                        </li>
+                        <li data-id="id-12" data-type="WebDevelopment" class="item">
+
+                            <a href="/project/mission" target="_blank"><img src="images/folioimages/im12.png" alt=""/><span class="border"></span></a>
+
+                            <h3>APP中任务中心<span> / Web</span></h3>
+                        </li>
+                        <li data-id="id-13" data-type="WebDevelopment" class="item">
+
+                            <a href="/project/OAM" target="_blank"><img src="images/folioimages/im13.png" alt=""/><span class="border"></span></a>
+
+                            <h3>OAM管理页面<span> / Web</span></h3>
+                        </li>
+                        <li data-id="id-14" data-type="3D" class="item">
+                            <a class="folio" href="images/folioimages/im14-pre.jpg">
+                                <span class="plus"></span>
+                            </a>
+                            <img src="images/folioimages/im14.png" alt=""/>
+                            <span class="border"></span>
+
+                            <h3>奎多斯3D模型<span> / Design</span></h3>
+                        </li>
+                        <li data-id="id-15" data-type="Design" class="item">
+                            <a class="folio" href="images/folioimages/im15-pre.jpg">
+                                <span class="plus"></span>
+                            </a>
+                            <img src="images/folioimages/im15.png" alt=""/>
+                            <span class="border"></span>
+
+                            <h3>自己制作电锯惊魂海报<span> / Design</span></h3>
+                        </li>
+                        <li data-id="id-16" data-type="Design" class="item">
+                            <a class="folio" href="images/folioimages/im16-pre.jpg">
+                                <span class="plus"></span>
+                            </a>
+                            <img src="images/folioimages/im16.png" alt=""/>
+                            <span class="border"></span>
+
+                            <h3>简易制作AI图标<span> / Design</span></h3>
+                        </li>
+                    </ul>
+                </section>
+                <!-- End Works list -->
+            </article>
+            <!--End portfolio Tab -->
+
+
+
+        </div>
+        <!--End Inner-->
+    </section>
+    <!-- End tabs Container-->
+    <!-- Page Footer-->
+    <footer id="pageFooter">
+        <p>Copyright © 2015. Design & Created By SONG XIN.</p>
+
+    </footer>
+    <!--End Page Footer-->
+    <!--End Tabs Container-->
+</div>
+<!--End Page Wrapper-->
+
+
+</body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head></html>

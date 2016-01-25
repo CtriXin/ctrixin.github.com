@@ -1,0 +1,274 @@
+
+
+/* Table of Content
+==================================================
+	#Reset & Basics
+	#Basic Styles
+	#Site Styles
+	#Typography
+	#Links
+	#Lists
+	#Images
+	#Buttons
+	#Forms
+	#Misc */
+
+
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline; }
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block; }
+	body {
+		line-height: 1; }
+	ol, ul {
+		list-style: disc; }
+	blockquote, q {
+		quotes: none; }
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none; }
+	table {
+		border-collapse: collapse;
+		border-spacing: 0; }
+
+	iframe{ z-index:0;}
+	mark{ background: none;}
+
+
+
+
+/* #Basic Styles
+================================================== */
+	body {
+		font: 13px/20px 'Droid Sans', Arial, sans-serif;
+		/*
+		-webkit-font-smoothing: antialiased;
+		-webkit-text-size-adjust: 100%;
+		*/
+ }
+
+
+/* #Typography
+================================================== */
+	h1, h2, h3, h4, h5, h6 {
+		color: #555;
+		font-family: 'Oswald', sans-serif;
+		}
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+	h1 { font-size: 62px; line-height: 84px; margin-bottom: 0px;}
+	h2 { font-size: 50px; line-height: 60px; margin-bottom: 10px;}
+	h3 { font-size: 32px; line-height: 32px; margin-bottom: 8px;}
+	h4 { font-size: 24px; line-height: 24px; margin-bottom: 10px;}
+	h5 { font-size: 15px; line-height: 26px;}
+	h6 { font-size: 14px; line-height: 22px;  font-family: 'Droid Sans', sans-serif; font-weight: 700;}
+
+	h2.alt{font-size: 38px; line-height: 65px;}
+	h3.alt{font-size: 30px; line-height: 42px; font-family: 'Droid Sans', sans-serif; font-weight: 700;}
+	h4.alt{font-size: 20px; line-height: 20px; font-family: 'Droid Sans', sans-serif;}
+
+
+	.subheader { color: #777; }
+
+	p { margin-bottom: 10px; padding: 0;}
+	p.norow { margin-bottom: 0px;}
+	figcaption p { margin-bottom: 10px;}
+	p img { margin: 0; }
+	p.lead { font-size: 21px; line-height: 27px; }
+
+	em { font-style: italic; }
+	strong { font-weight: bold;}
+	small { font-size: 11px; display:block;}
+
+/*	Blockquotes  */
+    blockquote {
+		padding-left: 107px;
+	}
+	blockquote.alignLeft{
+		width: 310px;
+		margin: 0 20px 20px 0;
+		float: left;
+	}
+	blockquote.alignRight{
+		width: 310px;
+		margin: 0 0 20px 20px;
+		float: right;
+	}
+	blockquote, blockquote p {  }
+	blockquote cite { display: block; font-size: 12px; }
+	blockquote cite:before { content: "\2014 \0020"; }
+	blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { }
+
+	hr {
+  border: none;
+  clear: both;
+  height: 35px;
+}
+
+@media only screen and (max-width: 767px) {
+
+	blockquote.alignLeft{
+		width: 50%;
+	}
+	blockquote.alignRight{
+		width: 50%;
+	}
+
+
+}
+
+
+/* #Links
+================================================== */
+	a, a:visited {
+	text-decoration: none;
+	outline: 0;
+	-webkit-transition: color 0.2s ease-out, background 0.2s ease-out;
+	-moz-transition: color 0.2s ease-out, background 0.2s ease-out;
+	-o-transition: color 0.2s ease-out, background 0.2s ease-out;
+	-ms-transition: color 0.2s ease-out, background 0.2s ease-out;
+	transition: color 0.2s ease-out, background 0.2s ease-out;
+
+	}
+	a:hover, a.selected { text-decoration: underline;}
+	p a, p a:visited { line-height: inherit; }
+
+
+
+
+/* #Lists
+================================================== */
+	ul, ol { margin-bottom: 20px; }
+	ul { list-style: none outside; }
+	ol { list-style: decimal; }
+	ol, ul.bullet, ul.check, ul.square, ul.circle, ul.disc { margin-left: 20px; }
+	ul.square { list-style: square outside; }
+	ul.circle { list-style: circle outside; }
+	ul.disc { list-style: disc outside; }
+	ul ul, ul ol,
+	ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 90%;  }
+	ul ul li, ul ol li,
+	ol ol li, ol ul li { margin-bottom: 0px; }
+	li { line-height: 18px; margin-bottom: 0px; }
+	ul.large li { line-height: 21px; }
+	li p { line-height: 21px; }
+
+	ul.bullet{
+		list-style-image: url('../images/icons/bullet.png');
+		margin-left: 15px;
+	}
+
+	ul.check{
+	    list-style-image: url('../images/icons/checklist.png');
+	}
+
+
+
+/* #Drop caps
+================================================== */
+
+.dropCap{
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  color: #fff;
+  width: 59px;
+  height: 40px;
+  -webkit-border-radius: 50em;
+  -moz-border-radius:50em;
+  border-radius: 50em;
+
+  margin-right: 10px;
+  padding-top: 18px;
+  padding-left: 1px;
+
+  float: left;
+  text-align: center;
+  display: block;
+
+}
+
+
+
+
+/* #Forms
+================================================== */
+
+	form {
+		margin-bottom: 20px; }
+	fieldset {
+		margin-bottom: 20px; }
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	textarea,
+	select {
+		border: 0px solid #ccc;
+		padding: 7px 4px;
+		outline: none;
+		margin: 0;
+		width: 215px;
+		max-width: 100%;
+		display: block;
+		margin-bottom: 20px;
+		font: 12px Arial, sans-serif;}
+	select {
+		padding: 0; }
+	input[type="text"]:focus,
+	input[type="password"]:focus,
+	input[type="email"]:focus,
+	textarea:focus,
+	select:focus{
+			-webkit-transition: all 0.2s ease-in-out;
+	   -moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;}
+	textarea {
+		min-height: 215px; }
+	label,
+	legend {
+
+
+ }
+	select {
+		width: 220px; }
+	input[type="checkbox"] {
+		display: inline; }
+	label span,
+	legend span {
+		font-weight: normal;
+		font-size: 13px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
