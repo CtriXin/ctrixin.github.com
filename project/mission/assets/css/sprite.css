@@ -1,0 +1,172 @@
+/* glue: 0.11.1 hash: 6ce128a3e4 */
+.sprite-sprite-dropdown,
+.sprite-sprite-congratulation,
+.sprite-sprite-nobody,
+.sprite-sprite-flag-bt,
+.sprite-sprite-tata-stan,
+.sprite-sprite-tata2,
+.sprite-sprite-tata1,
+.sprite-sprite-star,
+.sprite-sprite-plus,
+.sprite-sprite-flag,
+.sprite-sprite-male,
+.sprite-sprite-female,
+.sprite-sprite-selector,
+.sprite-sprite-selector-n,
+.sprite-sprite-question-mark,
+.sprite-sprite-gotop {
+    background-image: url('../img/sprite.png');
+    background-repeat: no-repeat;
+}
+
+.sprite-sprite-dropdown {
+    background-position: 0 0;
+    width: 250px;
+    height: 17px;
+}
+
+.sprite-sprite-congratulation {
+    background-position: 0 -17px;
+    width: 228px;
+    height: 202px;
+}
+
+.sprite-sprite-nobody {
+    background-position: -250px 0;
+    width: 120px;
+    height: 110px;
+}
+
+.sprite-sprite-flag-bt {
+    background-position: -250px -110px;
+    width: 7px;
+    height: 67px;
+}
+
+.sprite-sprite-tata-stan {
+    background-position: -257px -110px;
+    width: 33px;
+    height: 40px;
+}
+
+.sprite-sprite-tata2 {
+    background-position: -289px -110px;
+    width: 27px;
+    height: 30px;
+}
+
+.sprite-sprite-tata1 {
+    background-position: -316px -110px;
+    width: 26px;
+    height: 28px;
+}
+
+.sprite-sprite-star {
+    background-position: -342px -110px;
+    width: 21px;
+    height: 21px;
+}
+
+.sprite-sprite-plus {
+    background-position: -257px -150px;
+    width: 20px;
+    height: 20px;
+}
+
+.sprite-sprite-flag {
+    background-position: -277px -150px;
+    width: 15px;
+    height: 15px;
+}
+
+.sprite-sprite-male {
+    background-position: -292px -150px;
+    width: 14px;
+    height: 12px;
+}
+
+.sprite-sprite-female {
+    background-position: -306px -150px;
+    width: 14px;
+    height: 12px;
+}
+
+.sprite-sprite-selector {
+    background-position: -250px -177px;
+    width: 13px;
+    height: 13px;
+}
+
+.sprite-sprite-selector-n {
+    background-position: -263px -177px;
+    width: 13px;
+    height: 13px;
+}
+
+.sprite-sprite-question-mark {
+    background-position: -276px -177px;
+    width: 13px;
+    height: 13px;
+}
+
+.sprite-sprite-gotop {
+    background-position: -289px -140px;
+    width: 10px;
+    height: 9px;
+    -webkit-transform: scale(1.5, 1.5);
+    -moz-transform: scale(1.5, 1.5);
+    -transform: scale(1.5, 1.5);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.0), screen and (min--moz-device-pixel-ratio: 1.0), screen and (-o-min-device-pixel-ratio: 100/100), screen and (min-device-pixel-ratio: 1.0), screen and (min-resolution: 1.0dppx) {
+    .sprite-sprite-dropdown,
+    .sprite-sprite-congratulation,
+    .sprite-sprite-nobody,
+    .sprite-sprite-flag-bt,
+    .sprite-sprite-tata-stan,
+    .sprite-sprite-tata2,
+    .sprite-sprite-tata1,
+    .sprite-sprite-star,
+    .sprite-sprite-plus,
+    .sprite-sprite-flag,
+    .sprite-sprite-male,
+    .sprite-sprite-female,
+    .sprite-sprite-selector,
+    .sprite-sprite-selector-n,
+    .sprite-sprite-question-mark,
+    .sprite-sprite-gotop {
+        background-image: url('../img/sprite.png');
+        -webkit-background-size: 370px 219px;
+        -moz-background-size: 370px 219px;
+        background-size: 370px 219px;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2.0), screen and (min--moz-device-pixel-ratio: 2.0), screen and (-o-min-device-pixel-ratio: 200/100), screen and (min-device-pixel-ratio: 2.0), screen and (min-resolution: 2.0dppx) {
+    .sprite-sprite-dropdown,
+    .sprite-sprite-congratulation,
+    .sprite-sprite-nobody,
+    .sprite-sprite-flag-bt,
+    .sprite-sprite-tata-stan,
+    .sprite-sprite-tata2,
+    .sprite-sprite-tata1,
+    .sprite-sprite-star,
+    .sprite-sprite-plus,
+    .sprite-sprite-flag,
+    .sprite-sprite-male,
+    .sprite-sprite-female,
+    .sprite-sprite-selector,
+    .sprite-sprite-selector-n,
+    .sprite-sprite-question-mark,
+    .sprite-sprite-gotop {
+        background-image: url('../img/sprite@2x.png');
+        -webkit-background-size: 370px 219px;
+        -moz-background-size: 370px 219px;
+        background-size: 370px 219px;
+    }
+}
+
+
+.sprite-sprite-gotop.pull-right{
+    margin-right: 1em;
+}

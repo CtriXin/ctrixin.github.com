@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>有一个神经病组织举办了一个逆天的大胃王挑战赛，我准备去围观顺便蹭饭了！</title>
+
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon"/>
+
+    <!-- Declare page as iDevice WebApp friendly -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <meta name="Keywords"     content="tataufo 大胃王 热狗" />
+    <meta name="Description"  content="tataufo 大胃王吃热狗比赛" />
+
+    <div id='wx_pic' style='margin:0 auto;display:none;'>
+        <img src="assets/img/300x300.jpg" />
+    </div>
+
+    <!-- Css files -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+
+<!-- start: Content -->
+
+
+<div class="login-page">
+    <div class="panel panel-default">
+
+
+        <div class="slider">
+            <div><img class="food-banner" src="assets/img/banner.png" alt=""/></div>
+            <div class="opacity-txt">创意爆棚的美食—管得住嘴管不住口水！</div>
+        </div>
+
+
+    </div>
+    <!--/.panel-->
+
+    <img src="assets/img/bubble.png" class="bubble-top" alt=""/>
+
+    <div class="panel panel-default form-davaid">
+        <img src="assets/img/bubble.png" class="bubble" alt=""/>
+
+        <div class="panel-body">
+
+            <form action="" method="post" class="form-horizontal ">
+
+                <div class="form-group">
+                    <div class="biaoshi col-xs-25">
+                        姓&nbsp;&nbsp;&nbsp;名
+                    </div>
+                    <div class="padding-right-0 col-xs-95">
+                        <input type="text" class="form-control" placeholder="请输入姓名">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="biaoshi col-xs-25">
+                        组&nbsp;&nbsp;&nbsp;别
+                    </div>
+                    <div class="controls padding-0 col-xs-95">
+                        <div class="col-md-1 col-sm-2 padding-0 single col-xs-5">
+                            个人参赛
+                        </div>
+
+                        <div class="or">or</div>
+
+                        <div class="col-md-1 col-sm-2 padding-right-0 team-work col-xs-5">
+                            团队参赛
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group" id="group-name" style="display:none;">
+                    <div class="biaoshi col-xs-25">
+                        团队名
+                    </div>
+                    <div class="padding-0 col-xs-95">
+                        <input type="text" class="form-control" placeholder="起个响亮的团队名吧~">
+                    </div>
+                </div>
+
+            </form>
+
+
+        </div>
+
+        <a href="food-page-4.html" class="btn button-3d btn-tijiao">下一步</a>
+
+    </div>
+
+</div>
+<!--/.col-->
+
+
+<!-- end: Content -->
+
+
+<!-- start: JavaScript-->
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+
+<!--当页面完成时调整右上角气泡-->
+<script>
+    $(document).ready(function(){
+        var bannerH = $(".food-banner").height();
+        var counting = bannerH + 10 + 'px';
+        $(".bubble-top").css({"top": counting})
+    });
+
+</script>
+
+
+<!--团队名的隐藏出现-->
+<script>
+
+    $(".team-work").click(function(){
+        $(this).parents().find('#group-name').css({"display":""});
+        $(this).css({"background":"#8cdef0","border-width":"3px"});
+        $(".single").css({"background":"#ee9fa5","border-width":"2px"});
+    });
+    $(".single").click(function(){
+        $(this).parents().find('#group-name').css({"display":"none"});
+        $(".team-work").css({"background":"#ee9fa5","border-width":"2px"});
+        $(this).css({"background":"#8cdef0","border-width":"3px"});
+    })
+</script>
+
+<!-- end: JavaScript-->
+
+</body>
+</html>

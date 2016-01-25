@@ -1,0 +1,427 @@
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////*/
+
+/*-----------------------------rules--------------------------------------------*/
+
+/*//////////////////////////////////////////////////////////////////////////////////////*/
+*{
+    margin:0;
+    padding:0
+}
+body,html{
+    height:100%;
+    width:100%;
+    overflow:hidden
+}
+html {
+   -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+
+}
+/*zhuanquan*/
+.rotateCD{
+ -webkit-animation: myrotate 19.5s infinite linear;
+    -moz-animation: myrotate 19.5s infinite linear;
+     -ms-animation: myrotate 19.5s infinite linear;
+      -o-animation: myrotate 19.5s infinite linear;
+         animation: myrotate 19.5s infinite linear;
+}
+@-webkit-keyframes myrotate{
+   0%{
+       -webkit-transform : rotate(0deg);
+   }
+   100%{
+       -webkit-transform : rotate(360deg);
+   }
+}
+@-moz-keyframes myrotate{
+   0%{
+       -moz-transform : rotate(0deg);
+   }
+   100%{
+       -moz-transform : rotate(360deg);
+   }
+}
+@-ms-keyframes myrotate{
+   0%{
+       -ms-transform : rotate(0deg);
+   }
+   100%{
+       -ms-transform : rotate(360deg);
+   }
+}
+@-o-keyframes myrotate{
+   0%{
+       -o-transform : rotate(0deg);
+   }
+   100%{
+       -o-transform : rotate(360deg);
+   }
+}
+@keyframes myrotate{
+   0%{
+       transform : rotate(0deg);
+   }
+   100%{
+       transform : rotate(360deg);
+   }
+}
+/*zhuanquan*/
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////*/
+
+/*-----------------------------index--------------------------------------------*/
+
+/*//////////////////////////////////////////////////////////////////////////////////////*/
+.mod-page{
+    height:100%;
+    width: 100%;
+    background-image:url(../img/bg.jpg);
+    /*z-index: 99;*/
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    background-position:center bottom;
+    position:relative;
+    overflow:scroll;
+}
+
+
+.content{
+    position: absolute;
+    top: 110%;
+    width: 160%;
+    left: -30%;
+    font-size: 1em;
+    line-height: 1.3em;
+    text-align: center;
+    color: white;
+    opacity: .7;
+    margin-bottom:10%;
+}
+
+/* Basic */
+
+a { color: #FFF; text-decoration: none; }
+a:hover { color: #26C5CB; }
+p { margin: 0; }
+.credits { position: absolute; left: 20px; bottom: 20px; color: #ccc; font-size: 14px; }
+.credits a  { color: #26C5CB; }
+
+/* Centering */
+#container, #progress, #player, #flip-back, .cover, .playlist {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#container {
+    width: 320px;
+    height: 320px;
+  perspective: 550px;
+    -webkit-perspective: 550px;
+  transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    top: -50%;
+
+}
+
+#player {
+   width: 300px;
+   height: 300px;
+   background: #fff;
+   border-radius: 50%;
+    -webkit-border-radius: 50%;
+ -moz-border-radius: 50%;
+   overflow: hidden;
+   z-index: 300;
+}
+
+#progress {
+    width: 320px;
+    height: 320px;
+    z-index: 200;
+  transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+  filter: blur(.5px);
+    -webkit-filter: blur(.5px);
+    transition-property: opacity;
+    transition-duration: 3s;
+
+}
+
+#flip-back {
+    width: 300px;
+    height: 300px;
+    background: #4D4D4D;
+    border: 4px solid #AEAEAE;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: inset 0 -10px 10px -5px rgba(0,0,0,.3), 2px 2px 20px 0 rgba(0,0,0,.3); /* inner + outer */
+  transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+}
+
+/* Album Cover */
+img {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: .85;
+       border-radius: 50%;
+    -webkit-border-radius: 50%;
+ -moz-border-radius: 50%;
+    transition: .3s all ease-in-out;
+  -webkit-transition: .3s all ease-in-out;
+}
+
+/* Fade */
+#container:hover .cover,
+#container:hover .to-lyrics-label,
+#container:hover .to-back-label {
+    opacity: 1;
+}
+
+.cover,
+.to-lyrics-label,
+.to-back-label {
+    opacity: 1;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+/* Player Buttons */
+.controls {
+    position: relative;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+
+}
+
+button {
+    margin: 10px;
+    color: #fff;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    width: 10%;
+    background: #f2395b;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+
+}
+
+button:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+#play-pause {
+    width: 60px;
+    height: 60px;
+    border:4px solid white;
+    border-radius:50%; 
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    padding-left:5px;
+
+  }
+#playerr{
+    padding-left:6px;
+    -webkit-animation: played 3.5s infinite;
+     -moz-animation: played 3.5s infinite linear;
+      -ms-animation: played 3.5s infinite linear;
+       -o-animation: played 3.5s infinite linear;
+          animation: played 3.5s infinite linear;
+}
+@-webkit-keyframes played{
+    0%{
+        -webkit-transform : scale(1,1);
+    }    
+    12%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    17%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    22%{
+        -webkit-transform : scale(1.20,1.20);
+    }
+    29%{
+        -webkit-transform : scale(1,1);
+    }
+    50{
+        -webkit-transform : scale(1,1);
+    }    
+    62%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    67%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    72%{
+        -webkit-transform : scale(1.20,1.20);
+    }
+    79%{
+        -webkit-transform : scale(1,1);
+    }
+
+}
+@-moz-keyframes played{
+    0%{
+        -webkit-transform : scale(1,1);
+    }    
+    12%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    17%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    22%{
+        -webkit-transform : scale(1.20,1.20);
+    }
+    29%{
+        -webkit-transform : scale(1,1);
+    }
+    50{
+        -webkit-transform : scale(1,1);
+    }    
+    62%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    67%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    72%{
+        -webkit-transform : scale(1.20,1.20);
+    }
+    79%{
+        -webkit-transform : scale(1,1);
+    }
+
+}
+@-ms-keyframes played{
+    0%{
+        -webkit-transform : scale(1,1);
+    }    
+    12%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    17%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    22%{
+        -webkit-transform : scale(1.20,1.20);
+    }
+    29%{
+        -webkit-transform : scale(1,1);
+    }
+    50{
+        -webkit-transform : scale(1,1);
+    }    
+    62%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    67%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    72%{
+        -webkit-transform : scale(1.20,1.20);
+    }
+    79%{
+        -webkit-transform : scale(1,1);
+    }
+
+}
+@-o-keyframes played{
+    0%{
+        -webkit-transform : scale(1,1);
+    }    
+    12%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    17%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    22%{
+        -webkit-transform : scale(1.20,1.20);
+    }
+    29%{
+        -webkit-transform : scale(1,1);
+    }
+    50{
+        -webkit-transform : scale(1,1);
+    }    
+    62%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    67%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    72%{
+        -webkit-transform : scale(1.20,1.20);
+    }
+    79%{
+        -webkit-transform : scale(1,1);
+    }
+
+}
+@keyframes played{
+    0%{
+        -webkit-transform : scale(1,1);
+    }    
+    12%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    17%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    22%{
+        -webkit-transform : scale(1.20,1.20);
+    }
+    29%{
+        -webkit-transform : scale(1,1);
+    }
+    50{
+        -webkit-transform : scale(1,1);
+    }    
+    62%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    67%{
+        -webkit-transform : scale(1.15,1.15);
+    }
+    72%{
+        -webkit-transform : scale(1.20,1.20);
+    }
+    79%{
+        -webkit-transform : scale(1,1);
+    }
+
+}
+.cover {
+    padding-top: 120px;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+
+/* Media Queries */
+@media all and (max-width: 768px) {
+    #container, #player { width: 200px; height: 200px;}
+    #progress { width: 210px; height: 210px; margin-top: -5px; margin-left: -5px; }
+    label, .lyrics, .scroll { display: none; }
+    .cover { padding-top: 33%; }
+    button { margin: 4px; }
+    button:first-of-type, button:last-of-type { display: none; }
+    input[type='range'] { display: block; margin-top: -76px; height: 1px; }
+    .info { margin-top: 70px; }
+    .song { font-size: 12px; }
+    .author { font-size: 10px; }
+}

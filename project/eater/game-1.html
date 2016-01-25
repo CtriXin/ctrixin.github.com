@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>有一个神经病组织举办了一个逆天的大胃王挑战赛，我准备去围观顺便蹭饭了！</title>
+
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon"/>
+
+    <!-- Declare page as iDevice WebApp friendly -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <meta name="Keywords"     content="tataufo 大胃王 热狗" />
+    <meta name="Description"  content="tataufo 大胃王吃热狗比赛" />
+
+    <div id='wx_pic' style='margin:0 auto;display:none;'>
+        <img src="assets/img/300x300.jpg" />
+    </div>
+
+    <!-- Css files -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+
+<!-- start: Content -->
+
+
+
+<div class="first-page">
+    <div class="panel panel-game panel-default">
+
+
+        <div class="slider">
+            <div><img class="index-banner" src="assets/img/banner1.png" alt=""/></div>
+        </div>
+
+
+    </div>
+    <!--/.col-->
+
+    <div class="panel panel-default form-rule">
+
+        <p>规则</p>
+        <p>点击屏幕中间的"开始抢装备"按钮后，准备猛戳"抢"字按钮，计时20秒拼手快，拼人品</p>
+
+    </div>
+
+        <p id="timer">10.00 秒</p>
+        <a class="btn button-3d start-game">开始<br/>抢装备</a>
+        <a href=""  class="btn getequ">抢</a>
+
+
+
+
+
+</div>
+
+
+
+<!--/.col-->
+
+
+<!-- end: Content -->
+
+
+<!-- start: JavaScript-->
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+
+<!--定义按钮位置-->
+<script>
+    var workingHeight = window.screen.availHeight;
+    var workingWidth = window.screen.availWidth;
+    var imgH = $('.index-banner').height();
+    var imgW = $('.index-banner').width();
+    console.log(imgH);
+    $(document).ready(function(){
+        $('.start-game').css({'left':workingWidth/2-84 + 'px','top':imgH+ 100 + 'px'});
+        $('.getequ').css({'left':workingWidth/2-81 + 'px','top':imgH+ 100 + 'px'});
+        $('#timer').css({'top':imgH+ 90 + 'px'});
+    });
+    $('.start-game').click(function(){
+        $(this).remove();
+        $('#timer').css({'display':'block'});
+        $('.getequ').css({'display':'inline-block'});
+    })
+</script>
+
+<!--开始游戏-->
+<script type="text/javascript">
+    var initial = 1000;
+    var count = initial;
+    var counter; //10 will  run it every 100th of a second
+    var state = 0;
+    var total = 0;
+
+    if (localStorage.max) {
+
+    }
+
+    function timer() {
+        if (count <= 0) {
+            clearInterval(counter);
+            state = 0;
+            $('#result_panel').show();
+            if ( !localStorage.max || parseInt(localStorage.max) < total) {
+                localStorage.max = total;
+
+            }
+            $('#timer').hide();
+            localStorage.max = parseInt(localStorage.max) > total ? localStorage.max: total;
+            dp_submitScore(total);
+            offEvent();
+            return;
+        }
+        count--;
+        displayCount(count);
+    }
+
+    function displayCount(count) {
+        var res = count / 50;
+        document.getElementById("timer").innerHTML = res.toPrecision(count.toString().length) + " ’";
+    }
+    $(document).on('touchmove', function(e) {
+        e.preventDefault();
+    });
+    displayCount(initial);
+    initEvent();
+    function offEvent(){
+        $('.getequ').unbind();
+    }
+    function initEvent(){
+        $('.getequ').on('touchstart click', function (e) {
+            if (!state) {
+                state = 1;
+                counter = setInterval(timer, 20);   /*timer*/
+            }
+            this.classList.add('active');
+            e.preventDefault();
+        });
+
+        $('.getequ').on('touchend click', function (e) {
+            if (state) {
+                total++;
+                $('#result').html(total + ' 次');
+            }
+            this.classList.remove('active');
+            e.preventDefault();
+        });
+    }
+</script>
+
+<div style="display: none;">
+    <script type="text/javascript">
+        var myData={score:0,scoreName:''};
+
+        function dp_submitScore(score){
+            myscore=score;
+            myData.score = score;
+            myData.scoreName = "点了"+score+"下";
+            if(score>-1){
+                // var ref = window.open("win.html", "_self");
+                // ref.open();
+                window.location.href="http://www.baidu.com";
+            }
+        }
+        function onShareComplete(res) {
+            document.location.href = mebtnopenurl;
+            //if (auth.user && myData.score != undefined) {
+
+            //}
+            //else {
+            //  document.location.href = mebtnopenurl;
+            //}
+        }
+
+    </script>
+
+
+</div>
+
+
+<!-- end: JavaScript-->
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>社团功能介绍页面</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css" />
+        <link rel="stylesheet" type="text/css" href="css/load.css" />
+        <link rel="shortcut icon" href="images/favicon.png" />
+
+	</head>
+	<body>
+		<div id="content" style="display:none">
+			<div class="page page-1-1 page-current">
+				<div class="wrap">
+					<img class="img_4 rotateInUpLeft" src="images/tata-right.png" />
+					<img class="img_5 rotateInUpRight" src="images/tata-left.png" />
+					<img class="img_6 fadeInUp" src="images/tata-top.png" />
+					<img class="img_1 pt-page-moveInfitoLeft" src="images/cloud1.png" />
+					<img class="img_2 pt-page-moveInfitoRight" src="images/cloud2.png" />
+                    <img class="img_3 rubberBand" src="images/bg1-info.png" />
+					<img class="img_7 pt-page-moveIconUp" src="images/icon_up.png" />
+				</div>
+			</div>
+			<div class="page page-2-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromLeft" src="images/bg2-info.png" />
+ 					<!-- <img class="img_2 hide beemove" src="images/bee-left.png" /> -->
+ 					<img class="img_3 hide pt-page-moveCircle" src="images/tata2.png" />
+                    <img class="img_6 pt-page-moveIconUp" src="images/icon_up.png" />
+ 				</div>
+			</div>
+			<div class="page page-3-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromRight" src="images/bg3-info.png" />
+					<img class="img_2 hide rotateInDownLeft" src="images/tata3.png" />
+ 					<img class="img_6 hide pt-page-moveIconUp" src="images/icon_up.png" />
+				</div>
+			</div>
+			<div class="page page-4-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide bounceIn" src="images/bg4-info.png" />
+					<img class="img_3 pt-page-moveFromRight hide" src="images/tata4.png" />
+					<img class="img_6 hide pt-page-moveIconUp" src="images/icon_up.png" />
+				</div>
+			</div>
+
+            <div class="page page-5-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromBottom" src="images/bg5-info.png" />
+					<img class="img_2 swing hide" src="images/cell.png" />
+                    <img class="img_3 bounceIn hide" src="images/veal.png" />
+                    <img class="img_4 rotateInDownLeft hide" src="images/food.png" />
+                    <img class="img_5 rotateInDownRight hide" src="images/music.png" />
+                    <img class="img_7 pt-page-moveFromLeft hide" src="images/tata5.png" />
+					<img class="img_6 hide pt-page-moveIconUp" src="images/icon_up.png" />
+				</div>
+			</div>
+
+            <div class="page page-6-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveCircle" src="images/bg6-info.png" />
+					<img class="img_2 bounceInDownBottom1 hide" src="images/star1.png" />
+                    <img class="img_3 bounceInDownBottom2 hide" src="images/star2.png" />
+                    <img class="img_4 bounceInDownBottom hide" src="images/star3.png" />
+					<img onclick="shareDialog()" class="img_5 pt-page-moveFromBottom hide" src="images/t10-3.png" />
+					<img class="img_6 pt-page-moveInfitoLeft hide" src="images/cloud3.png" />
+					<img class="img_7 pt-page-moveInfitoRight hide" src="images/cloud4.png" />
+				</div>
+			</div>
+
+
+    </div>
+
+
+    <div id="share" onClick="closeDialog()">
+    	<div class="shareImg"></div>
+    </div>
+
+        <script src="js/zepto.min.js"></script>
+		<script src="js/touch.js"></script>
+		<script src="js/index.js"></script>
+        <script type="text/javascript">
+		document.onreadystatechange = loading;
+		function loading(){
+			if(document.readyState == "complete")
+			{
+				$("#loading").hide();
+				$("#content").show();
+
+			}
+		}
+		function shareDialog(){
+			 $("#share").show();
+		}
+		function closeDialog(){
+			$("#share").hide();
+		}
+		</script>
+	</body>
+
+</html>

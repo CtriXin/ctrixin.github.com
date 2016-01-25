@@ -1,0 +1,106 @@
+<!Doctype html>
+<html  class="no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="zh-CN">
+<head>
+<!-- meta define -->
+<meta charset="UTF-8">
+<meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="full-screen" content="true">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-fullscreen" content="true">
+<meta name="360-fullscreen" content="true">
+<meta name="format-detection" content="telephone=no">
+
+
+
+<meta name="Keywords"     content="" />
+<meta name="Description"  content="" />
+<meta name="author" content="" />
+
+
+<!-- logo icon define -->
+<link rel="shortcut icon" href="img/favicon.png">
+
+
+<!-- Page Title -->
+<title>听歌写歌词</title>
+
+<!-- Stylesheet Load -->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+
+<!-- JS Load -->
+
+
+</head>
+<body>
+
+<div class="mod-page">
+
+
+<div id="container">
+ <!-- 歌曲播放列表按钮 -->
+  <canvas id="progress" width="320" height="320"></canvas><!-- 进度条 -->
+  <div id="player">
+    <audio id="audio">
+      <source src="audio/mt.mp3" type="audio/mpeg" codecs="mp3"></source>
+    </audio>
+    <img class="rotateCD" src="img/cd.png"><!-- 专辑封面 -->
+    <label class="to-lyrics-label" style="display:none"  for="to-lyrics"><i class="fa fa-caret-down fa-lg"></i></label>
+
+
+
+    <div class="cover">
+      <div class="controls">
+        <button id="backward" style="display:none" title="播放模式">后退</button>
+        <a href="#back" style="display:none"  class="fa fa-fast-backward"></a>    
+        <!-- 暂停 -->
+        <button id="play-pause" title="暂停" onclick="togglePlayPause()"><i class="fa fa-play fa-3x"></i></button>
+        <!-- 前进 -->
+        <button id="forward" style="display:none"  title="前进"><i class="fa fa-forward fa-2x"></i></button>
+        <!-- 循环播放 -->
+        
+        <!-- 音量控制 -->
+        
+      </div>
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+<div class="content">
+
+ 我叫MT 铜墙铁壁的身躯<br>
+  我招架 我闪避 我用身躯守卫你<br>
+  不要再恐惧 我还没有倒下去<br>
+  我的姐妹兄弟 不要再保存火力<br>
+  人人都说T强力 是公会最高荣誉<br>
+  没有人和你抢位置 没DKP<br>
+  装备都给你<br>
+  攻击啊 不要再百分之一<br>
+  治疗啊 一定保证我无懈 可击<br>
+  OT啊 我援护你不要急<br>
+  盾墙啊 CD了 全体火力<br>
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+<!-- end content-->
+    <!-- Placed at the end of the document so the pages load faster -->
+<script src="js/index.js"></script>
+</body></html>

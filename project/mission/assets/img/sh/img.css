@@ -1,0 +1,66 @@
+/* glue: 0.11.1 hash: 10f798cca6 */
+        .sprite-img-gotop,
+.sprite-img-selector,
+.sprite-img-question-mark,
+.sprite-img-click,
+.sprite-img-downarrow {
+            background-image: url('img.png');
+            background-repeat: no-repeat;
+        }
+        
+        .sprite-img-gotop {
+            background-position: 0 0;
+            width: 15px;
+            height: 13px;
+        }
+        
+        .sprite-img-selector {
+            background-position: -15px 0;
+            width: 13px;
+            height: 13px;
+        }
+        
+        .sprite-img-question-mark {
+            background-position: 0 -13px;
+            width: 13px;
+            height: 13px;
+        }
+        
+        .sprite-img-click {
+            background-position: -13px -13px;
+            width: 13px;
+            height: 9px;
+        }
+        
+        .sprite-img-downarrow {
+            background-position: -28px 0;
+            width: 10px;
+            height: 5px;
+        }
+        
+        @media screen and (-webkit-min-device-pixel-ratio: 1.0), screen and (min--moz-device-pixel-ratio: 1.0), screen and (-o-min-device-pixel-ratio: 100/100), screen and (min-device-pixel-ratio: 1.0), screen and (min-resolution: 1.0dppx) {
+            .sprite-img-gotop,
+    .sprite-img-selector,
+    .sprite-img-question-mark,
+    .sprite-img-click,
+    .sprite-img-downarrow {
+                background-image: url('img.png');
+                -webkit-background-size: 38px 26px;
+                -moz-background-size: 38px 26px;
+                background-size: 38px 26px;
+            }
+        }
+        
+        @media screen and (-webkit-min-device-pixel-ratio: 2.0), screen and (min--moz-device-pixel-ratio: 2.0), screen and (-o-min-device-pixel-ratio: 200/100), screen and (min-device-pixel-ratio: 2.0), screen and (min-resolution: 2.0dppx) {
+            .sprite-img-gotop,
+    .sprite-img-selector,
+    .sprite-img-question-mark,
+    .sprite-img-click,
+    .sprite-img-downarrow {
+                background-image: url('img@2x.png');
+                -webkit-background-size: 38px 26px;
+                -moz-background-size: 38px 26px;
+                background-size: 38px 26px;
+            }
+        }
+        
