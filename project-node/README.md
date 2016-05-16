@@ -1,5 +1,8 @@
 # 地推后台文档记录
 
+**因为安全方面的问题，已删除数据库配置，请联系我**
+
+
 ## first of first
 ### Install dependencies
 
