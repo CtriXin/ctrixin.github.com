@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript">
+
+        var t
+        function timedCount()
+        {
+            startTime();
+        }
+
+
+        function startTime()
+        {
+            var today=new Date()
+            var h=today.getHours()
+            var m=today.getMinutes()
+            var s=today.getSeconds()
+            var ms=today.getMilliseconds()
+            m=checkTime(m)
+            s=checkTime(s)
+            ms=Math.floor(checkTime(ms)/100)
+            document.getElementById('txt').value=h+":"+m+":"+s+":"+ms
+            t=setTimeout('startTime()',100)
+        }
+
+        function checkTime(i)
+        {
+            if (i<10)
+            {i="0" + i}
+            return i
+        }
+
+        function stopCount()
+        {
+            clearTimeout(t)
+        }
+
+
+        function isKeyPressed(event)
+        {
+            if (event.ctrlKey==1)
+            {
+
+                startTime();
+            }
+            if(event.shiftKey==1)
+            {
+
+                stopCount()
+            }
+        }
+    </script>
+</head>
+
+<body onkeydown="isKeyPressed(event)">
+<form>
+    <input type="button" value="开始计时！" onClick="timedCount()" >
+    <input type="text" id="txt">
+    <input type="button" value="停止计时！" onClick="stopCount()" >
+</form>
+
+<p>
+    请点击上面的"开始计时"按钮。输入框会从 0 开始一直进行计时。点击"停止计时"可停止计时。
+</p>
+
+</body>
+
+</html>
