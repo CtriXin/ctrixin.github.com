@@ -1,0 +1,86 @@
+
+.page-1-1{ background-color:#EDEDED; background: url(../img/bg1.jpg) center center no-repeat ; background-size:100% 100%}
+
+.page-current{
+	z-index:1;
+}
+
+
+.new-btn {
+	width: 48%;
+	padding-top: 16%;
+	/*background: yellow;*/
+	position: absolute;
+	top: 63.1%;;
+	left: 29%;
+	border-radius: 22px;
+}
+
+#shareit {
+    -webkit-user-select: none;
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 105;
+}
+#shareit img {
+    max-width: 100%;
+}
+.arrow {
+    position: absolute;
+    right: 10%;
+    top: 5%;
+    width: 25%;
+}
+#share-text {
+    margin-top: 50%;
+    margin-left: 15%;
+    width: 70%;
+}
+
+.spinner {
+	width: 60px;
+	height: 60px;
+
+	position: relative;
+	margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: #67CF22;
+	opacity: 0.6;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	-webkit-animation: bounce 2.0s infinite ease-in-out;
+	animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+	-webkit-animation-delay: -1.0s;
+	animation-delay: -1.0s;
+}
+
+@-webkit-keyframes bounce {
+	0%, 100% { -webkit-transform: scale(0.0) }
+	50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+	0%, 100% {
+		transform: scale(0.0);
+		-webkit-transform: scale(0.0);
+	} 50% {
+		  transform: scale(1.0);
+		  -webkit-transform: scale(1.0);
+	  }
+}

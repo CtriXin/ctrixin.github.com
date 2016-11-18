@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>招聘页面</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta content="网页特效,特效代码,jQuery,css特效,Js代码,广告幻灯,图片切换" name="keywords" />
+<meta content="jQuery弹出层效果，有关闭按钮，代码简单易懂，你可以随意修改弹出层的参数。" name="description" />
+<script src="/uploads/common/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<style>
+
+
+.black_overlay{
+display: none;
+position: absolute;
+top: 0%;
+left: 0%;
+width: 100%;
+height: 100%;
+background-color: black;
+z-index:1001;
+-moz-opacity: 0.8;
+opacity:.80;
+filter: alpha(opacity=80);
+}
+.white_content {
+display: none;
+position: absolute;
+top: 1%;
+left: 4%;
+width: 90%;
+height: 100%;
+background-color: none;
+z-index:1002;
+padding-top: 30px;
+padding-right: 30px;
+overflow: auto;
+}
+
+.white_content span{
+
+  position:absolute;
+  margin-top: -4%;
+  right:5%;
+  font-size: 1.3em;
+  padding:3% 3.6%;
+  padding-top: 2.8%;
+  background:#f9f9f9;
+  color:#4dc3ff;
+  z-index:999;
+  border-radius: 50% !important;
+}
+
+@media(max-height: 500px){
+    .black_overlay{
+    display: none;-
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 150%;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+    }
+    .white_content {
+    display: none;
+    position: absolute;
+    top: 3%;
+    left: 9%;
+    padding-top: 15px;
+    padding-right: 30px;
+    width: 80%;
+    background-color: none;
+    z-index:1002;
+    }
+
+}
+
+
+</style>
+<script type="text/javascript">
+//弹出隐藏层
+function ShowDiv(show_div,bg_div){
+document.getElementById(show_div).style.display='block';
+document.getElementById(bg_div).style.display='block' ;
+var bgdiv = document.getElementById(bg_div);
+bgdiv.style.width = document.body.scrollWidth;
+// bgdiv.style.height = $(document).height();
+$("#"+bg_div).height($(document).height());
+};
+//关闭弹出层
+function CloseDiv(show_div,bg_div)
+{
+document.getElementById(show_div).style.display='none';
+document.getElementById(bg_div).style.display='none';
+};
+</script>
+</head>
+<body>
+<input id="Button1" type="button" value="点击弹出层" onclick="ShowDiv('MyDiv','fade')" />
+<!--弹出层时背景层DIV-->
+<div id="fade" class="black_overlay">
+</div>
+
+
+<div id="MyDiv" class="white_content">
+    <div style="text-align: right; cursor: default;">
+    <span onclick="CloseDiv('MyDiv','fade')">x</span>
+    </div>
+
+    <img src="company1.jpg" alt="">
+</div>
+
+
+</body>
+</html>

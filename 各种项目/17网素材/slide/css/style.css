@@ -1,0 +1,54 @@
+html {height:100%;}
+body {margin:0;font-size:16px;position:relative;height:100%;background:#fff;}
+.swiper-container {width: 100%;height: 100%;color: #000;text-align: center;}
+.swiper-slide {overflow: hidden;position: relative;}
+.head {background: url(../images/1.jpg) center center no-repeat;background-size:100%;position: relative;}
+.n2 {background-color: #EBDACD;}.n3 {background-color: #EBDACD;}.n4 {background-color: #F5D1B9;}
+.n5 {background-color: #F5D1B9;}.n6 {background-color: #9FC8CE;}.n7 {background-color: #9FC8CE;}
+.n8 {background-color: #E4DDED;}.n9 {background-color: #E4DDED;}.n10 {background-color: #D5E9F0;}
+.n11{background-color: #D5E9F0;}.n12{background: url(../images/12.png) center center no-repeat;background-size:100%;}
+.n13{background: url(../images/13.png) center center no-repeat;background-size:100%;}
+.info{top:5%;position:relative;}
+.info1,.info2,.info3,.info4,.info5{opacity: 0;}
+.head .info{position:relative;right:-410px;top:30px;}
+.n2 .info1{margin-top:6%;}.n2 .info2{margin-top:10%;}
+.n3 .info1{margin-top:6%;}.n3 .info2{margin-top:12%;}
+.n4 .info1{margin-top:6%;}.n4 .info2{margin-top:10%;}
+.n5 .info1{}.n5 .info2{}.n5 .info3{margin-top:3%;}
+.n6 .info1{}.n6 .info2{margin:10% auto 5% auto;}.n6 .info3{margin-top:3%;}
+.n7 .info1{}.n7 .info2{margin-top:5%;}.n7 .info3{}.n7 .info4{margin-top:5%;}
+.n8 .info1{}.n8 .info2{margin:10% auto 5% auto;}.n8 .info3{}
+.n9 .info1{margin-top:5%;}.n9 .info2{margin:4% auto;}.n9 .info3{}
+.n9 .info4{position:relative;top:-720px;}
+.n9 .info5{position:relative;top:-530px;left:150px;}
+.n10 .info1{}.n10 .info2{margin:6% auto;}.n10 .info3{}
+.n11 .info1{}.n11 .info2{margin:3% auto;}.n11 .info3{margin:3% auto;}.n11 .info4{}
+.n13 .info1{margin-top:-5%;}.n13 .info2{margin-top:-4%;}.n13 .info3{}.n13 .info4{}.n13 .info5{margin-top:4%;}
+.invite{margin-top:15%;}
+.press img{border:0px;}
+.foot {background: url(../images/share.png) no-repeat center center #000;background-size: 100%;}
+.share {width: 100%;height: 100%;background: url(../images/share.png) no-repeat center center #000;background-size: 100%;}
+.arrow {
+	position: fixed;
+	z-index: 100;
+	width: 96px;
+	height: 96px;
+	background: url(../images/up.png);
+	background-size:100%;
+	bottom: 30px;
+	left: 50%;
+	text-align: center;
+	margin-left: -50px;
+	animation: arrowUp 2s infinite ease-in;
+	-webkit-animation: arrowUp 2s infinite ease-in;
+}
+@keyframes arrowUp {
+    0% {transform:translateY(42px);opacity: 0;}
+    60% {transform:translateY(12px); opacity: 1;}
+    100% {transform:translateY(0px); opacity: 0;}
+}
+@-webkit-keyframes arrowUp {
+    0% {-webkit-transform:translateY(42px);opacity: 0;}
+    60% {-webkit-transform:translateY(12px); opacity: 1;}
+    100% {-webkit-transform:translateY(0px); opacity: 0;}
+}

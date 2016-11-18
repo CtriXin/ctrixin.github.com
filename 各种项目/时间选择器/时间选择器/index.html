@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery时间选择插件Timepicki</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" type="text/css" href="css/timepicki.css"/>
+
+<style>
+*{margin:0;padding:0;}
+body {
+font-family: 'arial';
+background-color:#36F;
+}
+a {
+text-decoration: none;
+color: #66666B;
+}
+a span {
+font-size: 12px;
+}
+input{padding:8px 5px;width:250px;border-radius:3px;border:1px solid #ddd;outline:none;text-align:center;color:#666;box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.35);}
+input:focus{border-color:#ccc;color:#333;}
+</style>
+</head>
+<body>
+
+<center>
+<br/><br/><br/><br/><br/>
+<input type="text" name="time" value="点击我选择时间！"/>
+</center>
+
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/timepicki.js"></script> 
+<script>
+$("input").timepicki();
+</script>
+
+
+</body>
+</html>

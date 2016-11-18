@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="whole">
+
+   <!--头部信息-->
+    <div class="head">
+        <div class="t_pic">
+            <img src="img/head.jpg" />
+        </div>
+        <div class="t_tit">
+            <p>第一届动物保护调研</p>
+        </div>
+    </div>
+    
+    <!--内容信息-->
+    <div class="content">
+    	<div class="finish_ion">
+        	<div class="ion">
+               <img src="img/wancheng.png" />
+            </div>
+            <div class="wz">
+            	<p>调研已经完成,感谢您的耐心回答！</p>
+            </div>
+            <div class="words">
+                <textarea value="我要发言" onfocus="if(value=='我要发言'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';  value='我要发言'}">我要发言</textarea>           		<input type="button" value="提交" />
+            </div>
+            <div class="botton_t">
+            	<input type="button" id="btn_a" value="分享" />
+            </div>
+        </div>
+    </div>
+    <div class="ts_mask">
+    	<div class="share">
+           <img src="img/share_t.png" />
+        </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript" src="http://www.xiaomafeiteng.com/js/jquery-1.7.2.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#btn_a").click(function(){
+		$(".ts_mask").fadeIn(1500);
+		});
+	$(".ts_mask").click(function(){
+		$(this).fadeOut(1500);
+		});
+});
+</script>
+</body>
+</html>

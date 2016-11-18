@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>咕咚欢迎您</title>
+<meta name="author" content="Administrator" />
+
+<link rel="shortcut icon" href="http://static.codoon.com/image/universal/codoon.ico" />
+
+<link rel="stylesheet" href="style/css/jquery.fullPage.css" />
+<link rel="stylesheet" href="style/css/base.css" />
+<link rel="stylesheet" href="style/css/welcome.css" />
+<link rel="stylesheet" href="style/css/jquery.bxslider.css">
+
+<script src="style/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="style/js/jquery.fullPage.min.js"></script>
+<script type="text/javascript" src="style/js/jquery.bxslider.js"></script>
+
+<script type="text/javascript" src="style/js/main.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+		my_section1.init();
+  $('#welcome').fullpage({
+	'verticalCentered': false,
+	'css3': true,
+	'sectionsColor': ['#6cbb52','#e89c38', '#40a3e1'],
+	'navigation': true,
+	'navigationPosition': 'right',
+			//'easing' : 'easeInOutBounce',
+			'afterRender' : function (index,anchorLink ) {
+				$(".iphone_img").addClass('fadeInTop');
+			},
+			'afterSlideLoad':function(index ) {
+
+			}
+			,
+	'afterLoad': function(anchorLink, index){
+				if( index == 2) {
+					$(".iphone_img").removeClass('fadeInTop');
+				}
+				if(index==3){
+					my_section1.init();
+				}
+				if(index==1){
+					my_section1.init();
+				}
+				if(index==2){
+					my_section2.init();
+				}
+
+	},
+	'onLeave': function(index, nextIndex, direction){
+	  if( nextIndex  == 1 ) {
+					$(".iphone_img").addClass('fadeInTop');
+				}
+				if(index==1){
+					my_section1.anim();
+				}
+				if(index==3){
+					my_section1.anim();
+				}
+				if(index==2){
+					my_section2.anim();
+				}
+	}
+  });
+});
+</script>
+</head>
+<body>
+
+    <div id="welcome">
+        <div class="section" id="section0">
+           <div class="my_section">
+                <div class="my_codoon fl">
+                    <div class="text1_box">
+                        <div class="text1 fl">要运动、</div><div class="text3 fl">用咕咚</div>
+                        <div class="blank0"></div>
+                    </div>
+                    <p><div class="text2">中国最大的运动社交APP</div></p>
+                    <div class="download_box">
+                        <div class="left">
+                            <div class="icon erweima"></div>
+                        </div>
+                        <div class="right">
+                            <a href="#" class="item pc_download item_pc" style="margin-bottom:15px;">iPhone版下载</a>
+                            <a href="#" class="item pc_download item_pc">Andriod版下载</a>
+                            <a class="item mobile_download mobile_icon"><img src="style/images/now_download.png" alt=""></a>
+                        </div>
+                        <div class="blank10"></div>
+                    </div>
+                </div>
+                <div class="iphone fr">
+                    <div class="iphone_icon iphone_img">
+                      <div id="iphone_slider_wrapper">
+                        <div id="iphone_slider">
+                          <ul id="iphone_slider_ul">
+                            <li><img src="style/images/iphone1.png"></li>
+                            <li><img src="style/images/iphone2.png"></li>
+                            <li><img src="style/images/iphone3.png"></li>
+                            <li><img src="style/images/iphone4.png"></li>
+                            <li><img src="style/images/iphone5.png"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <img class="iphone_xxoo" src="style/images/iphone_xxoo.png">
+                    </div>
+                </div>
+                <div class="blank0"></div>
+           </div>
+        </div>
+        <div class="section" id="section1">
+            <div class="my_section ">
+               <div class="rom_txt fr">
+                    <h2 class="bigtit">咕咚ROM</h2>
+                    <p class="notes">首个可用于大部分智能手环的通用固件</p>
+                    <div class="blank10"></div>
+                    <ul class="clearfix">
+                      <li>咕咚交友</li>
+                      <li>连接咕咚云平台</li>
+                      <li>精准的记录与识别</li>
+                      <li>SSA算法</li>
+                      <li>个人身份ID</li>
+                      <li>实用功能不断更新</li>
+                    </ul>
+                    <div><a class="rom_download mobile_icon" href="#"><img src="style/images/download.png" alt=""></a></div>
+                </div>
+                <div class="cod_rom fl">
+                    <img src="style/images/rom1.png" alt="">
+                    <img src="style/images/rom2.png" alt="">
+                    <img src="style/images/rom3.png" alt="">
+                    <img src="style/images/rom4.png" alt="">
+                    <img src="style/images/rom5.png" alt="">
+                    <img src="style/images/rom6.png" alt="">
+                    <img src="style/images/rom7.png" alt="">
+                    <img src="style/images/rom8.png" alt="">
+                    <img src="style/images/rom9.png" alt="">
+                    <img src="style/images/rom10.png" alt="">
+                </div>
+                <div class="blank0"></div>
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <div class="my_section">
+                  <div class="rom_txt fl souhuan">
+                    <h2 class="bigtit">咕咚手环</h2>
+                    <p class="notes">掌控自己的健康生活</p>
+                    <ul class="clearfix">
+                      <li>监测睡眠</li>
+                      <li>步数采集</li>
+                      <li>卡路里燃烧</li>
+                      <li>距离里程</li>
+                      <li>活动提醒</li>
+                      <li>智能无声闹钟</li>
+                    </ul>
+                    <div><a class="rom_download mobile_icon" id="buy" href="#"><img src="style/images/buy_smartband.png" alt=""></a></div>
+                </div>
+                <div class="shouhuanImg  fr">
+                    <img src="style/images/shouhuan.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed head">
+        <div class="head_content">
+            <div class="icon logo logo_blue fl"></div>
+            <div class="fr login_box">
+               
+                <a href="#" class="">登录</a>
+                <span class="">|</span>
+                <a href="#" class="">注册</a>
+                
+            </div>
+        </div>
+        <div class="line"></div>
+    </div>
+    <div class="fixed bottom">
+        <div class="bottom_content">
+            <a href="#">关于我们</a>
+            <span>|</span>
+            <a href="#">商务合作</a>
+            <span>|</span>
+            <a href="#">在线商城</a>
+            <span>|</span>
+            <a href="#">咕咚开放平台</a>
+            <label class="bottom_tips">
+                <span>|</span>
+                <a href="#">使用条款</a>
+                <span>|</span>
+                <a href="#">常见问题</a>
+            </label>
+            <br />
+            <p>Copyright © 2010-2014 Codoon 蜀ICP备12014086号</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+/* glue: 0.11.1 hash: 5efb08253b */
+.sprite-img-like,
+.sprite-img-chat {
+    background-image: url('../img/img.png');
+    background-repeat: no-repeat;
+}
+
+.sprite-img-like {
+    background-position: 0 0;
+    width: 15px;
+    height: 13px;
+}
+
+.sprite-img-chat {
+    background-position: -15px 0;
+    width: 14px;
+    height: 13px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.0), screen and (min--moz-device-pixel-ratio: 1.0), screen and (-o-min-device-pixel-ratio: 100/100), screen and (min-device-pixel-ratio: 1.0), screen and (min-resolution: 1.0dppx) {
+    .sprite-img-like,
+    .sprite-img-chat {
+        background-image: url('../img/img.png');
+        -webkit-background-size: 29px 13px;
+        -moz-background-size: 29px 13px;
+        background-size: 29px 13px;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2.0), screen and (min--moz-device-pixel-ratio: 2.0), screen and (-o-min-device-pixel-ratio: 200/100), screen and (min-device-pixel-ratio: 2.0), screen and (min-resolution: 2.0dppx) {
+    .sprite-img-like,
+    .sprite-img-chat {
+        background-image: url('../img/img@2x.png');
+        -webkit-background-size: 29px 13px;
+        -moz-background-size: 29px 13px;
+        background-size: 29px 13px;
+    }
+}
+
+
+.img-like-chat{
+    display: inline-block;
+    margin-right: 4px;
+}
+.img-like-member{
+    display: block;
+}

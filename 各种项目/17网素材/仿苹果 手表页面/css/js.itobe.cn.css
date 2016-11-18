@@ -1,0 +1,167 @@
+h1 {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+h2 {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+h3 {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+h4 {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+h5 {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+h6 {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+p {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+ul {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+ol {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+li {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+form {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+img {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+dl {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+dt {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+dd {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+table {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+th {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+td {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+blockquote {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+fieldset {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+div {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+strong {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+label {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+em {
+	margin: 0px; padding: 0px; border: 0px currentColor;
+}
+ul {
+	list-style: none;
+}
+ol {
+	list-style: none;
+}
+li {
+	list-style: none;
+}
+input {
+	margin: 0px; font-size: 12px; vertical-align: middle;
+}
+button {
+	margin: 0px; font-size: 12px; vertical-align: middle;
+}
+
+table {
+	border-collapse: collapse; border-spacing: 0;
+}
+.clearfloat {
+	height: 0px; line-height: 0; clear: both; font-size: 1px;
+}
+#container {
+	margin: 0px auto; width: 100%; text-align: left; float: left;
+}
+a {
+	color: rgb(51, 51, 51); text-decoration: none;
+}
+a:hover {
+	color: rgb(239, 155, 17); text-decoration: underline;
+}
+.small-pic {
+	overflow: hidden; zoom: 1;
+}
+.pic-text {
+	overflow: hidden; zoom: 1;
+}
+.small-list {
+	overflow: hidden; zoom: 1;
+}
+.head-pic {
+	margin: 0px auto; width: 500px; height: 508px;
+}
+.head-pic .big-pic {
+	width: 100%; position: relative;
+	height:509px;
+}
+.head-pic .big-pic .gray-bg {
+	background: rgb(54, 22, 1); left: 0px; top: 228px; width: 360px; height: 71px; filter: alpha(opacity=75); position: absolute; opacity: 0.75;
+}
+.head-pic .big-pic .to-describe {
+	left: 0px; top: 228px; width: 360px; height: 71px; text-align: center; color: rgb(255, 255, 255); line-height: 140%; font-size: 25px; position: absolute; z-index: 2;
+}
+.head-pic .big-pic img {
+	 width:100%; height: 100%; display: block;
+}
+.small-pic {
+	margin: 1px 0px 0px -6px;
+}
+.small-pic li {
+	width: 65px; height: 58px; padding-top: 8px; margin-left: 5px; float: left; display: inline;
+}
+
+.small-pic li img {
+	background: rgb(255, 255, 255); margin: 0px auto; padding: 1px; border: 1px solid rgb(202, 202, 202); width: 40px; height: 8px; display: block;
+}
+.small-pic li.on {
+	background: url("../images/on-bg.png") no-repeat top; padding-top: 7px;
+}
+.small-pic li.on img {
+	border: 2px solid rgb(142, 183, 61);
+}
+
+.page1 .icon {
+height: 111px;
+background: url(../images/slider4_icon.png) 0 0 no-repeat;
+width: 650px;
+margin: 0 auto;
+margin-top: 100px;
+}
+.pic-list1 {
+	height: 134px; overflow: hidden; margin-top: 15px; margin-left: -10px; zoom: 1;
+}
+.pic-list1 li {
+	width: 132px; margin-left: 26px; float: left; display: inline;
+}
+.pic-list1 li img {
+	border: 1px solid rgb(206, 206, 206); width: 130px; height: 88px; margin-bottom: 10px; display: block;
+}
+.pic-list1 li a {
+	color: rgb(76, 76, 76); text-decoration: none;
+}
+.pic-list1 li a:hover {
+	text-decoration: underline;
+}

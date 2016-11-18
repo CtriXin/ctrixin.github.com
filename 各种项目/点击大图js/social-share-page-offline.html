@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8"/>
+
+    <title>社区分享页面</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <!-- Declare page as iDevice WebApp friendly -->
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <meta content="" name="description"/>
+
+    <meta content="" name="author"/>
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+    <link href="sharepg1/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="sharepg1/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="sharepg1/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN PAGE LEVEL STYLES -->
+
+    <link href="sharepg1/media/css/self.css" rel="stylesheet" type="text/css"/>
+
+    <link href="sharepg1/media/css/expander.css" rel="stylesheet"/>
+    <!-- END PAGE LEVEL STYLES -->
+
+
+</head>
+
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="page-header-fixed">
+
+<!-- BEGIN CONTAINER -->
+
+<div class="page-container row-fluid">
+
+    <!-- BEGIN PAGE -->
+
+    <div class="page-content">
+
+        <!-- BEGIN PAGE CONTAINER-->
+
+        <div class="container-fluid">
+
+            <!-- BEGIN PAGE CONTENT-->
+
+            <div class="row-fluid">
+
+                <div class="span12">
+
+                    <!--BEGIN TABS-->
+
+                    <div class="tabbable tabbable-custom tabbable-full-width">
+
+                        <!--第一块-->
+                        <div class="row-fluid portfolio-block ">
+
+                            <div class="span5 portfolio-text topradius">
+
+                                <img src="sharepg1/media/image/1.jpg" class="head" alt=""/>
+
+                                <div class="portfolio-text-info">
+
+                                    <h4 class="name">霹雳泡椒娃霹雳泡椒娃</h4>
+
+                                    <img src="sharepg1/media/image/girl.png" class="gender" alt="">
+                                </div>
+
+                                <div class="portfolio-text-info">
+
+                                    <p id="masterschool"><span style="color:#4095de;font-size:13px;">楼主</span><span
+                                            style="color:#999999;font-size:13px;">&nbsp;·&nbsp;北京航空航天大学&nbsp;·&nbsp;白羊座</span>
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="span5" style="overflow:hidden;">
+
+                                <h3 class="title">减肥减肥！减肥减肥！减肥减肥！减肥减肥！减肥减肥！</h3>
+
+                                <div>
+
+                                    <p>
+                                        <span class="content">今天的早午餐啊今上了午餐啊天今天的早午餐今天的早午餐啊。</span>
+                                    </p>
+
+                                    <div style="margin-bottom:10px">
+
+                                        <img src="sharepg1/media/image/chinaz.jpg" onclick="imgShow($(this))" class="contentimg" width="30%;" alt="">
+                                        <img src="sharepg1/media/image/phone1.png" style="clip:rect(0px 100px 100px 0px);width: 30%;" />
+                                        <img src="sharepg1/media/image/1.jpg" onclick="imgShow($(this))"  class="contentimg" width="30%;" alt="">
+                                        <img src="sharepg1/media/image/1.jpg" data-expander='{animation:"fade"}' width="30%;" alt="">
+                                    </div>
+
+                                    <div class="date">12-24 11:34</div>
+
+                                </div>
+
+                            </div>
+                            <div id="outerdiv"
+                                 style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:999;width:100%;height:100%;display:none;">
+                                <a class="close" onclick="$('#outerdiv').fadeOut('fast');"></a>
+
+                                <div id="innerdiv" style="position:absolute;"><img id="bigimg" style="border:5px solid #fff;" src=""/></div>
+                            </div>
+
+
+
+
+                        </div>
+                        <!--第一块-->
+
+
+
+                    </div>
+
+                    <!--END TABS-->
+
+                </div>
+
+
+            </div>
+
+            <!-- END PAGE CONTENT-->
+
+        </div>
+
+        <!-- END PAGE CONTAINER-->
+
+    </div>
+
+    <!-- END PAGE -->
+    <div class="footer-mobile">
+        <img src="sharepg1/media/image/tata-footer.png" class="footer-logo">
+        <img src="sharepg1/media/image/tata-footer-text.png" class="footer-text">
+        <a class="large button blue footerbtn" style="font-size: 18px">立即下载</a>
+    </div>
+
+</div>
+
+<!-- END CONTAINER -->
+<script src="sharepg1/media/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function imgShow(_this) {
+        var src = _this.attr("src");
+        $("#bigimg").attr("src", src);
+        $("<img/>").attr("src", src).load(function () {
+            var windowW = $(window).width();
+            var windowH = $(window).height();
+            var realWidth = this.width;
+            var realHeight = this.height;
+            var imgWidth, imgHeight;
+            var scale = 0.8;
+
+            if (realHeight > windowH * scale) {
+                imgHeight = windowH * scale;
+                imgWidth = imgHeight / realHeight * realWidth;
+                if (imgWidth > windowW * scale) {
+                    imgWidth = windowW * scale;
+                }
+            } else if (realWidth > windowW * scale) {
+                imgWidth = windowW * scale;
+                imgHeight = imgWidth / realWidth * realHeight;
+            } else {
+                imgWidth = realWidth;
+                imgHeight = realHeight;
+            }
+            $("#bigimg").css("width", imgWidth);
+
+            var w = (windowW - imgWidth) / 2;
+            var h = (windowH - imgHeight) / 2;
+            $("#innerdiv").css({"top": h, "left": w});
+            $("#outerdiv").fadeIn("fast");
+        });
+        $("#outerdiv").click(function () {
+            $(this).fadeOut("fast");
+        });
+    }
+</script>
+
+</body>
+
+
+
+</html>

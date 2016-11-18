@@ -1,0 +1,130 @@
+:focus { outline: 0; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,input,section{	margin:0;padding:0;border:0;}
+li { list-style: none; }
+img { border:0; border:none; display: block; vertical-align: bottom;}
+em, i { font-style: normal; }
+a{text-decoration:none; }
+a{outline:none;blr:expression(this.onFocus=this.blur());}/*去掉a标签的虚线框，避免出现奇怪的选中区域*/
+.clear { margin: 0px; padding: 0px; width: 0px; height: 0px; line-height: 0px; font-size: 0px; clear: both; }
+/*li{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:px;} (用省略号显示)*/
+*{ -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+html{height:100%; }
+body{width:640px;height:100%;background-color:#161d27;font-family:'Microsoft YaHei',sans-serif !important;  }
+.section { text-align: center; color:#fff; padding:20px; background-color: #161d27; overflow: hidden;text-shadow:0 0 10px yellow;}
+.section p{ margin-bottom: 20px;}
+.section1{background: url(../images/index_bg.jpg) no-repeat left top; background-size: 100%; background-color: #000034;}
+.section1 h1{ font-size: 36px; margin-bottom:100px;}
+.section1 .text1{ position: absolute; bottom:60px; left: 0; padding: 0 20px;text-indent:2em;color: #fff;font-size: 24px; text-align:justify; }
+.textAll{width:600px;font-size: 24px; line-height:40px;}
+.section2 .text2{position: absolute; left: 0; top:-150%; }
+.section2 .img2{ position: absolute; bottom:70px; left:0; display: none; }
+.section3 .text3 p:nth-child(1){position: absolute; right:-150%; top: 50px;}
+.section3 .text3 p:nth-child(2){position: absolute; right:-150%; top: 105px;}
+.section3 .text3 p:nth-child(3){position: absolute; right:-150%; top: 155px;}
+.section3 .text3 p:nth-child(4){position: absolute; right:-150%; top: 205px;}
+.section3 .text3 p:nth-child(5){position: absolute; right:-150%; top: 255px;}
+.section3 .img3{  position: absolute;  left:-150%; top:150px; }
+.section4 .img4{ position: absolute; left:-100px; top: 0; display: none; }
+.section4 .text4{  position: absolute; top:160px;right:-80px; display: none;}
+.section5 .img5{ position: absolute; bottom:0;right: 0; display: none;}
+.section5 .text5{  position: absolute; top:100px; left:-100px; display: none;}
+.section6 .img6{ position: absolute; left:3px; top:-600%; z-index: 1; }
+.section6 .text6{position: absolute; top:5px;left: 0; display: none; z-index:0;}
+.section7 .img7{ position: absolute; left:-150%;bottom: 0; }
+.section7 .text7{position: absolute; right:-150%;top:150px; }
+.section8 .text8{ position: absolute; bottom:80px; left:-105px; display: none;}
+.section8 .img8{ position: absolute; right: 1px; top: -2px; }
+.sec8_img{
+ -moz-animation: my_01 .5s ease;
+ -o-animation: my_01 .5s ease;
+ -webkit-animation: my_01 .5s ease;
+ -ms-animation:my_01 .5s ease;
+ animation:my_01 .5s ease;
+}
+@-moz-keyframes my_01
+{
+	0% {-moz-transform:scale(2) rotatex(0deg);}
+	100% { -moz-taaaransform:scale(1) rotatez(360deg); }
+}
+@-o-keyframes my_01
+{
+	0% {-o-transform:scale(2) rotatex(0deg);}
+	100% { -o-transform:scale(1) rotatez(360deg); }
+}
+@-webkit-keyframes my_01
+{
+	0% {-webkit-transform:scale(2) rotatex(0deg);}
+	100% { -webkit-transform:scale(1) rotatez(360deg); }
+}
+@-ms-keyframes my_01
+{
+	0% {-ms-transform:scale(2) rotatex(0deg);}
+	100% { -ms-transform:scale(1) rotatez(360deg); }
+}
+@keyframes my_01
+{
+	0% {transform:scale(2) rotatex(0deg); }
+	100% { transform:scale(1) rotatez(360deg); } 
+}
+.section9 .img9{ position: absolute; bottom:10px; left:-450px; z-index: 0; } 
+.section9 .text9{ position: absolute;top:30px; right:-450px; z-index: 1;}
+.section10{ background: url(../images/bg.jpg) no-repeat right bottom; background-color: #000; }
+.section10 .text10{ position: absolute; left:-55px;top:50px; display: none;}
+.section11 .img11{ position: absolute; right: 0; bottom:45px; display: none; }
+.section11 .text11{position: absolute; top:200px; left:93px; font-size: 26px; text-shadow:0 0 5px yellow;}
+.section11 .text11 p{ display: none;}
+.music{ width: 50px; height: 50px;  position: fixed; top:20px; right: 20px; border-radius:45px; background: #fff; box-shadow:0 0 30px #f8fb04;  }
+.music>img{ max-width:100%; max-height:100%; position: absolute; top: 3px; left: 7px;}
+.arrow-up { height: auto; left: 50%; margin-left: -12px; position: fixed; top: 92%; width: 25px; z-index: 99;}
+.pt-page-moveIconUp { 
+	-webkit-animation: 1.5s ease 0s normal both infinite running moveToBottom;
+	-ms-animation: 1.5s ease 0s normal both infinite running moveToBottom;
+	-o-animation: 1.5s ease 0s normal both infinite running moveToBottom;
+	-moz-animation: 1.5s ease 0s normal both infinite running moveToBottom;
+	animation: 1.5s ease 0s normal both infinite running moveToBottom;
+}
+@-webkit-keyframes moveToBottom {
+ from { }
+ to {-webkit-transform: translateY(100%); }
+}
+@-moz-keyframes moveToBottom {
+ from { }
+ to {-moz-transform: translateY(100%); }
+}
+@-ms-keyframes moveToBottom {
+ from { }
+ to {-ms-transform: translateY(100%); }
+}
+@-o-keyframes moveToBottom {
+ from { }
+ to {-o-transform: translateY(100%); }
+}
+@keyframes moveToBottom {
+ from { }
+ to {transform: translateY(100%); }
+}
+@-webkit-keyframes moveIconUp {
+ 0% { -webkit-transform: translateY(100%); opacity:0;}
+ 50% { -webkit-transform: translateY(0%); opacity:1;}
+ 100% { -webkit-transform: translateY(-100%); opacity:0;}
+}
+@-moz-keyframes moveIconUp {
+ 0% { -moz-transform: translateY(100%); opacity:0;}
+ 50% { -moz-transform: translateY(0%); opacity:1;}
+ 100% { -moz-transform: translateY(-100%); opacity:0;}
+}
+@-ms-keyframes moveIconUp {
+ 0% { -ms-transform: translateY(100%); opacity:0;}
+ 50% { -ms-transform: translateY(0%); opacity:1;}
+ 100% { -ms-transform: translateY(-100%); opacity:0;}
+}
+@-o-keyframes moveIconUp {
+ 0% { -o-transform: translateY(100%); opacity:0;}
+ 50% { -o-transform: translateY(0%); opacity:1;}
+ 100% { -o-transform: translateY(-100%); opacity:0;}
+}
+@keyframes moveIconUp {
+ 0% { transform: translateY(100%); transform: translateY(100%); opacity:0;}
+ 50% { transform: translateY(0%); transform: translateY(0%); opacity:1;}
+ 100% { transform: translateY(-100%); transform: translateY(-100%); opacity:0;}
+}

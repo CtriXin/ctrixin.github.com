@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD>
+<title>纯CSS兼容IE6的固定底部的广告层 - 懒人建站</title>
+<meta name="keywords" content="网页特效,网页模板,导航菜单,焦点幻灯片,JS代码" />
+<meta name="description" content="懒人建站为您提供-HTML+CSS模板，JS广告代码，网页特效，导航菜单，焦点幻灯片代码，原创视频教程与网页模板和CSS技巧。" />
+<META http-equiv=content-type content="text/html; charset=utf-8">
+<style>
+body{ padding:0px; margin:0px;}
+#bottom_ad {
+	WIDTH: 100%; 
+	HEIGHT: 100px;
+	display:block;
+	overflow:hidden;
+	margin:0 auto;
+	BORDER: #b5b5b5 1px solid; 
+	BACKGROUND: #ccc; 
+	FLOAT: right; 
+	RIGHT: 0px; 
+	BOTTOM: 0px;
+	POSITION:fixed;/*固定定位*/
+	_POSITION: absolute;/*兼容IE6*/
+	_TOP: expression(offsetParent.scrollTop+document.documentElement.clientHeight-this.offsetHeight);/*兼容IE6*/
+}
+/*固定底部的效果是上面的样式在起作用，下面的样式均属于装饰，你可以随意修改。*/
+#bottom_ad .tit,#bottom_ad .ad_body{ width:97%; height:auto; display:block; margin:0 auto; font-size:13px;}
+#bottom_ad .tit{ width:100%;}
+#bottom_ad .ad_body{ padding:6px 0px 6px 0px;}
+#bottom_ad .tit,#BOTTOM_AD .tit h2{height:24px; line-height:24px;display:block; background-color:#999999;}
+#bottom_ad .tit h2{ font-size:14px; width:80%; float:left; margin:0px; padding:0px; text-indent:1em; }
+#bottom_ad .tit .guanbi{width:5%;float:right; text-align:right; margin-right:15px;}
+#bottom_none{ display:none;}
+</style>
+<script type="text/javascript">
+function toggle() {
+theObj = document.getElementById('bottom_ad').style;
+if ( theObj.display == "none" ) theObj.display = "block"; else theObj.display = "none";
+}
+</script>
+</head>
+
+<body>
+<div id="bottom_ad">
+	<div class="tit"><h2>懒人建站 http://www.51xuediannao.com</h2><a href="#" onclick="toggle()" class="guanbi">关闭</a></div>
+    <div class="ad_body">这里是你的底部广告内容。懒人建站原创，纯CSS兼容IE6的固定在底部
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+

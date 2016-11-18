@@ -1,0 +1,38 @@
+.footer-mobile{
+  text-align:center;
+  height:10%;
+  position:fixed;
+  bottom:-1px;
+  left:0px;	width:100%;
+  background-color:#2364a8;
+  z-index: 99;
+  color: #ffffff;
+}
+@heightmain: 'document.getElementById("footer-mobile").offsetHeight';
+@heightbtn: 'document.getElementById("footer-btn").offsetHeight';
+@media (min-width: 479px) {
+  .footer-mobile{
+    display: none;
+  }
+}
+.footer-logo{
+  height: 50%;
+  margin-top: 4%;
+  margin-left: 5%;
+
+}
+.footer-text{
+  width: 26%;
+  margin:4%;
+}
+.button {
+  font-size: 1em;
+  text-decoration: none!important;
+  padding: 8px 14px;
+  border-radius: 5px;
+  display:inline-block;
+  margin-right: 5%;
+  margin-top: (@heightmain - @heightbtn)/2;
+  background: #4dcc70;
+  color: #ffffff;
+}

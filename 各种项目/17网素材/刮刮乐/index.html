@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>刮刮乐</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript"  src="js/jquery-1.9.1.js"></script>
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{position:relative;background:url(img/guaguaka_bg.png) no-repeat 50% 0;height:640px;overflow:hidden;}
+
+#bg2{width:295px;height:195px;margin:0 auto;}
+#gua1{width:295px;;margin:0 auto;}
+#notify{width:295px;height:101px;margin:0 auto;}
+#nImg_div{position:absolute;color:white;font-size:17px;font-family:'黑体';}
+#nImg_div div{width:245px;height:101px;padding:20px 0px 0px 50px;}
+#di{width:295px;margin:0 auto;}
+#bg1{display:none;position:fixed;top:0%;left:0%;width:100%;height:100%;background-color:black;z-index:1001;-moz-opacity:0.7;opacity:.70;filter:alpha(opacity=70);}
+#show{display:none;position:absolute;top:222px;left:50%;margin-left:-148px;text-align:center;background-color:#fff;z-index:1002;overflow:auto;}
+#show div{margin-top:-145px;margin-left:40px;padding-right:40px;line-height:1.5;color:#000000;font-size:17px;font-family:'黑体';}
+</style>
+
+</head>
+<body>
+
+<div id="bg2"><img id="bg2_img" src="img/guaguaka_word.png" width="295" height="195" style="position:absolute;"/></div>
+
+<div id="gua1">
+	<img id="gua1_img" src="img/gua_image.png" style="position: absolute;"/>
+	<canvas id="front" style="position:absolute;" />
+</div>
+
+<div id="notify">
+	<img id="nImg" src="img/notice_bg.png" style="position: absolute;"/>
+	<div id="nImg_div">
+		<div>每天登陆热拍有1张刮刮卡哦~元旦开始，热币可抵现金，还可抽神秘大奖！</div>
+	</div>
+</div>
+<div id="di"><img id="di_img" src="img/detail_declare_bg.png" style="position: absolute;"/></div>
+
+<div id="bg1"></div>
+
+<div id="show">
+	<img id="show_img" src="img/dialog_bg.png" width="100%" height="100%"/>
+	<div>亲，您今天的机会已经用完了~明天再接再励！</div>
+	<img id="show_btn" src="img/btn_sure.png" style="margin-top: 30px;" onClick="hidediv()"/>
+</div>
+
+
+<script type="text/javascript">   
+var gua = 1,re = 2;  // 可设置刮奖次数
+var imgSrc = 'img/aa.png';
+
+function showdiv() { 
+	 document.getElementById("bg1").style.display ="block";
+	 document.getElementById("show").style.display ="block";
+}
+
+function hidediv() {
+	 document.getElementById("bg1").style.display ='none';
+	 document.getElementById("show").style.display ='none';
+}
+
+$(function(){
+	var width = $("#show_img").width();
+	var height = $("#show_img").height();
+	var winheight=$(window).height();
+	var winwidth=$(window).width();
+	$("#show").css({"width":300+"px","height":160+"px","overflow":"hidden"});
+	$("#show_btn").css({"width":176*0.5+"px","height":76*0.5+"px"});
+	$("#gua_div").html("x"+gua);
+	$("#re_div").html("x"+re);
+	
+	if(gua == 0){
+		showdiv();
+	}
+})
+
+$("img").load(function(){
+	var body_width = $(window).width();
+	var body_height = $(window).height();
+	$("#gua1_img").width(300).height(160);
+	var height = 141;
+	var width  = 285;
+	var bg2_width = $("#bg2_img").width();
+	var bg2_height = $("#bg2_img").height();
+	
+	$("#gua1").css({"margin-top":"20px"});
+
+	$("#notify").css({"margin-top":"200px"});
+	$("#nImg").width(300).height(101);
+	
+	$("#di").css({"margin-top":"50px"});
+	$("#di_img").width(414*0.7).height(24*0.7);
+
+
+	$("#gua").width(width/10).height(width/10);
+	$("#gua_div").css({"line-height":width/10+"px","width":width/10+"px","height":width/10+"px","margin-top":"-"+($("#gua").height())+"px","margin-left":$("#gua").height()+5+"px","font-size": $("#gua").height()/1.6+"px"});
+	$("#re").width(width/10).height(width/10);
+	$("#re_div").css({ "line-height":width/10+"px","width":width/10+"px","height":width/10+"px","margin-top":"-"+($("#gua").height())+"px","margin-left":$("#gua").height()+5+"px","font-size": $("#gua").height()/1.6+"px"});
+	var gua1_img_width = $("#gua1_img").width();
+	$("#front").css({"margin-top":9.3+"px","margin-left":7.5+"px"});
+	if(gua > 0){
+		bodys(height,width);
+	}
+});
+function bodys(height,width){
+	var img = new Image();         
+	var canvas = document.querySelector('canvas');         
+	canvas.style.position = 'absolute';           
+	img.addEventListener('load',function(e){  
+		var ctx;
+		var w = width, h = height;             
+		var offsetX = canvas.offsetLeft, offsetY = canvas.offsetTop;             
+		var mousedown = false;               
+		function layer(ctx){                 
+			ctx.fillStyle = 'gray';                 
+			ctx.fillRect(0, 0, w, h);             
+		}   
+		function eventDown(e){                 
+			e.preventDefault();                 
+			mousedown=true;             
+		}   
+		function eventUp(e){            
+			e.preventDefault();                 
+			mousedown=false;             
+		}               
+		function eventMove(e){                 
+			e.preventDefault();                 
+			if(mousedown){                     
+				if(e.changedTouches){                         
+					e=e.changedTouches[e.changedTouches.length-1];                     
+				}                     
+				var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0,                         
+				y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;                     
+				with(ctx){                    
+					beginPath()                     
+					arc(x, y, 15, 0, Math.PI * 2);                         
+					fill();                     
+				}                
+			}             
+		}               
+		canvas.width=w;             
+		canvas.height=h; 
+		
+		canvas.style.backgroundImage='url('+img.src+')';              
+		ctx=canvas.getContext('2d');         
+		ctx.fillStyle='b9b9b9';             
+		ctx.fillRect(0, 0, w, h);
+
+		layer(ctx);               
+		ctx.globalCompositeOperation = 'destination-out';               
+		canvas.addEventListener('touchstart', eventDown);             
+		canvas.addEventListener('touchend', eventUp);             
+		canvas.addEventListener('touchmove', eventMove);             
+		canvas.addEventListener('mousedown', eventDown);             
+		canvas.addEventListener('mouseup', eventUp);             
+		canvas.addEventListener('mousemove', eventMove);       
+	});
+	
+	img.src = imgSrc;
+	(document.body.style);
+}
+</script>
+	
+</body>
+</html>

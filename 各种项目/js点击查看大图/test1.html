@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>无标题文档</title>
+    <style type="text/css">
+        .close {
+            width: 30px;
+            height: 30px;
+            background: url(images/close_3.png) no-repeat 0 0;
+            position: fixed;
+            top: 5px;
+            right: 30px;
+            _position: absolute;
+            _top: expression(documentElement.scrollTop+5+"px");
+            cursor: pointer;
+        }
+
+        .close:hover {
+            background: url(images/close_3.png) no-repeat -30px 0;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        function imgShow(_this) {
+            var src = _this.attr("src");
+            $("#bigimg").attr("src", src);
+            $("<img/>").attr("src", src).load(function () {
+                var windowW = $(window).width();
+                var windowH = $(window).height();
+                var realWidth = this.width;
+                var realHeight = this.height;
+                var imgWidth, imgHeight;
+                var scale = 0.8;
+
+                if (realHeight > windowH * scale) {
+                    imgHeight = windowH * scale;
+                    imgWidth = imgHeight / realHeight * realWidth;
+                    if (imgWidth > windowW * scale) {
+                        imgWidth = windowW * scale;
+                    }
+                } else if (realWidth > windowW * scale) {
+                    imgWidth = windowW * scale;
+                    imgHeight = imgWidth / realWidth * realHeight;
+                } else {
+                    imgWidth = realWidth;
+                    imgHeight = realHeight;
+                }
+                $("#bigimg").css("width", imgWidth);
+
+                var w = (windowW - imgWidth) / 2;
+                var h = (windowH - imgHeight) / 2;
+                $("#innerdiv").css({"top": h, "left": w});
+                $("#outerdiv").fadeIn("fast");
+            });
+            $("#outerdiv").click(function () {
+                $(this).fadeOut("fast");
+            });
+        }
+    </script>
+</head>
+
+<body>
+<img src="image/png.jpg" width="100px" height="100px" onclick="imgShow($(this))"/>
+
+<div id="outerdiv"
+     style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:999;width:100%;height:100%;display:none;">
+    <a class="close" onclick="$('#outerdiv').fadeOut('fast');"></a>
+
+    <div id="innerdiv" style="position:absolute;"><img id="bigimg" style="border:5px solid #fff;" src=""/></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* 留言帖子 */
+.u-md-6{width:50%}
+.comment-bd{
+	padding:15px;
+	overflow:hidden
+}
+.comment-bd>:last-child{
+	margin-bottom:0
+}
+.comment-footer{
+	padding:0 15px 5px
+}
+.comment-meta{
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1;
+	padding:10px 15px;
+	font-size:13px;
+	color:#999;
+	line-height:1.2;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden
+}
+.comment-meta a{
+	text-decoration:none;
+	color:#999
+}
+.comment-author{
+	font-weight:700;
+	font-size:14px;
+	color:#999
+}
+.comment-main{
+	position:relative;
+	margin-left:42px;
+	border:1px solid #dedede;
+	border-radius:0; 
+	margin-bottom:20px;
+}
+.comment-hd{
+	background:#f8f8f8;
+	border-bottom:1px solid #eee;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex
+}
+.comment-avatar{
+	float:left;
+	width:32px;
+	height:32px;
+	border-radius:50%;
+	border:1px solid transparent
+	}
+@media only screen and (min-width:641px){
+	.comment-avatar{width:48px;height:48px}
+}
+.comment-main:before{
+	border-right-color:#dedede;
+	z-index:1
+}
+.comments-list{
+	padding:0;
+	list-style:none
+}
+.comment-main:after{
+	border-right-color:#f8f8f8;
+	margin-left:1px;
+	z-index:2
+}
+@media only screen and (min-width:641px){
+	.comment-main{margin-left:63px}
+}
+
+
+/*框框 */
+.panel{
+	margin-bottom:20px;
+	background-color:#fff;
+	border:1px solid transparent;
+	border-radius:0;
+	-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);
+	box-shadow:0 1px 1px rgba(0,0,0,.05)
+}
+.panel-hd{
+	padding:.6rem 1.25rem;
+	border-bottom:1px solid transparent;
+	border-top-right-radius:0;
+	border-top-left-radius:0
+}
+.panel-bd{
+	padding:10px;
+}
+.panel-default{
+	border-color:#ddd
+}
+.panel-hd{
+	color:#444;
+	background-color:#f5f5f5;
+	border-color:#ddd
+}
+
+
+/*帖子内容*/
+.admin-task{
+	list-style-type:none;
+}
+.admin-task-meta {
+	margin-bottom:10px;
+}
+.btn-toolbar{
+	float:right;
+}
+.fr{
+	float:right;
+}
+/* 留言帖子 */

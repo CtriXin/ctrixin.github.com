@@ -1,0 +1,300 @@
+/* glue: 0.11.1 hash: e1d3d02202 */
+        .sprite-img-bike,
+.sprite-img-txt,
+.sprite-img-jump,
+.sprite-img-inside,
+.sprite-img-planet0,
+.sprite-img-forest,
+.sprite-img-intro,
+.sprite-img-title-1,
+.sprite-img-logo,
+.sprite-img-form,
+.sprite-img-earth-main,
+.sprite-img-human,
+.sprite-img-ear-3,
+.sprite-img-rengong,
+.sprite-img-rocket,
+.sprite-img-ziran,
+.sprite-img-qingxin,
+.sprite-img-flag,
+.sprite-img-ear-4,
+.sprite-img-chuncui,
+.sprite-img-anquan,
+.sprite-img-planet1,
+.sprite-img-people,
+.sprite-img-ear-7,
+.sprite-img-planet2,
+.sprite-img-ear-5,
+.sprite-img-ear-2,
+.sprite-img-ear-1,
+.sprite-img-ear-6,
+.sprite-img-star,
+.sprite-img-star-gray {
+            background-image: url('img.png');
+            background-repeat: no-repeat;
+        }
+        
+        .sprite-img-bike {
+            background-position: 0 0;
+            width: 280px;
+            height: 428px;
+        }
+        
+        .sprite-img-txt {
+            background-position: -280px 0;
+            width: 299px;
+            height: 49px;
+        }
+        
+        .sprite-img-jump {
+            background-position: -280px -49px;
+            width: 218px;
+            height: 187px;
+        }
+        
+        .sprite-img-inside {
+            background-position: -280px -235px;
+            width: 208px;
+            height: 53px;
+        }
+        
+        .sprite-img-planet0 {
+            background-position: -579px 0;
+            width: 204px;
+            height: 204px;
+        }
+        
+        .sprite-img-forest {
+            background-position: -579px -204px;
+            width: 181px;
+            height: 201px;
+        }
+        
+        .sprite-img-intro {
+            background-position: 0 -428px;
+            width: 170px;
+            height: 170px;
+        }
+        
+        .sprite-img-title-1 {
+            background-position: -280px -288px;
+            width: 168px;
+            height: 45px;
+        }
+        
+        .sprite-img-logo {
+            background-position: -280px -333px;
+            width: 160px;
+            height: 44px;
+        }
+        
+        .sprite-img-form {
+            background-position: -170px -428px;
+            width: 154px;
+            height: 154px;
+        }
+        
+        .sprite-img-earth-main {
+            background-position: -324px -428px;
+            width: 129px;
+            height: 128px;
+        }
+        
+        .sprite-img-human {
+            background-position: -452px -428px;
+            width: 117px;
+            height: 117px;
+        }
+        
+        .sprite-img-ear-3 {
+            background-position: -488px -235px;
+            width: 82px;
+            height: 36px;
+        }
+        
+        .sprite-img-rengong {
+            background-position: -498px -49px;
+            width: 74px;
+            height: 74px;
+        }
+        
+        .sprite-img-rocket {
+            background-position: -498px -122px;
+            width: 29px;
+            height: 55px;
+        }
+        
+        .sprite-img-ziran {
+            background-position: -498px -177px;
+            width: 53px;
+            height: 53px;
+        }
+        
+        .sprite-img-qingxin {
+            background-position: -527px -122px;
+            width: 51px;
+            height: 51px;
+        }
+        
+        .sprite-img-flag {
+            background-position: -550px -177px;
+            width: 28px;
+            height: 46px;
+        }
+        
+        .sprite-img-ear-4 {
+            background-position: -448px -288px;
+            width: 45px;
+            height: 44px;
+        }
+        
+        .sprite-img-chuncui {
+            background-position: -493px -288px;
+            width: 43px;
+            height: 43px;
+        }
+        
+        .sprite-img-anquan {
+            background-position: -535px -288px;
+            width: 43px;
+            height: 43px;
+        }
+        
+        .sprite-img-planet1 {
+            background-position: -440px -333px;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .sprite-img-people {
+            background-position: -760px -204px;
+            width: 19px;
+            height: 29px;
+        }
+        
+        .sprite-img-ear-7 {
+            background-position: -760px -232px;
+            width: 23px;
+            height: 23px;
+        }
+        
+        .sprite-img-planet2 {
+            background-position: -760px -255px;
+            width: 21px;
+            height: 21px;
+        }
+        
+        .sprite-img-ear-5 {
+            background-position: -760px -276px;
+            width: 12px;
+            height: 12px;
+        }
+        
+        .sprite-img-ear-2 {
+            background-position: -760px -287px;
+            width: 12px;
+            height: 12px;
+        }
+        
+        .sprite-img-ear-1 {
+            background-position: -760px -299px;
+            width: 12px;
+            height: 12px;
+        }
+        
+        .sprite-img-ear-6 {
+            background-position: -771px -276px;
+            width: 10px;
+            height: 10px;
+        }
+        
+        .sprite-img-star {
+            background-position: -771px -287px;
+            width: 9px;
+            height: 9px;
+        }
+        
+        .sprite-img-star-gray {
+            background-position: -771px -299px;
+            width: 6px;
+            height: 6px;
+        }
+        
+        @media screen and (-webkit-min-device-pixel-ratio: 1.0), screen and (min--moz-device-pixel-ratio: 1.0), screen and (-o-min-device-pixel-ratio: 100/100), screen and (min-device-pixel-ratio: 1.0), screen and (min-resolution: 1.0dppx) {
+            .sprite-img-bike,
+    .sprite-img-txt,
+    .sprite-img-jump,
+    .sprite-img-inside,
+    .sprite-img-planet0,
+    .sprite-img-forest,
+    .sprite-img-intro,
+    .sprite-img-title-1,
+    .sprite-img-logo,
+    .sprite-img-form,
+    .sprite-img-earth-main,
+    .sprite-img-human,
+    .sprite-img-ear-3,
+    .sprite-img-rengong,
+    .sprite-img-rocket,
+    .sprite-img-ziran,
+    .sprite-img-qingxin,
+    .sprite-img-flag,
+    .sprite-img-ear-4,
+    .sprite-img-chuncui,
+    .sprite-img-anquan,
+    .sprite-img-planet1,
+    .sprite-img-people,
+    .sprite-img-ear-7,
+    .sprite-img-planet2,
+    .sprite-img-ear-5,
+    .sprite-img-ear-2,
+    .sprite-img-ear-1,
+    .sprite-img-ear-6,
+    .sprite-img-star,
+    .sprite-img-star-gray {
+                background-image: url('img.png');
+                -webkit-background-size: 782px 598px;
+                -moz-background-size: 782px 598px;
+                background-size: 782px 598px;
+            }
+        }
+        
+        @media screen and (-webkit-min-device-pixel-ratio: 2.0), screen and (min--moz-device-pixel-ratio: 2.0), screen and (-o-min-device-pixel-ratio: 200/100), screen and (min-device-pixel-ratio: 2.0), screen and (min-resolution: 2.0dppx) {
+            .sprite-img-bike,
+    .sprite-img-txt,
+    .sprite-img-jump,
+    .sprite-img-inside,
+    .sprite-img-planet0,
+    .sprite-img-forest,
+    .sprite-img-intro,
+    .sprite-img-title-1,
+    .sprite-img-logo,
+    .sprite-img-form,
+    .sprite-img-earth-main,
+    .sprite-img-human,
+    .sprite-img-ear-3,
+    .sprite-img-rengong,
+    .sprite-img-rocket,
+    .sprite-img-ziran,
+    .sprite-img-qingxin,
+    .sprite-img-flag,
+    .sprite-img-ear-4,
+    .sprite-img-chuncui,
+    .sprite-img-anquan,
+    .sprite-img-planet1,
+    .sprite-img-people,
+    .sprite-img-ear-7,
+    .sprite-img-planet2,
+    .sprite-img-ear-5,
+    .sprite-img-ear-2,
+    .sprite-img-ear-1,
+    .sprite-img-ear-6,
+    .sprite-img-star,
+    .sprite-img-star-gray {
+                background-image: url('img@2x.png');
+                -webkit-background-size: 782px 598px;
+                -moz-background-size: 782px 598px;
+                background-size: 782px 598px;
+            }
+        }
+        

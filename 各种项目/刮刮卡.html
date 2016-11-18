@@ -1,0 +1,160 @@
+<!Doctype html>
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <div id='wx_pic' style='margin:0 auto;display:none;'>
+        <img src='http://imgcdn.tataufo.com/profile_enhance/single_page/unicom/img/300x300.jpg'/>
+    </div>
+    <title>星星糖商城</title>
+
+    <style type="text/css">
+        .demo{width:320px; margin:10% auto; min-height:300px;}
+        .msg{text-align:center; height:32px; line-height:32px; font-weight:bold; margin-top:50px}
+        .lingqu{
+            position: absolute;
+            top: 75%;
+            left: 0px;
+            width: 80%;
+            left: 10%;
+            text-align: center;
+            z-index: 1051;
+            display: none;
+        }
+        .scratch-btn{
+            border:none;
+            width: 45%;
+            z-index: 1051;
+        }
+        .scratch-modal{
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="demo">
+    <canvas></canvas>
+    <div class="lingqu">
+        <button type="button" class="btn btn-info btn-lg scratch-btn gray">取消</button>
+        <button type="button" class="btn btn-info btn-lg scratch-btn blue">去兑换</button>
+    </div>
+</div>
+
+<div class="footer-mobile">
+    <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-info btn-lg votebtn-timmer">22:22:22后开始</button>
+</div>
+
+
+
+<script type="text/javascript">
+    var bodyStyle = document.body.style;
+
+    bodyStyle.mozUserSelect = 'none';
+    bodyStyle.webkitUserSelect = 'none';    //禁用页面的鼠标选中拖动的事件，就是不运行执行选中操作。
+
+
+
+
+
+    var img = new Image();
+    var canvas = document.querySelector('canvas');
+    canvas.style.backgroundColor='transparent';
+    canvas.style.position = 'absolute';
+    //    var imgs = ['/static/test/shop/assets/p_0.jpg','/static/test/shop/assets/p_1.jpg'];
+    //    var num = Math.floor(Math.random()*2);
+
+
+    img.src = '/static/test/shop/assets/p_0.jpg';           //定义图片类，获取canvas元素，并设置背景和位置属性。我们在本例中用到两张随机照片，每次刷新随机一张图片作为背景。
+
+    img.addEventListener('load', function(e) {
+        var ctx;
+        var w = img.width,
+                h = img.height;
+        aj= h+ h*.5;
+        console.log(h *.5)
+        $('.demo').css({'min-height': aj} );
+
+        var wi = document.body.clientWidth,
+                hi = document.body.clientHeight;     //这里获取浏览器的宽高
+        var offsetX = canvas.offsetLeft + (wi-w)/2,
+                offsetY = canvas.offsetTop + wi*.3;    //因为在modal里会默认在左上角，所以，依据自己定义的margin或padding 更改大小，现在代码意思为，先获取浏览器宽，减去图片的宽，因为上面css定义canvas居中，所以需要再除以2，获取到canvas距离左侧的距离，同理下面。
+        var mousedown = false;
+
+        function layer(ctx) {
+            ctx.fillStyle = 'gray';
+            ctx.fillRect(0, 0, w, h);     //绘制一个灰色的正方形
+        }
+
+        function eventDown(e){
+            e.preventDefault();
+            mousedown=true;
+        }
+
+        function eventUp(e){
+            e.preventDefault();
+            mousedown=false;    //eventDown()定义了按下事件eventUp()定义了松开事件
+
+            $(".lingqu").css({"display":"block"});
+
+            var data=ctx.getImageData(0,0,w,h).data;       //图层小余数值时执行命令
+            for(var i=0,j=0;i<data.length;i+=4){
+                if(data[i] && data[i+1] && data[i+2] && data[i+3]){
+                    j++;
+                }
+            }
+            if(j<=w*h*0.7){
+                swal("恭喜!", "恭喜你获得了XXX!", "success")
+            }
+        }
+
+        function eventMove(e){          //eventMove()定义了移动事件，其中当按下时，获取坐标位移，
+            e.preventDefault();
+            if(mousedown) {
+                if(e.changedTouches){
+                    e=e.changedTouches[e.changedTouches.length-1];
+                }
+                var x = (e.clientX + document.body.scrollLeft || e.touch.pageX) - offsetX || 0,
+                        y = (e.clientY + document.body.scrollTop || e.touch.pageY) - offsetY || 0;
+                with(ctx) {
+                    beginPath()
+                    arc(x, y, 15, 0, Math.PI * 2);    //绘制圆点
+                    var currentLayout = canvas.style.position;
+                    if(currentLayout=="absolute"){
+                        currentLayout = "relative";
+                    }else{
+                        currentLayout = "absolute";
+                    }
+                    canvas.style.position=currentLayout;
+                    fill();
+                }
+            }
+        }
+
+        canvas.width=w;
+        canvas.height=h;
+        canvas.style.backgroundImage='url('+img.src+')';
+        ctx=canvas.getContext('2d');
+        ctx.fillStyle='transparent';
+        ctx.fillRect(0, 0, w, h);
+        layer(ctx);
+
+        ctx.globalCompositeOperation = 'destination-out';
+
+        canvas.addEventListener('touchstart', eventDown);
+        canvas.addEventListener('touchend', eventUp);
+        canvas.addEventListener('touchmove', eventMove);
+        canvas.addEventListener('mousedown', eventDown);
+        canvas.addEventListener('mouseup', eventUp);
+        canvas.addEventListener('mousemove', eventMove);
+    });
+</script>
+
+
+
+</body>
+</html>

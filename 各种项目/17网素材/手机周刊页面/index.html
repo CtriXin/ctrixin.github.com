@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui"/>
+<title>壕周刊01期</title>
+
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link rel="stylesheet" type="text/css" href="css/adv.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+
+</head>
+<body>
+
+<style>
+.u-arrow{width:23px;height:auto;margin-left:-12px;position:absolute;}
+</style>
+
+<div id="fullpage">
+	<div id="voice" style="display:none;">
+		<!--<audio src="css/Bruises.mp3" autoplay="true" loop id="audio"></audio>-->
+		<div id="music"> 
+			<div id="m_main"><img src="images/music.png" /></div>
+			<span id="m1">&#xe600;</span> <span id="m2">&#xe601;</span> <span id="m3">&#xe600;</span> <span id="m5">&#xe601;</span> <span id="m6">&#xe600;</span> <span id="m7">&#xe601;</span>
+		</div>
+	</div>
+	<div class="section p1">
+		<img src="images/logo.png" class="logo" />
+		<div class="text">
+			<img src="images/text1.png" />
+			<a href="#" class="more"></a>
+		</div>
+		<div class="u-arrow" id="up"><img src="images/arrow1.png"/></div>
+	</div>
+	<div class="section p2">
+		<img src="images/text2a.png" class="a" />
+		<img src="images/text2b.png" class="b" />
+	</div>
+	<div class="section p3">
+		<a href="#" class="ico"><span class="a2"></span></a>
+		<div class="text">
+			<img src="images/text3.png" />
+			<a href="#" class="more"></a>
+		</div>
+	</div>
+	<div class="section p4">
+		<a href="h#" class="ico"><span class="a1"></span><span class="a2"></span></a>
+		<div class="text">
+			<img src="images/text4.png" />
+			<a href="#" class="more"></a>
+		</div>
+	</div>
+	<div class="section p5">
+		<a href="#" class="ico"><span class="a1"></span><span class="a2"></span></a>
+		<div class="text">
+			<img src="images/text5.png" />
+			<a href="#" class="more"></a>
+		</div>
+	</div>
+	<div class="section p6">
+		<a href="#" class="ico"><span class="a1"></span><span class="a2"></span></a>
+		<div class="text">
+			<img src="images/text6.png" />
+			<a href="#" class="more"></a>
+		</div>
+	</div>
+	<div class="section p7">
+		<a href="#" class="ico"><span class="a1"></span><span class="a2"></span></a>
+		<div class="text">
+			<img src="images/text7.png" />
+			<a href="#" class="more"></a>
+		</div>
+	</div>
+	<div class="section p8">
+		<a href="#"><img src="images/text8a.png" class="a" /></a>
+		<a href="#"><img src="images/text8b.png" class="b" /></a>
+	</div>
+	<div class="section p9">
+		<div class="bg"></div>
+		<a href="javascript:;" class="ico"><span class="a1"></span><span class="a2"></span></a>
+		<img src="images/text9.png" class="a" />
+		<a href="#"><img src="images/logo2.png" class="b" /></a>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+function actions(i){
+	
+}
+
+$(document).ready(function () {
+	$('#fullpage').fullpage({
+		//anchors: ['firstPage', 'secondPage', '3rdPage'],
+		scrollingSpeed:500,
+		easing:'',
+		sectionsColor: ['', '', ''],
+		navigation:0,
+		slidesNavigation: true,
+		loopHorizontal:0,
+		afterRender: function (anchorLink, index, slideAnchor, slideIndex) {
+			//load
+		},
+		afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
+			//slide
+		},
+		afterLoad: function (anchorLink, index) {
+			//page
+		}
+	});
+
+	//背景音乐 
+	var audio = document.getElementById('audio');
+	var music = document.getElementById('music');
+	var span = music.getElementsByTagName('span');
+	var main = document.getElementById('m_main');
+	var ifstop = 0;
+	$("#music").click(function(){
+	//music.addEventListener('touchstart',function(){
+		if(ifstop == 0){
+			audio.pause();
+			main.style.webkitAnimation = main.style.animation = 'none';
+			for(var i = 0; i < span.length; i++){
+				span.item(i).style.display = 'none';
+			}
+			ifstop = 1;
+		}else{
+			audio.play();
+			main.style.webkitAnimation = main.style.animation = 'music 2s ease infinite';
+			for(var i = 0; i < span.length; i++){
+				span.item(i).style.display = 'block';
+			}	
+			ifstop = 0;
+		}
+	//},false);
+	});
+	
+});
+</script>
+</body>
+</html>

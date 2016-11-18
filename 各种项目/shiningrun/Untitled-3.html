@@ -1,0 +1,200 @@
+<!Doctype html>
+<html  class="no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+
+
+<!-- meta define -->
+<meta charset="UTF-8
+">
+<!--Declare page as mobile friendly --> 
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<!-- Declare page as iDevice WebApp friendly -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<meta name="Keywords"     content="" />
+<meta name="Description"  content="" />
+<meta name="author" content="" />
+
+
+<!-- logo icon define -->
+<link rel="shortcut icon" href="img/favicon.png">
+
+
+
+<!-- Page Title -->
+
+<title>test</title>
+
+
+
+<!-- Stylesheet Load -->
+
+<link href="css/style-1.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+<!--Page Scripts Load -->
+
+</head>
+<body>
+<div style="height:100%;width:100%"  class="p8-container">
+  <img src="img/p8-bg.jpg" alt="bg" class="p8-bg">   
+
+
+
+
+
+<!-- start content-->                                           <!--  start here -->
+<div class="mod-page">
+<div class="gameplay">
+<div id="gameDiv">
+<div style="text-align:center;margin-top:50px;">
+   <p id="timer" style="color:#fff;font-size:20px;padding-left:120px;">10.00 秒</p>
+        <div id="result_panel" style="display:none;text-align:center;">
+            <div><button id="reset" style="font-size:25px">明日再来</button><br>
+            <button onClick="goHome();" style="font-size:25px">回到首页</button></div>   
+        </div>
+   
+   <button  class="btn red" style="margin-top: 10px;width: 150px;height:154px;border-radius:80px;font-size:30px;font-weight:bold;">抢!</button>
+
+
+
+
+
+
+</div>
+
+
+
+
+<div class="cont1 span_2_of_a1">
+        <h1>规则：</h1>
+        
+        <p class="quick_desc">
+        1.你都说什么规则呢嫩嗯嗯嗯嗯呢呢<br>
+        2.你都说什么规则呢嫩嗯嗯嗯嗯呢呢<br>
+        3.你都说什么规则呢嫩嗯嗯嗯嗯呢呢<br>
+        </p>
+         
+        
+        
+         
+      </div>
+
+
+
+        <script src="js/jquery.min.js"></script>
+            <script type="text/javascript">
+                    var initial = 1000;
+                    var count = initial;
+                    var counter; //10 will  run it every 100th of a second
+                    var state = 0;
+                    var total = 0;
+
+                    if (localStorage.max) {
+                        
+                    }
+
+                    function timer() {
+                        if (count <= 0) {
+                            clearInterval(counter);
+                            state = 0;
+                            $('#result_panel').show();
+                            if ( !localStorage.max || parseInt(localStorage.max) < total) {
+                                localStorage.max = total;
+                                
+                            }
+              $('#timer').hide();
+                            localStorage.max = parseInt(localStorage.max) > total ? localStorage.max: total;
+                            dp_submitScore(total);
+                            offEvent();
+                            return;
+                        }
+                        count--;
+                        displayCount(count);
+                    }
+
+                    function displayCount(count) {
+                        var res = count / 50;
+                        document.getElementById("timer").innerHTML = res.toPrecision(count.toString().length) + " ’";
+                    }
+                    $(document).on('touchmove', function(e) {
+                        e.preventDefault();
+                    });
+                    displayCount(initial);
+                    initEvent();
+                   function offEvent(){
+                      $('.btn').unbind();
+                   }
+                   function initEvent(){
+                        $('.btn').on('touchstart click', function (e) {
+                          if (!state) {
+                              state = 1;
+                              counter = setInterval(timer, 20);   /*timer*/
+                          }
+                          this.classList.add('active');
+                          e.preventDefault();
+                      });
+
+                    $('.btn').on('touchend click', function (e) {
+                        if (state) {
+                            total++;
+                            $('#result').html(total + ' 次');
+                        }
+                        this.classList.remove('active');
+                        e.preventDefault();
+                    });
+                   }
+            </script>
+    <!--<script src="./finger/api.js"></script>-->                           <!--  end here -->
+    <div style="display: none;">
+      <script type="text/javascript">
+      var myData={score:0,scoreName:''};
+      
+      function dp_submitScore(score){
+        myscore=score;
+        myData.score = score;
+        myData.scoreName = "点了"+score+"下";
+        if(score>-1){
+          // var ref = window.open("win.html", "_self");
+          // ref.open();
+          window.location.href="http://www.baidu.com";
+        }
+      }
+      function onShareComplete(res) {
+          document.location.href = mebtnopenurl;
+        //if (auth.user && myData.score != undefined) {
+          
+        //}
+        //else {
+            //  document.location.href = mebtnopenurl;
+        //}
+          }
+      
+      </script>
+  
+</div>
+
+</div>
+</div>
+
+</div>
+<!-- end content-->
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="gg"><img src="img/equi.jpg"></div>
+    </body>
+    </html>

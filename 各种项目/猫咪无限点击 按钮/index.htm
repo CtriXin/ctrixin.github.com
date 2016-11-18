@@ -1,0 +1,226 @@
+﻿<!Doctype html>
+<html  class="no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="zh-CN">
+<head>
+<!-- meta define -->
+<meta charset="UTF-8">
+<meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="full-screen" content="true">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-fullscreen" content="true">
+<meta name="360-fullscreen" content="true">
+<meta name="format-detection" content="telephone=no">
+
+
+
+<meta name="Keywords"     content="" />
+<meta name="Description"  content="" />
+<meta name="author" content="" />
+
+
+<!-- logo icon define -->
+<link rel="shortcut icon" href="img/favicon.png">
+
+
+<!-- Page Title -->
+<title>Shining-run 高级装备</title>
+
+<!-- Stylesheet Load -->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+</head>
+<body>
+<div class="mod-page">
+<div style="display:inline-block;width:100%; height:100%;margin: 0 auto;  position:relative;" id="gameDiv">
+    <div style="text-align:center;margin-top:50px;">
+        <p id="timer" style="color:#fff;font-size:20px;">10.00 秒</p>
+        <div id="result_panel" style="display:none;text-align:center;background-color:rgba(0,0,0,0.5)">
+            <div><button id="reset" style="font-size:25px">再玩一次</button><br>
+            <button onClick="goHome();" style="font-size:25px">更多游戏</button></div>
+        
+    </div>
+   
+	 <button  class="button red" style="margin-top: 30px;width: 150px;height:154px;border-radius:80px;font-size:18px;font-weight:bold;">点我啊点我啊</button>
+    <div style="margin:20px;text-align:center;margin-bottom:0">
+        <div id="result" style="color:#fff;font-size:30px;">0 次</div>
+        <div id="best" style="margin-top:20px;color:#fff;font-size:20px;"> </div>
+    </div>
+</div>
+        <script src="jquery.min.js"></script>
+            <script type="text/javascript">
+                    var initial = 1000;
+                    var count = initial;
+                    var counter; //10 will  run it every 100th of a second
+                    var state = 0;
+                    var total = 0;
+
+                    if (localStorage.max) {
+                        
+                    }
+
+                    function timer() {
+                        if (count <= 0) {
+                            clearInterval(counter);
+                            state = 0;
+                            $('#result_panel').show();
+                            if ( !localStorage.max || parseInt(localStorage.max) < total) {
+                                localStorage.max = total;
+                                
+                            }
+							$('#timer').hide();
+                            localStorage.max = parseInt(localStorage.max) > total ? localStorage.max: total;
+                            dp_submitScore(total);
+                            offEvent();
+                            return;
+                        }
+                        count--;
+                        displayCount(count);
+                    }
+
+                    function displayCount(count) {
+                        var res = count / 100;
+                        document.getElementById("timer").innerHTML = res.toPrecision(count.toString().length) + " 秒";
+                    }
+                    $(document).on('touchmove', function(e) {
+                        e.preventDefault();
+                    })
+                  
+                    function reset() {
+                        count = initial;
+                        total = 0;
+                        state = 0;
+                        $('#result').html(total + ' 次');
+                        $('#timer').html(10 + ' 秒');
+                        initEvent();
+                    }
+					
+                    $('#reset').on('touchend  click', function (e) {
+                        reset();
+                        $('#result_panel').hide();
+                        $('#timer').show();
+                         e.preventDefault();
+                    });
+                    displayCount(initial);
+                    initEvent();
+                   function offEvent(){
+                   		$('.button').unbind();
+                   }
+                   function initEvent(){
+                   		  $('.button').on('touchstart click', function (e) {
+                        	if (!state) {
+                            	state = 1;
+                            	counter = setInterval(timer, 10);
+                        	}
+                        	this.classList.add('active');
+                        	e.preventDefault();
+                    	});
+
+                    $('.button').on('touchend click', function (e) {
+                        if (state) {
+                            total++;
+                            $('#result').html(total + ' 次');
+                        }
+                        this.classList.remove('active');
+                        e.preventDefault();
+                    });
+                   }
+            </script>
+		<script language="javascript">
+		
+		
+		var mebtnopenurl = '';
+		var myscore=0;
+		window.shareData = {
+		        "imgUrl": "",
+		        "timeLineLink": "",
+		        "tTitle": "",
+		        "tContent": ""
+		};
+				
+		function goHome(){
+			//_hmt.push(['_trackEvent', 'html5', 'forward', '更多游戏']);
+			window.location='';
+		}
+		function dp_share(){
+			
+			var index=Math.floor(myscore/100);
+			if (index>=name.length-1) {index=name.length-1;}
+	
+			document.title = "文案文案文案";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id="share" style="display: none">
+			<img width="100%" src="img/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+		</div>
+		<!--<script src="./finger/api.js"></script>-->
+		<div style="display: none;">
+			<script type="text/javascript">
+			var myData={score:0,scoreName:''};
+			
+			function dp_submitScore(score){
+				myscore=score;
+				myData.score = score;
+				myData.scoreName = "点了"+score+"下";
+				if(score>5){
+					var name=["这里是名字"];
+				    var index=Math.floor(score/100);
+			       if (index>=name.length-1) {index=name.length-1;}
+				   var mess="我戳了"+score+"下咪咪，我【"+name[index]+"】,向小伙伴们炫耀一下!";
+					if (confirm(mess)){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+			    document.location.href = mebtnopenurl;
+				//if (auth.user && myData.score != undefined) {
+					
+				//}
+				//else {
+		        //	document.location.href = mebtnopenurl;
+				//}
+	        }
+			
+			</script>
+</div>
+
+
+</div>
+</body></html>

@@ -1,0 +1,134 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+img {
+	width: 100%;
+	display: block;
+}
+.new-container {
+	position: relative;
+	width: 100%;
+}
+.new-container>div {
+	position: absolute;
+	width: 100%;
+	top: 0;
+}
+.new-container .new-btn {
+
+	/*background: yellow;*/
+	top: 62%;
+	left: 26%;
+	padding-top: 16%;
+	width: 48%;
+	border-radius: 20px;
+	display: block;
+	position: absolute;
+}
+.new-icon-03 {
+	opacity: 0;
+	-webkit-animation: run 1s ease .2s forwards;
+}
+.new-icon-02 img {
+	-webkit-animation: run-forward 1.4s linear .2s infinite alternate;
+}
+.new-icon-01 img {
+	-webkit-animation: run-forward 1.5s linear .3s infinite alternate;
+}
+.new-icon-02 {
+	opacity: 0;
+	-webkit-animation: run 1s ease .2s forwards;
+}
+.new-icon-01 {
+	opacity: 0;
+	-webkit-animation: run 1s ease forwards;
+}
+.new-bg {
+	-webkit-transform: scale(1.1);
+	-webkit-animation: run-bg 5s linear .3s infinite alternate;
+}
+.new-text-01 {
+	opacity: 0;
+	-webkit-animation: show 1s linear 1s forwards;
+}
+.new-btn, .new-btn-01 {
+	opacity: 0;
+	-webkit-animation: show 1s linear 1.8s forwards;
+}
+.new-btn-01 img {
+	-webkit-animation: show02 1s linear 3s  infinite alternate;
+}
+@-webkit-keyframes show02 {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: .7;
+	}
+}
+@-webkit-keyframes show {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes text {
+	0% {
+		opacity: 1;
+		-webkit-transform: translate(-100%, 0%) scale(0);
+	}
+	10% {
+		opacity: 1;
+		-webkit-transform: translate(0, 0) scale(1.1);
+	}
+	20% {
+		opacity: .4;
+		-webkit-transform: translate(0, 0) scale(1.1);
+	}
+	30% {
+		opacity: 1;
+		-webkit-transform: translate(0, 0) scale(1.1);
+	}
+	80% {
+		opacity: 1;
+		-webkit-transform: translate(0, 0) scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(100%, 0%) scale(0);
+	}
+}
+@-webkit-keyframes run-bg {
+	0% {
+		opacity: 1;
+		-webkit-transform: translate(0, 0) scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(-5%, -1%) scale(1.1);
+	}
+}
+@-webkit-keyframes run-forward {
+	0% {
+		opacity: 1;
+		-webkit-transform: translate(1%, -1%);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(0, 0);
+	}
+}
+@-webkit-keyframes run {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate(-80%, 20%);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(0, 0);
+	}
+}

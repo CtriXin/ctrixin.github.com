@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>小浪游戏</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+    <link rel="stylesheet" href="dist/css/sm.min.css">
+
+</head>
+<body>
+
+<div id=demo style="overflow:hidden;width:750;" align=center>
+    <table border=0 align=center cellpadding=1 cellspacing=1 cellspace=0 >
+        <tr>
+            <td valign=top bgcolor=ffffff id=marquePic1 >
+                <pre>水平滚动数据一--水平滚动数据二--水平滚动数据三--水平滚动数据四--水平滚动数据五--水平滚动数据六--水平滚动数据七--水平滚动数据八</pre>
+            </td>
+            <td valign=top bgcolor=ffffff id=marquePic2>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<script type="text/javascript">
+    var speed=50;
+    marquePic2.innerHTML=marquePic1.innerHTML;
+    function Marquee(){
+        if(demo.scrollLeft>=marquePic1.scrollWidth)
+        {
+            demo.scrollLeft=0;
+        }
+        else
+        {
+            demo.scrollLeft++;
+        }
+    }
+    var MyMar=setInterval(Marquee,speed)
+    demo.onmouseover=function() { clearInterval(MyMar);  }
+    demo.onmouseout=function() { MyMar=setInterval(Marquee,speed);
+    }
+</script>
+</body>
+</html>

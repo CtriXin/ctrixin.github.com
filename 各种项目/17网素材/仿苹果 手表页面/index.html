@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IDO ONE</title>
+
+<link rel="stylesheet" href="css/onepage-scroll.css">
+<link rel="stylesheet" href="css/index.css">
+<LINK rel="stylesheet" type="text/css" href="css/js.itobe.cn.css">
+<LINK rel="stylesheet" type="text/css" href="css/aaAccordion.css">
+<LINK rel="stylesheet" type="text/css" href="css/flickerplate.css">
+<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.onepage-scroll.min.js"></script>
+<script type="text/javascript" src="js/jQuery.resizeEnd.min.js"></script>
+<script type="text/javascript" src="js/modernizr.custom.07427.js"></script>
+<script type="text/javascript" src="js/jquery.carouFredSel-6.2.0-packed.js"></script>
+<script type="text/javascript" src="js/jquery.zaccordion.min.js"></script>
+<script type="text/javascript" src="js/flickerplate.min.js"></script>
+
+</head>
+
+<body class="loading">
+<div class="dowebok-hd">
+  <div class="inner">
+    <h1><a href="/">IDO ONE 产品介绍</a></h1>
+    <ul class="nav">
+      <li><a href="/IDOONE/">概述</a></li>
+      <li><a href="/IDOONE/guige.html">技术规格</a></li>
+      <li><a href="http://localhost/xiaomi/article.php?id=18">常见问题</a></li>
+      <li><a href="http://www.i-doo.cn/shequ/portal.php">社区</a></li>
+      <li><a href="#">下载APP端</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="main" id="main">
+	<div class="page page1">
+		<DIV class="head-pic">
+			<DIV style="display: block;" id="showCon0" class="big-pic" ><IMG  src="images/img1.png"></A> </DIV>
+			<DIV style="display: none;" id="showCon1" class="big-pic"> <IMG  src="images/img2.png"> </DIV>
+			<DIV style="display: none;" id="showCon2" class="big-pic"> <IMG src="images/img3.png"> </DIV>
+			<DIV style="display: none;" id="showCon3" class="big-pic"><IMG src="images/img4.png"> </DIV>
+			<DIV style="display: none;" id="showCon4" class="big-pic"><IMG src="images/img5.png"> </DIV>
+			<DIV style="display: none;" id="showCon5" class="big-pic"><IMG src="images/img6.png"> </DIV>
+			<DIV style="display: none;" id="showCon6" class="big-pic"><IMG  src="images/img7.png"> </DIV>
+			<UL class="small-pic">
+			  <LI id="list0" class="on" onMouseOver="showContent(0)"> <IMG alt="颜色" src="images/1.jpg"></LI>
+			  <LI id="list1" onMouseOver="showContent(1)"> <IMG alt="颜色" src="images/2.jpg"></LI>
+			  <LI id="list2" onMouseOver="showContent(2)"> <IMG alt="颜色" src="images/3.jpg"></LI>
+			  <LI id="list3" onMouseOver="showContent(3)"> <IMG alt="颜色" src="images/4.jpg"></LI>
+			  <LI id="list4" onMouseOver="showContent(4)"> <IMG alt="颜色" src="images/5.jpg"></LI>
+			  <LI id="list5" onMouseOver="showContent(5)"> <IMG alt="颜色" src="images/6.jpg"></LI>
+			  <LI id="list6" onMouseOver="showContent(6)"> <IMG alt="颜色" src="images/7.jpg"></LI>
+			</UL>
+		</DIV>
+		<div class="icon"></div>
+		
+		<SCRIPT language="javascript">
+
+		var current = 0;
+		var imgNum = 1;
+		var interval = 0;
+		function showContent(index){
+			var oldTag = document.getElementById("list" + current.toString());
+			var oldCon = document.getElementById("showCon" + current.toString());
+			var newTag = document.getElementById("list" + index.toString());
+			var newCon = document.getElementById("showCon" + index.toString());
+			if(current != index){
+				oldTag.className= "";
+				oldCon.style.display = "none";
+				current = index;
+				newTag.className="on";
+				newCon.style.display = "block";
+			}
+		}
+		function setMode(n){
+			if(n != null){
+				imgNum = n+1;
+			}
+			if(interval == 0){
+				interval = setInterval("showTime()", 300000);  //时间调整
+			}
+		}
+		function showTime(){
+			if(imgNum > 7){
+				imgNum = 0;
+			}
+			showContent(imgNum);
+			imgNum ++;
+		}
+		setMode();
+		
+		</SCRIPT>
+	</div>
+	<div class="page page2">
+		<div class="txt" >
+			<div class="h2" id="page2_h2">自动识别运动模式&nbsp;</div>
+			<div class="h2_list" id="page2_list">
+				IDO ONE助您管理运动生活&nbsp;&nbsp;&nbsp;<br/>
+				通过自动识别您的运动，您可以清楚自己步数，<br/>
+				距离，卡路里消耗，<br/>
+				让生活更智能，便捷，提升生活品质。<br/>
+			</div>
+			<div class="page2_img1">
+				<img src="images/page2_img1.jpg">
+			</div>
+		</div>
+		<img src="images/img2-b.jpg" class="img2-b">
+	</div>
+	<div class="page page3">
+		<div class="txt">
+			<div class="h3" id="page3_h3">自动监测睡眠状态&nbsp;</div>
+			<div class="h3_list" id="page3_list">
+			IDO ONE关心您的睡眠状况，助您改善睡眠质量&nbsp;&nbsp;&nbsp;<br/>
+			通过睡眠数据监测，您可以了解每晚入睡后深度睡眠&nbsp;&nbsp;&nbsp;<br/>
+			和浅度睡眠时间，还知道您夜晚清醒的次数，<br/>
+			让您更了解入睡的自己，进一步提高睡眠质量。<br/>
+			</div>
+			<div class="page3_img1">
+				<img src="images/page3_img1.jpg">
+			</div>
+		</div>
+	</div>
+	<div class="page page4">
+		<div class="photo w1920-h1080">
+		  <ul>
+			<li class="one">
+			  <div class="photo-mask" style="opacity: 0.5;"></div>
+			  <div class="photo-text">防丢提醒</div>
+			</li>
+			<li class="two">
+			  <div class="photo-mask" style="opacity: 0;"></div>
+			  <div class="photo-text">久坐提醒</div>
+			</li>
+			<li class="three">
+			  <div class="photo-mask" style="opacity: 0.5;"></div>
+			  <div class="photo-text">来电提醒</div>
+			</li>
+			<li class="four">
+			  <div class="photo-mask" style="opacity: 0.5;"></div>
+			  <div class="photo-text">事件提醒</div>
+			</li>
+		  </ul>
+		  <!--导航--> 
+		</div>		
+	</div>
+	
+	<div class="page page5">
+		<div class="flicker-example" data-block-text="false">
+		  
+		  <ul>
+			<li data-background="images/phone.jpg">
+			  <div class="flick-title">Flickerplate Is Working</div>
+			  <div class="flick-sub-text">Heaven forbid this package you downloaded is broken. That wouldn't be embarrassing at all.</div>
+			</li>
+			<li data-background="images/misc.jpg">
+			  <div class="flick-title">Editable via Javascript or CSS</div>
+			  <div class="flick-sub-text">Take a look at the extensive documentation to see how you can change the settings in multiple ways.</div>
+			</li>
+		  </ul>
+		</div>
+	</div>
+	<div class="page page6">
+		<div class="txt" >
+			<div class="h6" id="page6_txt">充电如此简单</div>
+			<div class="h6_list" id="page6_list">
+				我们希望，充电能做到更简单，更聪明<br/>
+				因此，IDO ONE创新使用磁吸式触点充电<br/>
+				将T线靠近表盘就能吸附充电<br/>
+				仅需25分钟即可完全充满<br/>
+				一周待机时间，让您不必为电量烦恼<br/>
+			</div>
+			<div class="page6_img1">
+				<img src="images/page6_img1.jpg">
+			</div>
+			
+		</div>
+	</div>
+	<div class="page page7">
+		<div class="txt" >
+			<div class="h7" id="page7_txt">精选的材质</div>
+			<div class="h7_list" id="page7_list">
+				蓝宝石镜面<br/>
+				12盏LED指示灯<br/>
+				OLED显示屏<br/>
+				316L不锈钢表盘（玫瑰金，太空黑，星光银）<br/>
+				精选头层牛皮表带<br/>
+				T线：磁吸式触点充电<br/>
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+<script type="text/javascript">
+$(function(){
+	
+	$('.flicker-example').flicker({flick_animation: 'jquery-slide'});
+	var $window = $(window);
+	var $wh = $window.height();
+	var $body = $('body');
+	var $main = $('.main');
+	var $responsiveImg = $('.responsiveImg');
+	var $responsiveFallback = false;
+
+	//页面加载时判断是否需要更换图片
+	if($wh < 790){
+		responsiveFn1();
+	}
+
+	//浏览器检测，判断是否为高级浏览器
+	if(Modernizr.cssanimations){
+		$responsiveFallback = false;
+	} else {
+		$responsiveFallback = true;
+	}
+
+	//onepage_scroll方法
+	$main.onepage_scroll({
+		sectionContainer: '.page',
+		loop:false,
+		responsiveFallback: $responsiveFallback,
+		beforeMove: function(index){
+			$("#page2_h2").fadeOut();
+			$("#page2_list").fadeOut();
+			$(".page2_img1").fadeOut();
+
+			$("#page3_h3").fadeOut();
+			$("#page3_list").fadeOut();
+			$(".page3_img1").fadeOut();
+
+			$(".flick-title").fadeOut();
+			$(".flick-sub-text").fadeOut();
+			$("#page6_txt").fadeOut();
+			$("#page6_list").fadeOut();
+			$(".page6_img1").fadeOut();
+			$("#page7_txt").fadeOut();
+			$("#page7_list").fadeOut();
+			$(".page7_img1").fadeOut();
+		},
+		afterMove: function(index){
+			switch(index){
+				case 1:
+					var current = 0;
+					var imgNum = 1;
+					var interval = 0;
+					setMode();
+					break;
+				case 2:
+					$("#page2_h2").fadeIn();
+					$("#page2_list").fadeIn(3000);
+					$(".page2_img1").fadeIn(4000);
+					break;
+				case 3:
+					$("#page3_h3").fadeIn();
+					$("#page3_list").fadeIn(3000);
+					$(".page3_img1").fadeIn(4000);
+					break;
+				case 5: 
+					$(".flick-title").fadeIn();
+					$(".flick-sub-text").fadeIn(3000);
+					break;
+				case 6: 
+					$("#page6_txt").fadeIn();
+					$("#page6_list").fadeIn(3000);
+					$(".page6_img1").fadeIn(4000);
+					break;
+				case 7: 
+					$("#page7_txt").fadeIn();
+					$("#page7_list").fadeIn(3000);
+					$(".page7_img1").fadeIn(4000);
+					break;
+			}
+		}
+	});
+
+	//窗口改变大小切换不同的图片
+	$window.resizeEnd({
+		delay : 500
+	}, function(){
+		var $wh = $window.height();
+		if($wh < 790){
+			responsiveFn1();
+		} else {
+			responsiveFn2();
+		}
+	});
+
+	function responsiveFn1(){
+		$body.addClass('responsive-height-lt790')
+		$responsiveImg.each(function(){
+			var $dateSmall = $(this).attr('date-small');
+			$(this).attr('src', $dateSmall);
+		});
+	}
+
+	function responsiveFn2(){
+		$body.removeClass('responsive-height-lt790')
+		$responsiveImg.each(function(){
+			var $dateBig = $(this).attr('date-big');
+			$(this).attr('src', $dateBig);
+		});
+	}
+
+	
+	
+
+});
+
+//页面加载时的 Loading 效果
+$(window).load(function(){
+	window.setTimeout(function(){
+		$('body').removeClass('loading');
+	}, 2000);
+});
+</script>
+
+</body>
+</html>

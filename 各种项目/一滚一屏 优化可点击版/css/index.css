@@ -1,0 +1,130 @@
+body{
+	
+	width:100%;
+	overflow:hidden;
+}
+
+
+
+.hide{ display:none;}
+
+.page{
+	width:100%;
+	height:100%;
+	position:absolute;
+	font-size:100px;
+	text-align:center;
+}
+
+.page .wrap{
+	height:500px;
+}
+
+.page-1-1{ background-color:#EDEDED; background: url(../img/t1-bg.png) center center no-repeat ; background-size:cover}
+.page-2-1{ background-color:#CBFFFA;background: url(../img/t10-bg.png) center center no-repeat ; background-size:100% 100%}
+ 
+.page-current{
+	z-index:1;
+}
+
+.page-1-1 .img_1 {
+	height:auto;width:320px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-160px;
+	z-index:999;
+	margin-top:-108.75px
+}
+.page-1-1 .img_2 {
+	height:auto;width:292.5px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-146.5px;
+	margin-top:-150.5px
+}
+.page-1-1 .img_3 {
+	height:auto;width:25px;
+	position:absolute;
+	left:50%;
+	top:93%;
+	margin-left:-12px;
+}
+
+
+
+.page-2-1 .img_1 {
+	height:auto;
+	width:288px;
+	position:absolute;
+	left:50%;
+	top:40px;
+	margin-left:-144px;
+
+}
+.page-2-1 .img_2 {
+	height:auto;
+	width:100px;
+	position:absolute;
+	left:50%;
+	bottom:25px;
+	margin-left:-50px;
+}
+.page-2-1 .img_3 {
+	height:auto;
+	width:157.5px;
+	position:absolute;
+	left:50%;
+	bottom:99px;
+	margin-left:-78.75px;
+}
+.page-2-1 .img_6 {
+	height:auto;
+	width:25px;
+	position:absolute;
+	left:50%;
+	top:92%;
+	margin-left:-12px;
+}
+.page-2-1 .img_logo {
+	height:auto;
+	width:103.5px;
+	position:absolute;
+	left:50%;
+	top:83%;
+	margin-left:-51.75px;
+}
+.page-2-1 .img_7 {
+	height:auto;
+	width:100px;
+	position:absolute;
+	left:50%;
+	bottom:25px;
+	margin-left:-50px;
+}
+.page-2-1 div.text{
+	top:276px;
+	color:#FF811A;
+	font-size:16px;
+	position:absolute;
+	text-align:center;
+	width:100%;
+	line-height:1.5em;
+}
+.page-2-1 div.text a{
+	color:#FF811A;
+}
+.page-2-1 span h2{
+	font-size:28px;
+}
+.page-2-1 span h3{
+	font-size:24px;
+}
+
+
+
+#textsuper{position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4000}
+#textsub{color:black;position:relative;font-size:21pt;text-align:left;line-height:40pt;top:2000px}
+#share{ background: rgba(0,0,0,0.8); position:absolute; top:0px; width:100%; height:100%; display:none; z-index:99998}
+.shareImg{ background: url(../img/share.png) right top no-repeat; position:absolute; top:0px; right:0px; width:165px; height:114px; background-size:cover; z-index:99999}

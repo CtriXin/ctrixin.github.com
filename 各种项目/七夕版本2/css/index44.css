@@ -1,0 +1,122 @@
+
+.page-1-1{ background-color:#EDEDED; background: #cccccc center center no-repeat ; background-size:100% 100%}
+
+.page-current{
+	z-index:1;
+}
+
+.page-1-1 .img_1 {
+	height: 50%;
+	width: 80%;
+	position: absolute;
+	left: 10%;
+	top: 2%;
+	/* margin-left: -160px; */
+	z-index: 999;
+	/* margin-top: -108.75px; */
+}
+.page-1-1 .img_2 {
+	height: auto;
+	width: 16%;
+	position: absolute;
+	right: 5%;
+	z-index: 9999999;
+	bottom: 5%;
+}
+.page-1-1 .text-1 {
+	height: auto;
+	width: 80%;
+	position: absolute;
+	left: 10%;
+	font-size: 20px;
+	top: 58%;
+	text-align: left;
+	z-index: 99999;
+	color: yellow;
+	/* margin-left: -146.5px; */
+	/* margin-top: -150.5px; */
+}
+@media(width:320px){
+	.page-1-1 .img_1 {
+
+		width: 80%;
+		position: absolute;
+		left: 10%;
+		height: 50%;
+		/* top: 2%; */
+		/* margin-left: -160px; */
+		z-index: 999;
+		/* margin-top: -108.75px; */
+	}
+	.page-1-1 .text-1 {
+		height: auto;
+		width: 80%;
+		position: absolute;
+		left: 10%;
+		font-size: 15px;
+		top: 56%;
+		text-align: left;
+		z-index: 99999;
+		color: yellow;
+		/* margin-left: -146.5px; */
+		/* margin-top: -150.5px; */
+	}
+}
+.page-1-1 .img_3 {
+	height:auto;width:25px;
+	position:absolute;
+	left:50%;
+	top:93%;
+	margin-left:-12px;
+}
+
+
+.new-btn{
+    width: 40%;
+    padding-top: 16%;
+    /*background: yellow;*/
+    position: absolute;
+    top: 72.1%;
+    left: 52%;
+    border-radius: 22px;
+    z-index: 99999999999;
+}
+.new-btn1{
+    width: 40%;
+    padding-top: 16%;
+    /*background: yellow;*/
+    position: absolute;
+    top: 72.1%;
+    left: 8%;
+    border-radius: 22px;
+    z-index: 99999999999;
+}
+
+
+
+#shareit {
+    -webkit-user-select: none;
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 105;
+}
+#shareit img {
+    max-width: 100%;
+}
+.arrow {
+    position: absolute;
+    right: 10%;
+    top: 5%;
+    width: 25%;
+}
+#share-text {
+    margin-top: 50%;
+    margin-left: 15%;
+    width: 70%;
+}

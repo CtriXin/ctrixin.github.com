@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>test</title>
+    <style>
+        .picutre_many p{min-width:200px; height:150px;}
+    </style>
+</head>
+<body>
+<div id="list" class=" picutre_many"
+     style="overflow: hidden; height: 150px; width: 800px; margin: 0 auto;">
+    <table cellspacing="0" cellpadding="0"
+           style="width: 680px; border: 0px;">
+        <tr>
+            <td id="list1">
+                <table style="border: 0px;" cellpadding="0" cellspacing="0">
+                    <tr id="pic">
+                        <td>
+                            <p>fdasfdsafdsafafdasfdsafdsafafdasfdsafdsafafdasfdsafdsafafdasfdsafdsafafdasfdsafdsafa</p>
+                        </td>
+                        <td>
+                            <p>11111111111111111</p>
+                        </td>
+                        <td>
+                            <p>fdasfdsafdsafa</p>
+                        </td>
+                        <td>
+                            <p>fdasfdsafdsafa</p>
+                        </td>
+                        <td>
+                            <p>fdasfdsafdsafa</p>
+                        </td>
+                        <td>
+                            <p>fdasfdsafdsafa</p>
+                        </td>
+
+                    </tr>
+                </table>
+            </td>
+            <td id="list2"></td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    /*图片滚动效果*/
+    var speedpic = 20;//速度数值越大速度越慢
+    document.getElementById("list2").innerHTML = document.getElementById("list1").innerHTML;
+    function Marqueepic() {
+        if (document.getElementById("list2").offsetWidth
+                - document.getElementById("list").scrollLeft <= 0) {
+            document.getElementById("list").scrollLeft -= document
+                    .getElementById("list1").offsetWidth;
+        } else {
+            console.log('aaaa')
+            document.getElementById("list").scrollLeft++;
+        }
+    }
+    var MyMarpic = setInterval(Marqueepic, speedpic);
+
+    document.getElementById("list").onmouseover = function() {
+        clearInterval(MyMarpic);
+    }
+    document.getElementById("list").onmouseout = function() {
+        MyMarpic = setInterval(Marqueepic, speedpic);
+    }
+</script>
+</body>
+</html>

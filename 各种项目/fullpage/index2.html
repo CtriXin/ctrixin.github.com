@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <div id='wx_pic' style='margin:0 auto;display:none;'>
+        <img src='http://imgcdn.tataufo.com/300x300.png' />
+    </div>
+<title>fullPage.js — 基本演示_dowebok</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+<style>
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+</style>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+$(function(){
+	$('#dowebok').fullpage({
+		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90']
+	});
+});
+</script>
+</head>
+
+<body>
+
+<div id="dowebok">
+	<div class="section">
+		<h3>第一屏</h3>
+		<div class="form-group">
+			<label class="col-md-3 control-label" for="text-input">Text Input</label>
+			<div class="col-md-9">
+				<input type="text" id="text-input" name="text-input" class="form-control" placeholder="Text">
+				<span class="help-block">This is a help text</span>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="slide"><h3>第二屏的第一屏</h3></div>
+		<div class="slide"><h3>第二屏的第二屏</h3></div>
+		<div class="slide"><h3>第二屏的第三屏</h3></div>
+	</div>
+	<div class="section">
+		<h3>第三屏</h3>
+	</div>
+	<div class="section">
+		<h3>第四屏</h3>
+		<p>这是最后一屏</p>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<a href="http://www.dowebok.com/" style="display: none;">dowebok</a>
+<a href="http://www.dowebok.com/77.html" style="display: none;">jQuery全屏滚动插件fullPage.js</a>
+
+</body>
+</html>

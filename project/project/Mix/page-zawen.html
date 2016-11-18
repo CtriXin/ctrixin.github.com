@@ -6,14 +6,14 @@
     <meta name="format-detection" content="telephone=no">
     <title>解忧杂货店</title>
     <link rel="stylesheet" href="css/frozen.css">
-    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="css/demo.css">
     <link rel="stylesheet" href="css/simplelightbox.min.css">
 
-    <!--<script src="lib/zepto.min.js"></script>-->
-    <!--<script src="js/frozen.js"></script>-->
+    <script src="lib/zepto.min.js"></script>
+    <script src="js/frozen.js"></script>
     <script src="js/jquery-2.1.1.min.js"></script>
-    <!--<script src="js/simple-lightbox.min.js"></script>-->
-    <!--<script src="js/jquery.scrollLoading.js"></script>-->
+    <script src="js/simple-lightbox.min.js"></script>
+    <script src="js/jquery.scrollLoading.js"></script>
 
 
 </head>
@@ -152,73 +152,10 @@
 </section><!-- /.ui-container-->
 
 
-<!--异步加载-->
 <script>
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript'; ga.async = true;
-        ga.src = 'lib/zepto.min.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-    (function()
-    {var po = document.createElement("script");
-        po.type = "text/javascript"; po.async = true;po.src = "js/frozen.js";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(po, s);
-    })();
-
-    jQuery.getScript("js/jquery.scrollLoading.js")
-            .done(function() {
-                /* 耶，没有问题，这里可以干点什么 */
-                //滚动异步加载图片
-                $(".scrollLoading").scrollLoading();
-                jQuery.getScript("js/simple-lightbox.min.js")
-                        .done(function() {
-                            /* 耶，没有问题，这里可以干点什么 */
-                            //点击查看大图
-                            var $dowebok = $('.demo-block a').simpleLightbox({
-                                nav: false,
-                                close: false,
-                                captions:false,
-                                widthRatio:1,
-                                heightRatio:1,
-                                swipeTolerance:100
-                            });
-
-                            $dowebok.on('show.simplelightbox', function(){
-                                $('.dwo-control').show();
-                            });
-                            $dowebok.on('close.simplelightbox', function(){
-                                $('.dwo-control').hide();
-                            });
-
-                            $('.dwo-prev').on('click', function(){
-                                $dowebok.prev();
-                                return false;
-                            });
-                            $('.dwo-next').on('click', function(){
-                                $dowebok.next();
-                                return false;
-                            });
-                            $('.dwo-close').on('click', function(){
-                                $dowebok.close();
-                                return false;
-                            });
-                            $('.sl-overlay').on('click', function(){
-                                $dowebok.close();
-                                return false;
-                            });
-
-
-                        })
-                        .fail(function() {
-                            console.log('js加载出错了');
-                        });
-            })
-            .fail(function() {
-                console.log('js加载出错了');
-            });
+    $(".scrollLoading").scrollLoading();
 </script>
+
+<!--异步加载-->
 </body>
 </html>
