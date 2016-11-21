@@ -1,0 +1,121 @@
+
+.form-control {
+    background: none !important;
+    border: 1px solid #fff !important;
+    border-radius: 20px !important;
+    box-shadow: none !important;
+}
+
+.panel .panel-heading {
+    padding: 20px;
+    overflow: hidden;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: 0!important;
+    height: 55px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.panel-heading {
+    padding:32px 15px 0px;
+    border-top-left-radius:0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.graphs{
+    padding: 2em 1em;
+    background: #f2f4f8;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-control1, .input-sm{
+    border: 1px solid #e0e0e0;
+    padding: 5px 8px;
+    color: #616161;
+    background: #fff;
+    box-shadow: none !important;
+    width: 100%;
+    font-size: 0.85em;
+    font-weight: 300;
+    height: 40px;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+.label {
+    font-weight: 300 !important;
+    border-radius:4px;
+}
+.table > thead > tr > th, .table > tbody > tr > th{
+    border-top: none !important;
+}
+.tab-content > .active {
+    display: block;
+    visibility: visible;
+}
+
+.form-horizontal .control-label {
+    text-align: right;
+    color: #000;
+    font-weight: 300;
+    font-size: 0.85em;
+}
+.checkbox-inline1{
+    position: relative;
+    display:block;
+    margin-bottom: 0;
+    font-weight: 400;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.help-block {
+    color: #999;
+    font-size: 0.85em;
+}
+.radio label, .checkbox label, label{
+    font-size: 0.85em;
+    font-weight:300;
+    vertical-align: middle;
+}
+select[multiple] {
+    padding: 7px 9px !important;
+}
+
+.panel .panel-heading h2 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    font-size: 0.85em;
+    color: #999;
+}
+.mailbox-content table tbody tr:hover {
+    background: #FAFAFA;
+}
+.table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding:15px !important;
+}
+.table > thead > tr > th {
+    border-bottom: 1px solid #ddd !important;
+}
+
+.copy_layout{
+    padding:1.5em 0;
+    background:#fff;
+    text-align:center;
+    margin: 4em 0 0em 0;
+}
+.progress {
+    background: #f5f5f5;
+    background-image: none;
+    -webkit-box-shadow: inset 0 -1px 2px rgba(150, 150, 150, .1);
+    -moz-box-shadow: inset 0 -1px 2px rgba(150, 150, 150, .1);
+    box-shadow: inset 0 -1px 2px rgba(150, 150, 150, .1);
+    border-radius: 0px;
+    -o-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
