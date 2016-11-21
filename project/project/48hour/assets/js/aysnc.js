@@ -47,10 +47,10 @@ var loadResult = function(data)
     }
 }
 
-var body1 = 'http://imgcdn.tataufo.com/intership/imgs/body1.png';
-var body2 = 'http://imgcdn.tataufo.com/intership/imgs/body2.png';
-var body3 = 'http://imgcdn.tataufo.com/intership/imgs/body3.png';
-var longpic = 'http://imgcdn.tataufo.com/intership/imgs/top-bar.png'
+var body1 = 'assets/imgs/body1.png';
+var body2 = 'assets/imgs/body2.png';
+var body3 = 'assets/imgs/body3.png';
+var longpic = 'assets/imgs/top-bar.png'
 
 loadImage('body1',body1,loadResult);
 loadImage('body2',body2,loadResult);
