@@ -1,0 +1,133 @@
+html {
+  font-size: 20px; }
+
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 20px !important; } }
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 20px !important; } }
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 20px !important; } }
+body {
+  font-family: "SimHei","Arial",sans-serif;
+  font-size: 1rem; }
+
+.content-inner, .page {
+  background: #fff !important; }
+
+.gray-bg {
+  background: #efeff0 !important; }
+
+.list-block .item-subtitle {
+  font-size: .85rem; }
+
+.button {
+  border-color: #5895d8;
+  color: #5895d8; }
+
+.button-danger {
+  border-color: #ff6161 !important;
+  color: #ff6161; }
+
+.button-danger.button-fill {
+  background: #ff6161; }
+
+.button-light {
+  border-color: #9d9d9d;
+  color: #9d9d9d; }
+
+.button-big {
+  font-size: 1.3rem; }
+
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
+.bar {
+  background: #ff6161; }
+
+.bar, .bar > .button-link, .bar > .title {
+  height: 2.5rem;
+  line-height: 2.5rem; }
+
+.bar .icon, .bar .title {
+  font-size: 1.25rem;
+  color: #fff; }
+
+.bar-nav ~ .content {
+  top: 2.5rem; }
+
+.bar-footer ~ .content {
+  bottom: 4rem; }
+
+.spread-p-title {
+  font-size: 1.25rem;
+  color: #000;
+  margin: .5rem 0; }
+
+.spread-game-list {
+  margin: .75rem 0; }
+
+.spread-card-img {
+  width: 4rem;
+  border-radius: 10px; }
+
+.gray-bg .list-block ul {
+  background: none; }
+  .gray-bg .list-block ul li {
+    background: #fff;
+    margin: .75rem 0; }
+  .gray-bg .list-block ul :before, .gray-bg .list-block ul :after, .gray-bg .list-block ul .item-inner:after {
+    height: 0; }
+.gray-bg .list-block .item-content {
+  padding-right: .75rem; }
+.gray-bg .list-block .item-text {
+  color: #000; }
+
+.spread-manage-list {
+  margin: .75rem 0;
+  color: #9d9d9d !important; }
+  .spread-manage-list .item-title {
+    color: #000;
+    font-size: 1.25rem; }
+  .spread-manage-list .item-subtitle {
+    font-size: 1rem; }
+  .spread-manage-list button {
+    font-size: .9rem; }
+  .spread-manage-list .online {
+    color: #00d424; }
+  .spread-manage-list .offline {
+    color: #dd3836; }
+
+.spread-game-message {
+  margin: .75rem 0;
+  color: #000 !important; }
+  .spread-game-message .spread-benefit {
+    color: #dd3836; }
+
+.spread-game-list .card-content-inner {
+  font-size: 1rem;
+  color: #000; }
+
+.spread-content .card {
+  box-shadow: none;
+  border-bottom: 1px dashed #dcdcdc; }
+
+.content-title, .content-content, .content-link, .content-img {
+  color: #000;
+  font-size: 1rem; }
+
+.content-link .url {
+  color: #2d92f0; }
+
+.content-img img {
+  width: 100%; }
+
+.card {
+  margin: .5rem 10rem; }
+
+/*# sourceMappingURL=page.css.map */

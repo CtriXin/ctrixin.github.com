@@ -1,0 +1,1515 @@
+$white : #fff;
+$black: #000;
+$darkblack : #434343;
+$red: #ff6161;
+$darkred:#e55757;
+$warning: #ff0000;
+$gray: #9d9d9d;
+$light-gray:#efeff0;
+$dark-gray: #dcdcdc;
+$input-placeholder-color: #9d9d9d;
+$blue:#2eb3e8;
+$text-blue: #5895d8;
+$spread-green:#50d12d;
+$green: #50d12d;
+$spread-red:#dd3836;
+$urlblue: #2d92f0;
+$orange: #f39826;
+$darkgreen: #009688;
+$darkblue: #2196f3;
+$purple: #673ab7;
+
+
+
+
+@mixin border-radius($num){
+  -moz-border-radius: $num;
+  -webkit-border-radius: $num;
+  border-radius: $num;
+}
+
+@mixin radius($num) {
+  -moz-border-radius: $num;
+  -webkit-border-radius: $num;
+  border-radius: $num;
+}
+
+@mixin border-radius($num){
+  -moz-border-radius: $num;
+  -webkit-border-radius: $num;
+  border-radius: $num;
+}
+
+
+//global
+html {
+  font-size: 15px;
+}
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 15px !important;
+  }
+}
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 15px !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 15px !important;
+  }
+}
+
+body{
+  font-family: "SimHei","Arial",sans-serif;
+  font-size: 1rem;
+}
+.hidden-value{
+  display: none;
+}
+.no-margin{
+  margin: 0 !important;
+}
+.no-padding{
+  padding: 0 !important;
+}
+.no-border{
+  border: none !important;
+}
+.float-left{
+  float: left !important;
+}
+.float-right{
+  float: right !important;
+}
+.icon-back{
+  color: white;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+.white-bg{
+  background: $white !important;
+}
+
+.buttons-tab{
+  border-bottom: 0;
+}
+.popup-black-bg{
+  background: none;
+}
+.buttons-tab .button{
+  border-bottom: 1.5px solid transparent;
+}
+.buttons-tab .button.active{
+  color: $red;
+  border-color: $red;
+}
+.bar .button-link{
+  color: $white;
+}
+.gray-bg{
+  background: $light-gray !important;
+}
+.list-block .item-subtitle{
+  font-size: .85rem;
+}
+.content-block-title{
+  margin: .5rem 0 0 ;
+  padding: .5rem;
+  font-size: .9rem;
+  background: $white;
+  color: $black;
+  border-top: 1px solid $light-gray;
+}
+.content{
+  background: #f5f5f9;
+}
+//button
+.button{
+  border-color: $text-blue;
+  color: $text-blue;
+}
+.button-danger{
+  border-color: $red !important;
+  color: $red;
+}
+.button-danger.button-fill{
+  background: $red;
+}
+.button-light{
+  border-color: $input-placeholder-color;
+  color: $input-placeholder-color;
+}
+
+.button-big{
+  font-size: 1.3rem;
+}
+
+.text-right{
+  text-align: right !important;
+}
+.text-left{
+  text-align: left !important;
+}
+
+
+//顶栏
+.bar{
+  background: $red;
+}
+.bar , .bar>.button-link, .bar>.title{
+  height:2.5rem;
+  line-height:2.5rem;
+}
+.bar .icon, .bar .title{
+  font-size: 1.25rem;
+  color: $white;
+}
+.bar-nav~.content{
+  top:2.5rem;
+}
+.bar-footer~.content{
+  bottom:4rem;
+}
+
+
+
+//index
+.bar-footer-secondary{
+  bottom: 4rem;
+}
+.bar-nav:after{
+  height: 0;
+}
+.login-footer{
+  line-height: 4rem;
+  height: 4rem;
+  background: $white;
+  padding: 0.4rem 5%;
+  a{
+    font-size: 1.3rem !important;
+  }
+}
+.border-right{
+  border-right:1px solid $light-gray !important;
+}
+.login-footer-sec{
+  padding: 0 5%;
+  height: 3rem;
+}
+.login-footer:before{
+  height: 0 !important;
+}
+.benifit{
+  color: $white !important;
+  background: $red;
+  margin: 0;
+  padding: .5rem 1.5rem;
+  .benifit-total{
+    display: table-cell;
+    vertical-align: middle;
+    position: static;
+    a{
+      color: $white !important ;
+    }
+    .total-benifit{
+      text-align: center;
+      text-indent: 0;
+      font-size: .7rem;
+      span{
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .benifit-balance{
+    display: table-cell;
+    vertical-align: middle;
+    position: static;
+    a{
+      color: $white !important;
+    }
+    .balance{
+      text-align: center;
+      text-indent: 0;
+      font-size: .7rem;
+      span{
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .benifit-avatar{
+    text-align: center;
+    height: 4.5rem;
+    img{
+      border: 2px solid $white;
+      @include border-radius(50%);
+      height: 4.5rem;
+    }
+  }
+  .benifit-today{
+    margin-top: .5rem;
+    text-align: center;
+    width: 100%;
+    color: $white !important;
+    font-size: .75rem;
+    span{
+      font-size: 3rem;
+    }
+  }
+
+
+}
+.join-group{
+  background: $darkred;
+  font-size: .7rem;
+  color: white;
+  padding: .2rem 0 .2rem 1rem;
+}
+.login-money-button{
+  font-size: 1.25rem !important;
+  line-height: 3rem  !important;
+  height: 3rem  !important;
+}
+.icon-join-group{
+  float: right;
+  font-size: 1rem;
+  height: 1.2rem;
+  line-height: 1.2rem !important;
+}
+.speaker{
+  height: 2rem;
+  line-height: 2rem;
+  background: $white;
+
+}
+.horn{
+  width: 10%;
+  float: left;
+  padding-left: 1rem;
+  span{
+    color: $red;
+    vertical-align: text-bottom ;
+    font-size: 1.2rem;
+  }
+}
+.picutre_many {
+  font-size: .8rem;
+  overflow: hidden;
+  width:85%;
+  margin: 0 auto;
+  td{
+    min-width: 375px;
+    color: $red;
+  }
+  nobr{
+    min-width:400px;
+    margin: 0 .5rem 0 0;
+  }
+}
+
+.vertical-scroll{
+  margin-top: 1rem;
+}
+.right_scroll_ad{
+  border-left:1px solid $light-gray;
+}
+.BreakingNewsController{width:100%; overflow:hidden; background:#FFF; height:3.5rem;
+  position:relative;
+  a{
+    color: $black !important ;
+  }
+}
+.BreakingNewsController ul{padding:0; margin:0; display:block; list-style:none;}
+.BreakingNewsController ul li{list-style:none; padding:10px 20px; display:none;height:3.5rem;vertical-align: middle}
+.easing a, .easing span{transition:.25s linear; -moz-transition:.25s linear; -webkit-transition:.25s linear;}
+.scroll-top{
+  font-size: .5rem;
+  span{
+    font-size: .6rem;
+    color: $gray;
+    float: right;
+  }
+}
+.scroll-down{
+  font-size: .5rem ;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow:ellipsis;
+  overflow:hidden;
+  span{
+    color: $red;
+  }
+}
+.function-btn{
+  margin-top: 1rem;
+}
+.earn-money-btn{
+  background: $white;
+  height: 7rem;
+  line-height: 7rem;
+  text-align: center;
+  font-size: 1rem;
+  color: $black;
+  span{
+    font-size: 2.5rem;
+    color: $red;
+    vertical-align: middle;
+  }
+}
+.wallet-btn{
+  @extend .earn-money-btn;
+  border-left: 1px solid $light-gray;
+  span{
+    font-size: 2rem;
+    color: $blue;
+    vertical-align: middle;
+  }
+}
+
+.fourth-btn-group{
+  margin-top: 1rem;
+  .col-33{
+    text-align: center;
+    padding: 1rem 0;
+    background: white;
+  }
+  .icon{
+    font-size: 1.8rem;
+  }
+  .description{
+    font-size: .8rem;
+    color: black !important ;
+  }
+}
+.start-earn-money,.partner,.gonglve,.money-detail{
+  border-right: 1px solid $light-gray;
+}
+.gonglve,.money-detail,.money-sign{
+  border-top: 1px solid $light-gray;
+}
+.icon-money,.icon-money-sign{
+  color: $red;
+}
+.icon-partner,.icon-gonglve{
+  color: $blue;
+}
+.icon-money-rank,.icon-money-detail{
+  color: $orange;
+}
+
+.checkout-success{
+  width: 70%;
+  position: absolute;
+  left: 15%;
+  top: 30%;
+}
+.checkout-close{
+  width: 10% ;
+  position: absolute;
+  top: 22%;
+  right: 10%;
+}
+
+
+
+
+
+
+//教程弹窗
+.popup-tutorial{
+  .tutorial-img{
+    height: 100%;
+    width: 100%;
+  }
+  .step2,.step3,.step4,.step5{
+    display: none;
+  }
+  .close-popup-tutorial{
+    //background: blue;
+    width: 20%;
+    height: 5%;
+    position: absolute;
+    left: 4%;
+    top: 2%;
+  }
+  .next-img{
+    //background: none;
+    width: 34%;
+    height: 7%;
+    position: absolute;
+    bottom: 2%;
+    left: 33%;
+  }
+}
+
+
+
+//开始赚钱
+.three-lable-media-list{
+  margin: 0 !important;
+  .rank{
+    width: 3rem;
+    text-align: center;
+    color: $white;
+    height: 2.8rem;
+    margin-bottom: -15px;
+    margin-left: 1.2rem;
+    font-size: 0.7rem;
+    line-height: 1.7rem;
+    background: url(../img/rank-background.png) bottom;
+  }
+  label{
+    border-bottom: 1px solid $light-gray;
+  }
+  .item-inner{
+    border-bottom: 0;
+  }
+  .list-game-icon{
+    width: 15%;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    img{
+      width: 100%;
+      @include border-radius(4px);
+    }
+  }
+  .list-game-icon-large{
+    width: 20%;
+  }
+  .game-name{
+    color: $black
+  }
+  .game-type{
+    font-size: .65rem !important;
+    color:  $gray;
+  }
+  .game-num{
+    color: $orange;
+    font-size: .7rem !important;
+  }
+
+}
+
+.equal-benifit{
+  color: $red;
+  text-align: center;
+  font-size: .8rem ;
+  margin: 0 !important;
+  padding-right: .5rem ;
+  span{
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+//赚钱TOP10
+.earn-money-card{
+  margin: 0 0 .5rem 0 !important;
+  box-shadow: none;
+  .card-header{
+    min-height: 1.5rem;
+    padding: 0 .75rem;
+    border-bottom: 0;
+  }
+  .card-content{
+    img{
+      width: 100%;
+    }
+  }
+  .card-footer{
+    border-top: 0;
+    padding: 0 .75rem;
+    min-height: 1.5rem;
+    .footer-left{
+      color: $gray;
+      font-size: .8rem;
+    }
+    .footer-right{
+      color: $red;
+      font-size: 1rem;
+    }
+  }
+  .header-left{
+    font-size: .8rem;
+    span{
+      color: $white;
+      font-size: .5rem;
+      padding: 2px;
+      @include border-radius(5px)
+    }
+    .cps{
+      background: $blue;
+    }
+    .cpc{
+      background: $red;
+    }
+    .cpa{
+      background: $orange;
+    }
+  }
+  .header-right{
+    float: right;
+    font-size: .7rem;
+    color: $orange;
+  }
+}
+
+
+
+
+
+//赚钱游戏详情
+.game-description{
+  padding: .5rem;
+  color: $gray;
+  font-size: .8rem;
+}
+.rank-right{
+  position: absolute;
+  right: .5rem;
+  float: right;
+  text-align: right;
+  font-size: .8rem;
+  top:.2rem;
+  color: $orange;
+}
+.game-equal{
+  color: $red;
+  font-size: .8rem;
+  span{
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+//8折优惠??
+.content-block-titkle-with-link{
+  color: $black;
+  span{
+    color: $blue ;
+  }
+}
+
+.copy-bg-1{
+  background: url(../img/copy-content-ad-1.png) no-repeat;
+  background-size: 60%;
+  background-position: 50% 85%;
+  .card-content-inner{
+    padding-bottom: 1.8rem ;
+    span{
+      color: $blue ;
+
+    }
+  }
+}
+.copy-bg-2{
+  .card-content-inner{
+    background: url(../img/copy-content-ad-2.png) no-repeat;
+    background-size: 75% ;
+    background-position: 50% 96%;
+    padding-bottom: 2rem;
+  }
+}
+
+#showbig-img{
+  position: absolute;
+  z-index: 99;
+  display: none;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.498039);
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+
+
+//教程2
+.tutorial-page{
+  @include border-radius(5px);
+  img{
+    width: 100%;
+  }
+}
+
+
+
+
+//秘籍
+.cheat-list-time{
+  font-size: .7rem !important ;
+  color: $gray;
+  padding-left: .75rem;
+}
+.cheat-list-content{
+  color: $darkblack;
+  font-size: .8rem !important;
+}
+
+
+//提现
+.withdraw-notify{
+  color: $red;
+  font-size: .8rem;
+  padding: .5rem;
+  background: $white;
+  margin-bottom: .75rem;
+}
+.withdraw-card-icon{
+  width: 12%;
+  img{
+    width: 100%;
+  }
+}
+.withdraw-list{
+  .notice{
+    color: $orange;
+  }
+  .card{
+    li{
+      padding:.5rem;
+      .item-title{
+        font-size: 1rem;
+      }
+      .withdraw-card-img{
+        width: 3rem;
+        border-radius: 10px;
+      }
+    }
+
+  }
+}
+
+
+
+//提现记录
+.item-no-padding{
+  padding: 0 !important;
+  .item-inner{
+    padding-right: 0 !important;
+    .item-title{
+      font-weight: lighter;
+    }
+  }
+}
+.withdraw-memo-list{
+  border-bottom:1px solid $light-gray;
+  font-size: .9rem;
+  padding: .6rem;
+  .withdraw-money{
+    color: $red;
+    font-weight: lighter;
+  }
+}
+.withdraw-memo-list-last{
+  font-size: .9rem ;
+  padding: .6rem;
+  .paid{
+    color: $green;
+  }
+  .paying{
+    color: $blue;
+  }
+}
+
+.gray-bg{
+  .card{
+    border-radius: 5px;
+    li{
+      border-radius: 5px;
+    }
+  }
+}
+.card-margin{
+  margin: 0 !important;
+  margin-bottom: .75rem !important;
+}
+
+
+//微信
+.wechat-name{
+  border-bottom: 1px solid $light-gray;
+  padding: .5rem 1rem .5rem 0;
+}
+.withdraw-form-input{
+  background: $light-gray;
+  @include border-radius(3px);
+  border: 1px solid $dark-gray;
+  padding: 5px;
+  font-size: .8rem;
+}
+.withdraw-form-input > input{
+  background: none;
+  border: 0;
+  width: 100%;
+}
+.money-list{
+  .row{
+    margin-bottom: 1rem;
+  }
+  .money-box{
+    border: 1px solid $input-placeholder-color;
+    border-radius: 5px;
+    color: $input-placeholder-color;;
+    height: 5rem;
+    line-height: 5rem;
+    margin-bottom: 1rem;
+  }
+  .select-box{
+    color: $red;
+    border-color: $red;
+  }
+}
+.paynum{
+  margin: 0;
+  color: $orange;
+}
+.withdraw-action-input{
+  min-height: 5rem;
+}
+.paying-btn-group{
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  bottom: 5%;
+  .actual-pay{
+    color: $red;
+    font-size: .8rem;
+  }
+  .withdraw-btn{
+    margin: .5rem 0;
+  }
+}
+
+
+//rank
+.item-img-group {
+  position: relative;
+}
+.item-badgt {
+  position: absolute;
+  bottom: 15%;
+  right: -10%;
+  z-index: 97;
+  height: .8rem;
+  width: 2.3rem;
+  padding: 0 .2rem;
+  font-size: .5rem;
+  line-height: .8rem;
+  color: white;
+  vertical-align: top;
+  border: 1px solid $white;
+  background: $red;
+  float: right;
+  border-radius: .5rem;
+  margin-left: .1rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.img-badgt {
+  position: absolute;
+  width: 10%;
+  height: 40%;
+  right: 30%;
+  bottom: 15%;
+  img {
+    height: 100%;
+  }
+}
+
+.item-round {
+  padding: 5px;
+  @include radius(50%)
+}
+
+.title-name {
+  color: $black;
+  font-size: .8rem;
+}
+
+.subtitle-id {
+  color: $gray;
+  padding-left: 0 !important;
+  font-size: .7rem !important;
+  span {
+    color: $orange;
+  }
+}
+
+.my-score-rank{
+  width: 3.5rem;
+}
+.ranking-score-img{
+  @extend .my-score-rank
+}
+.rank-list-1st{
+  margin: 0;
+  margin-bottom: .75rem;
+}
+
+.modal-list-body.media-list .item-inner {
+  padding-top: .8rem !important;
+}
+.rank-list-header {
+  margin: 0 !important;
+  margin-bottom: 1rem;
+  ul:before {
+    height: 0 !important;
+  }
+}
+
+
+
+.right-money-get{
+  font-size: .8rem;
+  color: $red;
+  padding-right: .9rem;
+  text-align: right;
+  span{
+    width: 2.3rem;
+    float: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.rank-nav {
+  background: $red;
+  &:after {
+    content: none;
+  }
+  h1, a {
+    color: $white;
+  }
+}
+
+.rank-pannel {
+  margin-bottom: 0;
+  .buttons-tab .button.active {
+    color: $red !important;
+    border-color: $red !important;
+  }
+}
+
+.inner-rank {
+  margin: 0;
+  padding: 0;
+}
+
+
+//收益
+.benifit-small{
+  padding: .5rem 1rem;
+}
+.total-benifit-small{
+  font-size: .7rem;
+}
+.balance-small{
+  @extend .total-benifit-small;
+  text-align: right;
+  float: right;
+}
+.li-border{
+  li{
+    border-bottom: 1px solid $light-gray;
+
+  }
+}
+.page-benifit-li-all-img{
+  padding: 0 !important;
+  img{
+    width: 3rem;
+  }
+}
+.page-benifit-li-all-title{
+  color: $black;
+  font-size: .9rem !important;
+  span{
+    color: $red;
+  }
+}
+.page-benifit-li-all-title-right{
+  color: $gray !important;
+  font-size: .7rem;
+}
+.page-benifit-li-all-content{
+  font-size: .8rem !important;
+  color: $gray !important;
+  span{
+    color: $red;
+  }
+}
+.page-benifit-li-game-title{
+  @extend .page-benifit-li-all-title;
+  font-size: .75rem !important;
+}
+.page-benifit-li-game-subtitle,.page-benifit-li-game-subtitle-right{
+  @extend .page-benifit-li-all-title;
+  font-size: .8rem !important;
+  color: $black !important;
+}
+
+
+
+//秀图
+.show-pic-noti{
+  font-size: .8rem;
+  span{
+    color: $red;
+  }
+  text-align: center;
+  padding: .75rem;
+  background: $white;
+  border-bottom: 1px solid $light-gray;
+  border-top: 1px solid $light-gray;
+}
+
+
+//晒单
+.show-money-top{
+  margin-top: .5rem;
+  position: relative;
+  .bg{
+    width: 96%;
+    margin-left: 2%;
+ }
+  .score{
+    position: absolute;
+    top: 10%;
+    width: 90%;
+    left: 5%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: $white;
+  }
+  .total-income{
+    @extend .score;
+    top: 40%;
+    font-size: .9rem;
+  }
+  .total-income-num{
+    @extend .score;
+    top: 60%;
+    font-size: 1.8rem;
+    span{
+      font-size: 1rem;
+    }
+  }
+}
+.show-money-bottom{
+  margin-top: -6px;
+  position: relative;
+  img{
+    width: 96%;
+    margin-left: 2%;
+  }
+  .show-detail{
+    width: 90%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: .8rem;
+    text-align: center;
+    line-height: 1.5rem;
+    color: $gray;
+    span{
+      color: $red;
+    }
+  }
+  .qchar{
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    text-align: center;
+    bottom: 8%;
+    color: $gray;
+    font-size: .8rem;
+    .qchar-img{
+      width: 30% ;
+    }
+  }
+}
+
+//扫码 & 连接
+.scan-content{
+  background: $white;
+  padding: 1rem;
+  .uerdetail{
+    text-align: center;
+    span{
+      color: $gray;
+    }
+  }
+  .copy-the-link{
+    word-wrap: break-word;
+    background: $light-gray;
+    padding: .5rem;
+    @include border-radius(2px);
+    word-break: normal;
+    margin-top: 2rem;
+  }
+  .link-notify{
+    color: $red;
+    font-size: .8rem;
+    margin: 2rem 0 4rem;
+  }
+  .qchar{
+    text-align: center;
+    img{
+      width: 60%;
+      margin:3rem 20% .75rem;
+    }
+    p{
+      width: 50%;
+      margin: 0;
+      margin-left: 25%;
+      font-size: .8rem;
+      color: $red;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+//发展合伙人
+.icon-shai,.icon-scan,.icon-img,.icon-link{
+  font-size: 2rem;
+}
+.icon-shai{
+ color: $orange;
+}
+.icon-scan{
+  color: $blue;
+}
+.icon-img{
+  color: $red;
+}
+.icon-link{
+  color: $green;
+}
+.partner-right{
+  font-size: .8rem;
+  color: $gray !important;
+}
+
+.card-round-change{
+  background: none !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  .card-header{
+    padding: 0 !important;
+    border-bottom: none;
+    .float-header{
+      float: left;
+      background: $green;
+      padding: .5rem .75rem;
+      color: $white;
+      @include border-radius(5px 5px 0 0);
+    }
+    .green{
+      background: $green;
+    }
+    .darkgreen{
+      background: $darkgreen;
+    }
+    .orange{
+      background: orange;
+    }
+    .blue{
+      background: $blue;
+    }
+    .red{
+      background: $red;
+    }
+    .darkblue{
+      background: $darkblue;
+    }
+    .purple{
+      background: $purple ;
+    }
+  }
+  .card-content{
+    margin-top: -5px;
+    background: $white;
+    @include border-radius(5px);
+    border: 1px solid $light-gray;
+  }
+}
+
+
+//如何快速发展
+.get-partner-card-content{
+  color: $gray !important;
+  font-size: .8rem;
+}
+
+//管理合伙人
+.manage-notify{
+  background: white;
+  padding: 1.5rem;
+  font-size: .9rem;
+  margin: 0 0 .75rem;
+}
+.let-me-taught-you{
+  margin: 2rem 0 1rem;
+  text-align: center;
+  .taught-link{
+    color: $darkblue;
+    text-decoration: underline;
+  }
+}
+.manage-partner-list{
+  padding: .5rem;
+  padding-left: .75rem;
+  .icon-get-partner{
+    font-size: 2rem;
+  }
+  .icon-watch{
+    color: $orange;
+    font-size: 1.5rem;
+  }
+}
+.today-mange,.total-manage{
+  background: #fff;
+  padding: .5rem 0;
+  text-align: center;
+  font-size: 1rem;
+  color: #000;
+  .today-header{
+    font-size: .9rem;
+    color: $gray;
+    text-align: center;
+  }
+  .today-num{
+    font-size: .9rem !important;
+    color: $gray;
+    span{
+      color: $orange;
+      font-size: 2rem;
+    }
+  }
+
+
+}
+.today-mange{
+  border-right: 1px solid $light-gray;
+}
+
+.today-benifit,.total-benifit-manage{
+  color: $gray;
+  font-size: .8rem;
+  text-align: center;
+  background: white;
+  height: 3rem;
+  border-top: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
+  line-height: 3rem;
+  span{
+    color: $red;
+    font-size: 1rem;
+  }
+  .normal-size{
+    font-size: .9rem;
+  }
+}
+.total-benifit-manage{
+  margin-bottom: .75rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//sign
+.sign-form{
+  margin: 20% 0;
+}
+.sign-footer{
+  line-height: 4rem;
+  height: 4rem;
+  background: $white;
+  padding: 0.4rem 5%;
+  a{
+    font-size: 1.3rem !important;
+  }
+}
+.sign-footer:before{
+  height: 0 !important;
+}
+//creat
+.creat-form{
+  margin: 8% 0;
+}
+
+//pushrequest
+.dash-list{
+  padding: 0 .75rem;
+  ul:before,ul:after{
+    height:0;
+  }
+  ul{
+    border-bottom: 1px dashed $input-placeholder-color;
+  }
+  .item-content{
+    padding-left: 0;
+    border-top: 1px dashed $input-placeholder-color;
+    .item-inner{
+      &:after{
+        height: 0;
+      }
+      font-size: 1.25rem;
+      padding-left: .75rem;
+      margin-left: 0;
+      .item-title,.item-after{
+        color: $black;
+      }
+    }
+  }
+}
+.push-warning-text{
+  color: $warning !important;
+}
+
+
+
+
+//spread
+.spread-p-title{
+  font-size: 1.25rem;
+  color: $black;
+  margin: .5rem 0;
+}
+.spread-game-list{
+  margin: .75rem 0;
+}
+.spread-card-img{
+  width: 4rem;
+  border-radius: 10px;
+}
+.gray-bg {
+  .list-block {
+    ul{
+      background: none;
+      li{
+        background: $white;
+        margin: .75rem 0;
+      }
+      :before,:after,.item-inner:after{
+        height: 0;
+      }
+    }
+    .item-content{
+      padding-right: .75rem;
+    }
+    .item-text{
+      color: $black;
+    }
+  }
+}
+
+
+
+//spread manage
+.spread-manage-list{
+  margin: .75rem 0;
+  color: $input-placeholder-color !important;
+  .item-title{
+    color: $black;
+    font-size: 1.25rem;
+  }
+  .item-subtitle{
+    font-size: 1rem;
+  }
+  button{
+    font-size: .9rem;
+  }
+  .online{
+    color: $spread-green;
+  }
+  .offline{
+    color: $spread-red;
+  }
+}
+
+//spread-detail
+.spread-game-message{
+  margin: .75rem 0;
+  color: $black !important;
+  .spread-benefit{
+    color: $spread-red;
+  }
+
+}
+.spread-game-list{
+  .card-content-inner{
+    font-size: 1rem;
+    color: $black;
+  }
+}
+
+
+//spread-content
+.spread-content{
+  .card{
+    box-shadow: none;
+    border-bottom: 1px dashed $dark-gray;
+  }
+}
+.content-title,.content-content,.content-link,.content-img{
+  color: $black;
+  font-size: 1rem;
+}
+.content-link{
+  .url{
+    color: $urlblue;
+  }
+}
+.content-img{
+  img{
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+
+
+//withdraw
+
+
+
+
+
+
+//reset-password
+.reset-button{
+  margin-top: 4rem;
+  a{
+    font-size: 1.3rem !important;
+
+  }
+}
+
+
+//find password
+.find-form-input{
+  background: $light-gray;
+  @include border-radius(5px);
+  border: 1px solid $dark-gray;
+  padding: 5px;
+  margin: 2% 0 5%;
+}
+.find-form-button{
+  margin-top: 2%;
+}
+.find-form-input > input{
+  background: none;
+  border: 0;
+  width: 100%;
+}
+.fill-gray{
+  background: $input-placeholder-color !important;
+}
+
+
+//choose spread
+.choose-p-title{
+  font-size: 1.25rem;
+  color: #000;
+  margin: .5rem 0;
+  span{
+    color: $spread-red;
+    font-size: 1rem;
+  }
+}
+.choose-game-list{
+  margin: .75rem 0;
+  a{
+    color: $black;
+    .item-subtitle{
+      font-size: 1rem;
+      .main{
+        color: $orange;
+      }
+      .sub{
+        color: $spread-green;
+      }
+    }
+    .go-further{
+      font-size:.7rem;
+      margin: 0;
+      color: $spread-red;
+    }
+    .icon-right{
+      color: $input-placeholder-color;
+    }
+  }
+}

@@ -1,0 +1,208 @@
+$white : #fff;
+$black: #000;
+$red: #ff6161;
+$warning: #f11010;
+$light-gray:#efeff0;
+$dark-gray: #dcdcdc;
+$input-placeholder-color: #9d9d9d;
+$blue:#1262df;
+$text-blue: #5895d8;
+$spread-green:#00d424;
+$spread-red:#dd3836;
+$urlblue: #2d92f0;
+$orange: #ff8a00;
+
+
+
+
+
+@mixin border-radius($num){
+  -moz-border-radius: $num;
+  -webkit-border-radius: $num;
+  border-radius: $num;
+}
+
+
+//global
+html {
+  font-size: 20px;
+}
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 20px !important;
+  }
+}
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 20px !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 20px !important;
+  }
+}
+body{
+  font-family: "SimHei","Arial",sans-serif;
+  font-size: 1rem;
+}
+
+
+.content-inner,.page{
+  background: $white !important;
+}
+.gray-bg{
+  background: $light-gray !important;
+}
+.list-block .item-subtitle{
+  font-size: .85rem;
+}
+
+//button
+.button{
+  border-color: $text-blue;
+  color: $text-blue;
+}
+.button-danger{
+  border-color: $red !important;
+  color: $red;
+}
+.button-danger.button-fill{
+  background: $red;
+}
+.button-light{
+  border-color: $input-placeholder-color;
+  color: $input-placeholder-color;
+}
+
+.button-big{
+  font-size: 1.3rem;
+}
+
+.text-right{
+  text-align: right;
+}
+.text-left{
+  text-align: left;
+}
+
+
+//顶栏
+.bar{
+  background: $red;
+}
+.bar , .bar>.button-link, .bar>.title{
+  height:2.5rem;
+  line-height:2.5rem;
+}
+.bar .icon, .bar .title{
+  font-size: 1.25rem;
+  color: $white;
+}
+.bar-nav~.content{
+  top:2.5rem;
+}
+.bar-footer~.content{
+  bottom:4rem;
+}
+
+//spread
+.spread-p-title{
+  font-size: 1.25rem;
+  color: $black;
+  margin: .5rem 0;
+}
+.spread-game-list{
+  margin: .75rem 0;
+}
+.spread-card-img{
+  width: 4rem;
+  border-radius: 10px;
+}
+.gray-bg {
+  .list-block {
+    ul{
+      background: none;
+      li{
+        background: $white;
+        margin: .75rem 0;
+      }
+      :before,:after,.item-inner:after{
+        height: 0;
+      }
+    }
+    .item-content{
+      padding-right: .75rem;
+    }
+    .item-text{
+      color: $black;
+    }
+  }
+}
+
+
+
+//spread manage
+.spread-manage-list{
+  margin: .75rem 0;
+  color: $input-placeholder-color !important;
+  .item-title{
+    color: $black;
+    font-size: 1.25rem;
+  }
+  .item-subtitle{
+    font-size: 1rem;
+  }
+  button{
+    font-size: .9rem;
+  }
+  .online{
+    color: $spread-green;
+  }
+  .offline{
+    color: $spread-red;
+  }
+}
+
+//spread-detail
+.spread-game-message{
+  margin: .75rem 0;
+  color: $black !important;
+  .spread-benefit{
+    color: $spread-red;
+  }
+
+}
+.spread-game-list{
+  .card-content-inner{
+    font-size: 1rem;
+    color: $black;
+  }
+}
+
+
+//spread-content-web
+.spread-content{
+  .card{
+    box-shadow: none;
+    border-bottom: 1px dashed $dark-gray;
+  }
+}
+.content-title,.content-content,.content-link,.content-img{
+  color: $black;
+  font-size: 1rem;
+}
+.content-link{
+  .url{
+    color: $urlblue;
+  }
+}
+.content-img{
+  img{
+    width: 100%;
+    //margin-left: 30%;
+  }
+}
+.card{
+  margin: .5rem 10rem;
+}
