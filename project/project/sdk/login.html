@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="format-detection" content="telephone=no, address=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta property="desc" content="<?php echo $game_desc;?>"/>
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta class="buttons" content="<?php echo $buttons?>">
+    <meta class="red_buttons" content="<?php echo $red_buttons?>">
+    <meta class="loading_style" content="<?php echo $loading_style?>">
+    <meta class="login_style" content="<?php echo $login_style?>">
+    <link rel="apple-touch-icon" href="<?php echo $game_icon;?>" />
+    <title><?php echo $game_name;?></title>
+
+    <link rel="stylesheet" href="http://auv2.game.weibo.cn/auv/api/server/platform/css/v2_0_1/sm.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+
+</head>
+<body>
+
+<!-- body -->
+
+<div class="page-group">
+    <div class="page " id="page-lanscape" style="display: none">
+        <!-- 这里是横竖屏内容 -->
+        <div class="content">
+            <div class="screen-up">
+                <img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/screen_prompt_icon.png" alt="">
+            </div>
+            <div class="screen-down">
+                <img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/screen_prompt.png" alt="">
+                <strong>请使用竖屏进行游戏</strong>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="page page-current" id="page-open-game" style="background-color: white">
+
+
+        <!--bg-->
+
+
+    </div>
+
+
+    <!-- 选择登录方式 -->
+    <div class="popup popup-choose">
+        <div class="login-mode-content-new" style="display: block;">
+            <div class="login-mode-contbox-new">
+                <!--<p>选择登录方式</p>-->
+                <div class="content-padded grid-demo">
+                    <p>选择登录方式</p>
+
+                    <div class="row">
+                        <div class="col-25 login_mobile login_li_user_new">
+                            <i id="login_icon_mobile" class="icon iconfont icon-wechat bind-way-orange-i"></i>
+
+                            <div style="color:#ffae00">手机</div>
+                        </div>
+                        <div class="col-25 login_qq login_li_qq_new" onclick="qqAuthorization()">
+                            <i id="login_icon_qq" class="icon iconfont icon-qq bind-way-blue-i"></i>
+
+                            <div style="color:#60acec">QQ</div>
+                        </div>
+                        <div class="col-25 login_wechat login_li_wechat_new" onclick="$.popup('.popup-wechat-qchar')">
+                            <i id="login_icon_wechat" class="icon iconfont icon-wechat bind-way-green-i"></i>
+
+                            <div style="color:#00d424">微信</div>
+                        </div>
+                        <div class="col-25 login_sina login_li_wb_new" onclick="sinaAuthorization()">
+                            <i id="login_icon_sina" class="icon iconfont icon-weibo bind-way-red-i"></i>
+
+                            <div style="color:#e7675c">微博</div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="prompt">
+                    <i class="iconfont icon icon-icexclamationcircleo"></i>
+                    “游客”可能无法保存角色
+                    <span onclick="createTourist();">游客试玩</span>
+                </div>
+            </div>
+
+            <a href="#" id="loginTimer" class="button button-big  button-fill shiwan">立即试玩</a>
+
+        </div>
+    </div>
+
+
+
+
+    <!--微信 二维码-->
+    <div class="popup popup-wechat-qchar">
+        <div style="position: relative;" id="wechat-qchar">
+            <div id="login_code"> </div>
+            <div id="login_code_h2">
+                <h2>微信登录</h2>
+            </div>
+            <img id="for_weixin_login" src="http://pc.9g.com/wx_9g.jpg" />
+            <div id="login_code_txt">
+                请使用微信扫描二维码登录
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--输入框主体,登录-->
+    <div class="popup popup-login">
+        <div class="content-padded content-popup">
+
+            <div class="content-block-title modal-input-title">
+                <span class="pull-left">手机号用户登录</span>
+                <span class="pull-right redcolor open-sign">注册新用户</span>
+            </div>
+
+            <div class="searchbar modal-input-sign">
+                <div class="search-input">
+                    <input type="text" id="phone_num" placeholder='请输入您的手机号码'/>
+                </div>
+            </div>
+
+            <div class="searchbar modal-input-sign">
+                <div class="search-input">
+                    <input type="password" id="user_pwd" placeholder='请输入帐号密码'/>
+
+                </div>
+            </div>
+
+
+            <div class="forget-password">
+
+                <div class="modal-forget-password pull-left">
+                    忘记密码?
+                </div>
+                <div class="hint pull-right">
+                    <i class="iconfont icon icon-icexclamationcircleo"></i>
+                    手机号或密码输入错误
+                </div>
+            </div>
+
+
+            <p><a href="javascript:;" class="button button-big modal-button-login button_login button-fill">登录</a></p>
+
+            <p><a href="javascript:;" class="button button-big modal-button-exit button-phone-logout button-fill">退出</a></p>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!--手机号注册-->
+    <div class="popup popup-sign">
+        <div class="content-padded content-popup">
+            <div class="content-block-title modal-input-title">
+                <span class="pull-left">手机号注册</span>
+                <a href="javascript:;" data-popup=".popup-sign" class="close-popup pull-right">
+                    <i class="icon iconfont close-icon-popup icon-close01"></i>
+                </a>
+
+            </div>
+
+            <div class="searchbar modal-input-sign">
+                <div class="search-input">
+                    <input type="text" id="input_phonenum_sign" placeholder='请输入您的手机号码'/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-60">
+                    <div class="searchbar modal-input-sign">
+                        <div class="search-input">
+                            <input type="text" id="input_verify_sign" placeholder='请输入验证码'/>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-40 codeing-get">
+                    <input type="button" class="button button-fill get-code" value="获取验证码"/>
+                </div>
+            </div>
+
+            <p><a href="#" class="button button-big modal-button-login button-fill signin-now">立即注册</a></p>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!--找回密码-->
+    <div class="popup popup-find">
+        <div class="content-padded content-popup">
+            <div class="content-block-title modal-input-title">
+                <span class="pull-left">找回密码</span>
+                <a href="javascript:;" data-popup=".popup-find" class="close-popup pull-right">
+                    <i class="icon iconfont close-icon-popup icon-close01"></i>
+                </a>
+
+            </div>
+            <div class="searchbar modal-input-sign">
+                <div class="search-input">
+                    <input type="text" id="input_phonenum_find" placeholder='请输入您的手机号码'/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-60">
+                    <div class="searchbar modal-input-sign">
+                        <div class="search-input">
+                            <input type="text" id="input_verify_find" placeholder='请输入验证码'/>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-40 codeing-get">
+                    <input type="button" class="button button-fill get-code-find" value="获取验证码"/>
+                </div>
+            </div>
+
+            <p><a href="#" class="button button-big modal-button-login button-next-step-find button-fill">下一步</a></p>
+
+
+        </div>
+
+    </div>
+
+
+    <!--设置新密码-->
+    <div class="popup popup-set">
+        <div class="content-padded content-popup">
+
+            <div class="content-block-title modal-input-title">
+                <span class="pull-left">设置新密码</span>
+                <a href="javascript:;" data-popup=".popup-set" class="close-popup pull-right">
+                    <i class="icon iconfont close-icon-popup icon-close01"></i>
+                </a>
+
+            </div>
+
+
+            <div class="searchbar modal-input-sign">
+                <div class="search-input">
+                    <input type="text" id="input_set_pwd" placeholder='请输入新密码'/>
+                </div>
+            </div>
+
+
+            <p><a href="#" class="button button-big modal-button-login set_new_password  button-fill">确定</a></p>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!--支付警告-->
+    <div class="popup popup-warning">
+        <div class="content-padded content-popup">
+
+            <div class="content-block-title modal-input-title">
+                <span class="pull-left">支付警示信息</span>
+                <a href="javascript:;" data-popup=".popup-warning" class="close-popup pull-right">
+                    <i class="icon iconfont close-icon-popup icon-close01"></i>
+                </a>
+
+            </div>
+
+
+            <div class="content-padded">
+                <div class="row no-gutter warning-text">
+                    <div class="col-15">
+                        <i class="iconfont icon icon-icexclamationcircleo small-icon-warning"></i>
+                    </div>
+                    <div class="col-80 ">
+                        <p>
+                            您当前为<span>游客身份</span>还没有绑定用户，如果不绑定用户可能会导致您的玩家信息丢失
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <p><a href="#" class="button button-big modal-button-login button-bind-now button-fill">立即绑定</a></p>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!--选择绑定用户方式-->
+    <div class="popup popup-bind-way">
+        <div class="content-padded content-popup">
+
+            <div class="content-block-title modal-input-title">
+                <span class="pull-left">选择绑定用户方式</span>
+                <a href="javascript:;" data-popup=".popup-bind-way" class="close-popup pull-right">
+                    <i class="icon iconfont close-icon-popup icon-close01"></i>
+                </a>
+            </div>
+
+
+            <div class="content-padded">
+                <div class="row no-gutter row-bind-way">
+                    <div class="col-50 mobile-bind">
+                        <div class="row">
+                            <div class="col-100">
+                                <i class="icon iconfont icon-shouji bind-way-orange-i"></i>
+                            </div>
+                            <div class="col-100 bind-way-orange">
+                                手机
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-50 weibo-bind">
+                        <div class="row">
+                            <div class="col-100">
+                                <i class="icon iconfont icon-weibo bind-way-red-i"></i>
+                            </div>
+                            <div class="col-100 bind-way-red">
+                                微博
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!--手机号绑定-->
+    <div class="popup popup-binding">
+        <div class="content-padded content-popup">
+            <div class="content-block-title modal-input-title">
+                <span class="pull-left">手机号绑定</span>
+                <a href="javascript:;" data-popup=".popup-binding" class="close-popup pull-right">
+                    <i class="icon iconfont close-icon-popup icon-close01"></i>
+                </a>
+
+            </div>
+            <div class="searchbar modal-input-sign">
+                <div class="search-input">
+                    <input type="text" id="input_phonenum_bind" placeholder='请输入您的手机号码'/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-60">
+                    <div class="searchbar modal-input-sign">
+                        <div class="search-input">
+                            <input type="text" id="input_verify_bind" placeholder='请输入验证码'/>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-40 codeing-get">
+                    <input type="button" class="button button-fill get-code-bind" value="获取验证码" />
+                </div>
+            </div>
+
+            <p><a href="#" class="button button-big modal-button-login button-binding button-fill">立即绑定</a></p>
+
+
+        </div>
+
+    </div>
+
+
+    <!--手机号绑定错误-->
+    <div class="popup popup-fail">
+        <div class="content-padded content-popup">
+
+            <div class="content-block-title modal-input-title">
+                <span class="pull-left">手机绑定错误</span>
+                <a href="javascript:;" data-popup=".popup-fail" class="close-popup pull-right">
+                    <i class="icon iconfont close-icon-popup icon-close01"></i>
+                </a>
+
+            </div>
+
+
+            <div class="content-padded">
+                <div class="row no-gutter warning-text">
+                    <div class="col-15">
+                        <i class="icon iconfont small-icon-warning icon-close1"></i>
+                    </div>
+                    <div class="col-80 ">
+                        <p>
+                            系统检测到该手机号已经绑定过小浪游戏平台
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <p><a href="#" class="button button-big modal-button-login change-another-mobile button-fill">换个手机号绑定</a></p>
+
+            <p><a href="#" class="button button-big modal-button-exit button-bind-way button-fill ">选择其他方式绑定</a></p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+<script type='text/javascript' src='http://auv2.game.weibo.cn/auv/api/server/platform/js/v2_0_8/zepto.min.js'></script>
+<script type='text/javascript' src='http://auv2.game.weibo.cn/auv/api/server/platform/js/v2_0_8/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/login.js' charset='utf-8'></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>小浪游戏</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--<link rel="shortcut icon" href="/favicon.ico">-->
+
+
+    <link rel="stylesheet" href="dist/css/sm.min.css">
+    <link rel="stylesheet" href="dist/css/sm-extend.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+</head>
+<body>
+
+
+<div class="page-group">
+
+
+    <div id="page-modal" class="page">
+        <header class="bar bar-nav">
+            <h1 class="title">Popup(JavaScript)</h1>
+        </header>
+        <div class="content">
+            <div class="content-block">
+                <p><a href="javascript:;" class="open-popup" data-popup=".popup-modal">点我点我</a></p>
+                <p><a href="modal.html">点我点我</a></p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Modal Popup -->
+    <div class="popup popup-modal">
+        <div class="content-block">
+
+
+
+            <!--这里插入modal.html-->
+
+
+            <header class="bar modal-nav bar-nav">
+                <a class="icon iconfont icon-close01 pull-right " id="testclick" ></a>
+                <h1 class="title">游戏成绩</h1>
+            </header>
+            <nav class="bar bar-tab">
+                <a class="tab-item external downbtn" href="#">
+                    <span class="icon iconfont icon-chexiaoshangyicidongzuo"></span>
+                    <span class="tab-label">再来一次</span>
+                </a>
+                <a class="tab-item external downbtn" href="#">
+                    <span class="icon iconfont icon-share"></span>
+                    <span class="tab-label">分享</span>
+                </a>
+                <a class="tab-item external downbtn" href="rank.html">
+                    <span class="icon iconfont icon-shouyepaixing"></span>
+                    <span class="tab-label">查看排行榜</span>
+                </a>
+                <a class="tab-item external downbtn" href="#">
+                    <span class="icon iconfont icon-jiangpin"></span>
+                    <span class="tab-label">查看奖品</span>
+                </a>
+
+            </nav>
+            <div class="content auto">
+                <div class="list-block modal-list-header media-list">
+                    <ul>
+                        <li>
+                            <a href="#" class="item-content">
+                                <div class="item-media item-img-group">
+                                    <img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" class="item-round" style='width: 4rem;'>
+                                    <span class="badge item-badgt">332323232</span>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title title-name">发达放到萨芬</div>
+                                    <div class="item-subtitle subtitle-score">最高得分: 699999</div>
+                                    <div class="item-subtitle subtitle-phone-number">距第一名还差: <span>99999</span></div>
+
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+
+
+                <!--下面的排行榜-->
+                <div class="list-block modal-list-body media-list">
+                    <!--第一名-->
+                    <ul>
+                        <li>
+                            <a href="#" class="item-content">
+                                <div class="item-media item-img-group">
+                                    <img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" class="item-round" style='width: 4rem;'>
+                                    <span class="img-badgt"><img src="img/first.png" alt=""></span>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title title-name">发达放到萨芬</div>
+                                    <div class="item-subtitle subtitle-score">最高得分: 699999</div>
+                                    <div class="item-subtitle subtitle-phone-number">138***98558</div>
+
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--第二名-->
+                    <ul>
+                        <li>
+                            <a href="#" class="item-content">
+                                <div class="item-media item-img-group">
+                                    <img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" class="item-round" style='width: 4rem;'>
+                                    <span class="img-badgt"><img src="img/second.png" alt=""></span>
+
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title title-name">发达放到萨芬</div>
+                                    <div class="item-subtitle subtitle-score">最高得分: 699999</div>
+                                    <div class="item-subtitle subtitle-phone-number">138***98558</div>
+
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--第三名-->
+                    <ul>
+                        <li>
+                            <a href="#" class="item-content">
+                                <div class="item-media item-img-group">
+                                    <img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" class="item-round" style='width: 4rem;'>
+                                    <span class="img-badgt"><img src="img/third.png" alt=""></span>
+
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title title-name">发达放到萨芬</div>
+                                    <div class="item-subtitle subtitle-score">最高得分: 699999</div>
+                                    <div class="item-subtitle subtitle-phone-number">138***98558</div>
+
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!--循环开始-->
+                    <ul>
+                        <li>
+                            <a href="#" class="item-content">
+                                <div class="item-media item-img-group">
+                                    <img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" class="item-round" style='width: 4rem;'>
+                                    <span class="badge item-badgt">4</span>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title title-name">发达放到萨芬</div>
+                                    <div class="item-subtitle subtitle-score">最高得分: 699999</div>
+                                    <div class="item-subtitle subtitle-phone-number">138***98558</div>
+
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="#" class="item-content">
+                                <div class="item-media item-img-group">
+                                    <img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" class="item-round" style='width: 4rem;'>
+                                    <span class="badge item-badgt">14</span>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title title-name">发达放到萨芬</div>
+                                    <div class="item-subtitle subtitle-score">最高得分: 699999</div>
+                                    <div class="item-subtitle subtitle-phone-number">138***98558</div>
+
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!--这里插入modal.html-->
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<script type='text/javascript' src='dist/js/zepto.min.js'></script>
+<script type='text/javascript' src='dist/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='dist/js/sm-extend.min.js' charset='utf-8'></script>
+<script type="text/javascript" src="js/modify.js"></script>
+
+
+</body>
+</html>

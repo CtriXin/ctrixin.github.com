@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="format-detection" content="telephone=no, address=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta property="desc" content="<?php echo $game_desc;?>"/>
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta class="buttons" content="<?php echo $buttons?>">
+    <meta class="red_buttons" content="<?php echo $red_buttons?>">
+    <meta class="loading_style" content="<?php echo $loading_style?>">
+    <meta class="login_style" content="<?php echo $login_style?>">
+    <title><?php echo $game_name;?></title>
+
+
+    <link rel="stylesheet" href="dist/css/sm.min.css">
+    <link rel="stylesheet" href="dist/css/sm-extend.min.css">
+    <link rel="stylesheet" type="text/css" href="http://auv2.game.weibo.cn/auv/api/server/platform/css/v1_0_5/game_index.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- body -->
+<div class="page-group" >
+    <div class="page" id="page-lanscape" style="display: none">
+        <!-- 你的html代码 -->
+
+        <!-- 这里是横竖屏内容 -->
+        <div class="content">
+            <div class="screen-up">
+                <img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/screen_prompt_icon.png" alt="">
+            </div>
+            <div class="screen-down">
+                <img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/screen_prompt.png" alt="">
+                <strong>请使用竖屏进行游戏</strong>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="page page-current" id="page-open-game">
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+
+
+            <div id="sider_menu" class="sider_menu sider_right" style="top:8rem;right:0;/* display: none */">
+                <ul class="ui_li">
+                    <li class="m1" onclick="clicn(1)">
+                        <img class="scrollLoading  m11" id="1" data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m1.png" src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m1.png" alt="" title="">
+                        <span class="tab-red-point" id="m1-red"></span>
+                    </li>
+                    <!--更多-->
+                    <li class="m2" onclick="clicn(2)">
+                        <img class="scrollLoading  m12" id="2" data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m2.png" src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m2.png" alt="" title="">
+                        <span class="tab-red-point" id="m2-red"></span>
+                    </li>
+                    <!--关注公众号-->
+                    <li class="m3" onclick="clicn(3)">
+                        <img class="scrollLoading  m13" id="3" data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m3.png" src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m3.png" alt="" title="">
+                        <span class="tab-red-point" id="m3-red"></span>
+                    </li>
+                    <!--存桌面-->
+                    <li class="m4" onclick="clicn(4)">
+                        <img class="scrollLoading  m14" id="4" data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m4.png" src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m4.png" alt="" title="">
+                        <span class="tab-red-point" id="m4-red"></span>
+                    </li>
+                    <!--领福利-->
+                    <li class="m5" onclick="clicn(5)">
+                        <img class="scrollLoading  m15" id="5" data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m5.png" src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m5.png" alt="" title="">
+                        <span class="tab-red-point" id="m5-red"></span>
+                    </li>
+                    <!--攻略-->
+                    <li class="m6" onclick="clicn(6)">
+                        <img class="scrollLoading  m16" id="6" data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m6.png" src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m6.png" alt="" title="">
+                        <span class="tab-red-point" id="m6-red"></span>
+                    </li>
+                    <!--分享-->
+                    <li class="m7" onclick="clicn(7)">
+                        <!--<img class="scrollLoading  m17" id=7  data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m7.png"  src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/n2.png" alt="" title="">-->
+                        <span class="tab-red-point" id="m7-red"></span>
+                        <i class="icon sprite-images-icon02"></i>
+                        <!--<img src="css/images.png" alt="">-->
+                    </li>
+                    <!--绑定-->
+                </ul>
+
+                <!--浮球本体-->
+                <i class="menu_btn" id="menu_btn"><span class="menu-red-point" id="menu-red" style="display: none;"></span></i>
+            </div>
+
+            <!-- 登录框 -->
+            <div class="login-mode" style="display: none;">
+                <div class="login-mode-back"></div>
+                <div class="login-mode-content" style="display: none">
+                    <div class="login-mode-contbox">
+                        <strong>请选择登录方式</strong>
+                        <ul>
+                            <li class="login_li_user"><img
+                                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/tourist_icon.png"
+                                    onclick="createTourist();" alt=""><i>立即试玩</i></li>
+                            <li class="login_li_wb"><img
+                                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/weibo_icon.png"
+                                    onclick="sinaAuthorization();" alt=""><i>新浪微博</i></li>
+                            <li class="login_li_qq"><img
+                                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/qq_icon.png"
+                                    onclick="qqAuthorization();" alt=""><i>QQ登录</i></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- 16.4.22 合并UED -->
+                <div class="login-mode-content-new" style="display: block">
+                    <div class="login-mode-contbox-new">
+                        <strong>选择登录方式</strong>
+                        <ul>
+                            <li class="login_li_user_new"><img id="login_icon_mobile"
+                                                               src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/mobile_icon.png"><i
+                                    style="color:#ffae00">手机</i></li>
+                            <li class="login_li_qq_new"><img id="login_icon_qq"
+                                                             src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/qq_icon.png"><i
+                                    style="color:#60acec">QQ</i></li>
+                            <li class="login_li_wb_new"><img id="login_icon_sina"
+                                                             src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/weibo_icon.png"><i
+                                    style="color:#e7675c">微博</i></li>
+                        </ul>
+                        <div class="prompt"><i><img
+                                src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/icon_prompt.png"/></i>
+                            <p>“游客”可能无法保存角色</p><a onclick="createTourist();">游客试玩</a></div>
+                    </div>
+                    <div class="shiwan"><a id="loginTimer" onclick="createTourist();">立即试玩(10s)</a></div>
+
+                </div>
+            </div>
+            <!-- 新版手机号登录 -->
+            <div class="login_Photo" style="display:block;">
+                <!--黑色背景-->
+                <div class="login_Photo_Black" style="display: none"></div>
+                <!--输入框整体-->
+                <div class="login_Photo_contbox" style="display: none">
+                    <div class="loginbox">
+                        <div class="surfaceA">
+                            <h5>手机号用户登录</h5>
+                            <p id="registerUse" onclick="showMobileRegisterPop()">注册新用户</p>
+                        </div>
+                        <div class="surfaceB">
+                            <div class="lfm">
+                                <input type="number" autocomplete="off" name="username_Ww_k" id="username_Ww_k"
+                                       placeholder="请输入您的手机号码" onclick="photoUseEvent();">
+                            </div>
+                            <div class="lfm">
+                                <input type="password" name="password_Ww_k" value="" id="password_Ww_k"
+                                       placeholder="请输入账号密码"
+                                       onclick="photoPwdEvent();">
+                            </div>
+                        </div>
+                        <div class="hint" style="display: none"><i><img
+                                src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/icon0.png"/></i>手机号或密码输入错误
+                        </div>
+                        <div class="wjmm"><a onclick="showMobileResetPwd()">忘记密码？</a></div>
+
+                        <div class="loginBtn" id="loginBtn">登录</div>
+                        <div class="exitBtn" id="exitBtn">退出</div>
+                    </div>
+                </div>
+                <!--注册成功-->
+                <div class="zccg" style="display: none"><a href="#">恭喜注册成功</a></div>
+                <!--手机号注册-->
+                <div class="register_Photo_contbox" id="register_use" style="display: none">
+                    <div class="loginbox">
+                        <div class="surfaceA">
+                            <h5>手机号注册</h5>
+                            <p class="close" title="关闭"><img
+                                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                                    onclick="register_close()"/></p>
+                        </div>
+                        <div class="surfaceB">
+                            <div class="lfm">
+                                <input type="number" autocomplete="off" name="register_Num" id="register_Num"
+                                       placeholder="请输入您的手机号码" onclick="register_num();">
+                            </div>
+                            <div class="yzmbox">
+                                <div class="yzm">
+                                    <input type="text" name="register_Pwd" value="" id="register_Pwd"
+                                           placeholder="请输入验证码"
+                                           onclick="register_Pwd();">
+                                </div>
+                                <button class="hqyzm" id="register_sendCode" value="获取验证码"
+                                        onclick="register_Sendcode(this)">获取验证码
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class="registerBtn" id="registerBtn" onclick="clickCreateMobilePlayer();"> 立即注册</div>
+                    </div>
+                </div>
+                <!--找回密码 1-->
+                <div class="register_Photo_contbox" id="find_pwd" style="display: none;">
+                    <div class="loginbox">
+                        <div class="surfaceA">
+                            <h5>找回密码</h5>
+                            <p class="close" title="关闭"><img
+                                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                                    id="findPwd_close" onclick="closeFind()"/></p>
+                        </div>
+                        <div class="surfaceB">
+                            <div class="lfm">
+                                <input type="number" autocomplete="off" name="findPwd_Num" id="findPwd_Num"
+                                       placeholder="请输入您的手机号码"
+                                       onclick="findPwd_num();">
+                            </div>
+                            <div class="yzmbox">
+                                <div class="yzm">
+                                    <input type="text" name="findPwd_Pwd" value="" id="findPwd_Pwd" placeholder="请输入验证码"
+                                           onclick="findPwd_Pwd();">
+                                </div>
+                                <button class="hqyzm" id="findPwd_sendCode" value="获取验证码" onclick="findPwd_code(this)">
+                                    获取验证码
+                                </button>
+                            </div>
+                        </div>
+                        <div class="registerBtn" id="find_next" onclick="chickResetPwdNext();"> 下一步</div>
+                    </div>
+                </div>
+                <!--设置新密码-->
+                <div class="setNewPwd_contbox" style="display: none;">
+                    <div class="loginbox">
+                        <div class="surfaceA">
+                            <h5>设置新密码</h5>
+                            <p class="close" title="关闭"><img
+                                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                                    onclick="setNewPwd_close()"></p>
+                        </div>
+                        <div class="surfaceC">
+                            <div class="lfm">
+                                <input type="text" autocomplete="off" name="setNewPwd_pwd" id="setNewPwd_pwd"
+                                       placeholder="请输入新密码"
+                                       onclick="setNewPwd_pwd();">
+                            </div>
+                        </div>
+                        <div class="registerBtn" id="setNewPwd_true" onclick="clickResetPwdSure();">确定</div>
+                    </div>
+                </div>
+                <!--支付警告-->
+                <div class="payWarn_contbox" style="display: none">
+                    <div class="loginbox">
+                        <div class="surfaceA">
+                            <h5>支付警示信息</h5>
+                            <p class="close" title="关闭"><img
+                                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                                    onclick="payWarn_close()"></p>
+                        </div>
+                        <div class="surfaceD">
+                            <i><img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/icon01.png"></i>
+                            <p>您当前为<span>游客身份</span>还没有绑定用户，如果
+                                不绑定用户可能会导致您的玩家信息丢失
+                                平台</p>
+                        </div>
+                        <div class="loginBtn" onclick="showSeleBindingPop();" id="payWarn_nowBind">立即绑定</div>
+                        <div class="exitBtn" onclick="PlaceAnOrder(sinaWebSdk.data.payData);" id="payWarn_nowPay">
+                            老子有钱直接支付
+                        </div>
+                    </div>
+                </div>
+
+                <!--手机绑定页面-->
+                <div class="register_Photo_contbox" id="bindPhone" style="display: none;">
+                    <div class="loginbox">
+                        <div class="surfaceA">
+                            <h5>手机号绑定</h5>
+                            <p class="close" title="关闭"><img
+                                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                                    onclick="bindPhone_close()"></p>
+                        </div>
+                        <div class="surfaceB">
+                            <div class="lfm">
+                                <input type="number" autocomplete="off" name="bindPhone_info" id="bindPhone_info"
+                                       placeholder="请输入您的手机号码" onclick="bindPhone_info();">
+                            </div>
+                            <div class="yzmbox">
+                                <div class="yzm">
+                                    <input type="text" name="bindPhone_code" value="" id="bindPhone_code"
+                                           placeholder="请输入验证码"
+                                           onclick="bindPhone_infoCode();">
+                                </div>
+                                <button class="hqyzm" id="bindPhone_sendCode" value="获取验证码"
+                                        onclick="bindPhone_code(this)">获取验证码
+                                </button>
+                            </div>
+                        </div>
+                        <div class="loginBtn" id="bindPhoneBtn" onclick="clickMobileBind();"> 立即绑定</div>
+                    </div>
+                </div>
+
+                <!--手机号绑定错误-->
+                <div class="bingding_Photo_contbox" id="bindError" style="display: none">
+                    <div class="loginbox">
+                        <div class="surfaceA">
+                            <h5>手机绑定错误</h5>
+                            <p class="close" title="关闭"><img
+                                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                                    onclick="bindError_close()"></p>
+                        </div>
+                        <div class="surfaceD">
+                            <i><img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/icon02.png"></i>
+                            <p>系统检测到该手机号已经绑定过小浪游戏
+                                平台</p>
+                        </div>
+                        <div class="loginBtn" id="exchangePhoneBtn" onclick="clickChangeMobileBing();">换个手机号绑定</div>
+                        <div class="exitBtn" id="exchangeWay" onclick="clickChangeBing();">选择其他方式绑定</div>
+                    </div>
+                </div>
+
+                <!--绑定方式-->
+                <div class="bingdingB" style="display: none">
+                    <div class="bingdingC">
+                        <h5>选择绑定用户方式</h5>
+                        <p class="bingdingclose" title="关闭"><img
+                                src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                                onclick="bindWay_close()"/></p>
+                    </div>
+                    <div class="bingdingD">
+                        <ul>
+                            <li><img
+                                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/mobile_icon.png"
+                                    onclick="showMobileBindPop();"><i style="color:#ffae00">手机</i></li>
+                            <li style="display: none"><img
+                                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/qq_icon.png"
+                                    onclick="qqAuthorization();"><i style="color:#60acec">QQ</i></li>
+                            <li><img
+                                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/weibo_icon.png"
+                                    onclick="sinaAuthorizationBing();"><i style="color:#e7675c">微博</i></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--绑定成功-->
+                <div class="bdcg" style="display: none"><a href="#">绑定成功</a></div>
+
+            </div>
+
+
+            <div class="loading-smallsina">
+                <div class="smallsina-icon">
+                    <img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/small_sina_icon.jpg" alt="">
+                    <span class="smallsina-prompt">正在努力加载中...</span>
+                </div>
+                <strong>【玩家交流群】: 182321886</strong>
+            </div>
+        </div>
+
+
+        <!--TODO 还没加第二加载样式-->
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<script type='text/javascript' src='dist/js/zepto.min.js'></script>-->
+<script src="http://auv2.game.weibo.cn/auv/api/server/platform/js/jquery_1.7.2.min.js"></script>
+
+<script>var Zepto = jQuery</script>
+<script type='text/javascript' src='dist/js/sm.js' charset='utf-8'></script>
+<script type='text/javascript' src='dist/js/sm-extend.min.js' charset='utf-8'></script>
+
+
+<script src="http://auv2.game.weibo.cn/auv/api/server/platform/js/v1_0_8/sinah5websdk.js"></script>
+<script src="http://auv2.game.weibo.cn/auv/api/server/platform/js/v1_0_8/sinah5websdk_login.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" async="async"></script>
+
+
+
+</body>
+</html>

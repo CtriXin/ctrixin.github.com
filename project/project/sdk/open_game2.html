@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="format-detection" content="telephone=no, address=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta property="desc" content="<?php echo $game_desc;?>"/>
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta class="buttons" content="<?php echo $buttons?>">
+    <meta class="red_buttons" content="<?php echo $red_buttons?>">
+    <meta class="loading_style" content="<?php echo $loading_style?>">
+    <meta class="login_style" content="<?php echo $login_style?>">
+    <title><?php echo $game_name;?></title>
+    <link rel="stylesheet" type="text/css"
+          href="http://auv2.game.weibo.cn/auv/api/server/platform/css/v1_0_5/game_index.css">
+
+    <link rel="stylesheet" href="css/images.css">
+    <!--<link rel="apple-touch-icon" href="<?php echo $game_icon;?>" />-->
+
+    <!--<script>-->
+    <!--var _hmt = _hmt || [];-->
+    <!--(function() {-->
+    <!--var hm = document.createElement("script");-->
+    <!--hm.src = "//hm.baidu.com/hm.js?9de8af480946f95e5f4a6e687496a053";-->
+    <!--var s = document.getElementsByTagName("script")[0];-->
+    <!--s.parentNode.insertBefore(hm, s);-->
+    <!--})();-->
+    <!--</script>-->
+</head>
+<body>
+
+<!-- 横竖屏提示 -->
+<div class="screen-prompt" style="display: none">
+    <div class="screen-up">
+        <img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/screen_prompt_icon.png" alt="">
+    </div>
+    <div class="screen-down">
+        <img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/screen_prompt.png" alt="">
+        <strong>请使用竖屏进行游戏</strong>
+    </div>
+</div>
+
+<!-- 加载界面 -->
+<div class="wrap">
+    <div class="loading-smallsina" style="display: none;">
+        <div class="smallsina-icon"><img
+                src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/small_sina_icon.jpg" alt=""> <span
+                class="smallsina-prompt">正在努力加载中...</span>
+        </div>
+        <strong>【玩家交流群】: 182321886</strong>
+    </div>
+
+    <!--加载方式2-白色背景-游戏图标-游戏名称样式-->
+    <div class="loading-wd" style="display: none;">
+        <div class="game-box">
+            <!--如果页面为正式地址则开启此条信息-->
+            <img src="<?php echo $game_icon;?>" id="game-logo" class="game-logo" alt="">
+            <strong><?php echo $game_name;?></strong>
+            <!-- 测试时使用的替换位置-->
+            <!--<img src="images/gamelogo.png" id="game-logo" class="game-logo" alt=""> <strong>游戏名称XXX游戏</strong> -->
+            <span id="wachat-prompt" style="display: none; font-size: 13px;font-weight: normal;color: cornflowerblue">正在为您请求授权,请稍后</span>
+            <div class="loading-bor"><em style="width:0%;"></em><strong class="wd-prompt">加载中...</strong></div>
+        </div>
+        <div class="sina-game"><img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/sinagame.png"
+                                    alt=""></div>
+    </div>
+
+</div>
+
+<!-- 浮球 -->
+<div id="sider_menu" class="sider_menu sider_right" style="top:8rem;right:0;display: none">
+    <ul class="ui_li">
+        <li class="m1" onClick="clicn(1)">
+            <img class="scrollLoading  m11" id=1  data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m1.png"  src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/n2.png" alt="" title="">
+            <span class="tab-red-point" id="m1-red"></span>
+        </li>
+        <!--更多-->
+        <li class="m2" onClick="clicn(2)">
+            <img class="scrollLoading  m12" id=2  data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m2.png"  src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/n2.png" alt="" title="">
+            <span class="tab-red-point" id="m2-red"></span>
+        </li>
+        <!--关注公众号-->
+        <li class="m3" onClick="clicn(3)">
+            <img class="scrollLoading  m13" id=3  data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m3.png"  src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/n2.png" alt="" title="">
+            <span class="tab-red-point" id="m3-red"></span>
+        </li>
+        <!--存桌面-->
+        <li class="m4" onClick="clicn(4)">
+            <img class="scrollLoading  m14" id=4  data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m4.png"  src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/n2.png" alt="" title="">
+            <span class="tab-red-point" id="m4-red"></span>
+        </li>
+        <!--领福利-->
+        <li class="m5" onClick="clicn(5)">
+            <img class="scrollLoading  m15" id=5  data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m5.png"  src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/n2.png" alt="" title="">
+            <span class="tab-red-point" id="m5-red"></span>
+        </li>
+        <!--攻略-->
+        <li class="m6" onClick="clicn(6)">
+            <img class="scrollLoading  m16" id=6  data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m6.png"  src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/n2.png" alt="" title="">
+            <span class="tab-red-point" id="m6-red"></span>
+        </li>
+        <!--分享-->
+        <li class="m7" onClick="clicn(7)">
+            <!--<img class="scrollLoading  m17" id=7  data-url="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/m7.png"  src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/n2.png" alt="" title="">-->
+            <span class="tab-red-point" id="m7-red"></span>
+            <i class="icon sprite-images-icon02"></i>
+            <!--<img src="css/images.png" alt="">-->
+        </li>
+        <!--绑定-->
+    </ul>
+
+    <!--浮球本体-->
+    <i class="menu_btn" id="menu_btn"><span class="menu-red-point" id="menu-red"/></i>
+</div>
+
+
+<!-- 登录框 -->
+<div class="login-mode" style="display: none;">
+    <div class="login-mode-back"></div>
+    <div class="login-mode-content" style="display: none">
+        <div class="login-mode-contbox">
+            <strong>请选择登录方式</strong>
+            <ul>
+                <li class="login_li_user"><img
+                        src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/tourist_icon.png"
+                        onclick="createTourist();" alt=""><i>立即试玩</i></li>
+                <li class="login_li_wb"><img
+                        src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/weibo_icon.png"
+                        onclick="sinaAuthorization();" alt=""><i>新浪微博</i></li>
+                <li class="login_li_qq"><img
+                        src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/qq_icon.png"
+                        onclick="qqAuthorization();" alt=""><i>QQ登录</i></li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- 16.4.22 合并UED -->
+    <div class="login-mode-content-new" style="display: block">
+        <div class="login-mode-contbox-new">
+            <strong>选择登录方式</strong>
+            <ul>
+                <li class="login_li_user_new"><img id="login_icon_mobile"
+                                                   src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/mobile_icon.png"><i
+                        style="color:#ffae00">手机</i></li>
+                <li class="login_li_qq_new"><img id="login_icon_qq"
+                                                 src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/qq_icon.png"><i
+                        style="color:#60acec">QQ</i></li>
+                <li class="login_li_wb_new"><img id="login_icon_sina"
+                                                 src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/weibo_icon.png"><i
+                        style="color:#e7675c">微博</i></li>
+            </ul>
+            <div class="prompt"><i><img
+                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/icon_prompt.png"/></i>
+                <p>“游客”可能无法保存角色</p><a onclick="createTourist();">游客试玩</a></div>
+        </div>
+        <div class="shiwan"><a id="loginTimer" onclick="createTourist();">立即试玩(10s)</a></div>
+
+    </div>
+</div>
+<!-- 新版手机号登录 -->
+<div class="login_Photo" style="display:none;">
+    <!--黑色背景-->
+    <div class="login_Photo_Black" style="display: none"></div>
+    <!--输入框整体-->
+    <div class="login_Photo_contbox" style="display: none">
+        <div class="loginbox">
+            <div class="surfaceA">
+                <h5>手机号用户登录</h5>
+                <p id="registerUse" onclick="showMobileRegisterPop()">注册新用户</p>
+            </div>
+            <div class="surfaceB">
+                <div class="lfm">
+                    <input type="number" autocomplete="off" name="username_Ww_k" id="username_Ww_k"
+                           placeholder="请输入您的手机号码" onclick="photoUseEvent();">
+                </div>
+                <div class="lfm">
+                    <input type="password" name="password_Ww_k" value="" id="password_Ww_k" placeholder="请输入账号密码"
+                           onclick="photoPwdEvent();">
+                </div>
+            </div>
+            <div class="hint" style="display: none"><i><img
+                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/icon0.png"/></i>手机号或密码输入错误
+            </div>
+            <div class="wjmm"><a onclick="showMobileResetPwd()">忘记密码？</a></div>
+
+            <div class="loginBtn" id="loginBtn">登录</div>
+            <div class="exitBtn" id="exitBtn">退出</div>
+        </div>
+    </div>
+    <!--注册成功-->
+    <div class="zccg" style="display: none"><a href="#">恭喜注册成功</a></div>
+    <!--手机号注册-->
+    <div class="register_Photo_contbox" id="register_use" style="display: none">
+        <div class="loginbox">
+            <div class="surfaceA">
+                <h5>手机号注册</h5>
+                <p class="close" title="关闭"><img
+                        src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                        onclick="register_close()"/></p>
+            </div>
+            <div class="surfaceB">
+                <div class="lfm">
+                    <input type="number" autocomplete="off" name="register_Num" id="register_Num"
+                           placeholder="请输入您的手机号码" onclick="register_num();">
+                </div>
+                <div class="yzmbox">
+                    <div class="yzm">
+                        <input type="text" name="register_Pwd" value="" id="register_Pwd" placeholder="请输入验证码"
+                               onclick="register_Pwd();">
+                    </div>
+                    <button class="hqyzm" id="register_sendCode" value="获取验证码" onclick="register_Sendcode(this)">获取验证码
+                    </button>
+
+                </div>
+            </div>
+            <div class="registerBtn" id="registerBtn" onclick="clickCreateMobilePlayer();"> 立即注册</div>
+        </div>
+    </div>
+    <!--找回密码 1-->
+    <div class="register_Photo_contbox" id="find_pwd" style="display: none;">
+        <div class="loginbox">
+            <div class="surfaceA">
+                <h5>找回密码</h5>
+                <p class="close" title="关闭"><img
+                        src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                        id="findPwd_close" onclick="closeFind()"/></p>
+            </div>
+            <div class="surfaceB">
+                <div class="lfm">
+                    <input type="number" autocomplete="off" name="findPwd_Num" id="findPwd_Num" placeholder="请输入您的手机号码"
+                           onclick="findPwd_num();">
+                </div>
+                <div class="yzmbox">
+                    <div class="yzm">
+                        <input type="text" name="findPwd_Pwd" value="" id="findPwd_Pwd" placeholder="请输入验证码"
+                               onclick="findPwd_Pwd();">
+                    </div>
+                    <button class="hqyzm" id="findPwd_sendCode" value="获取验证码" onclick="findPwd_code(this)">获取验证码
+                    </button>
+                </div>
+            </div>
+            <div class="registerBtn" id="find_next" onclick="chickResetPwdNext();"> 下一步</div>
+        </div>
+    </div>
+    <!--设置新密码-->
+    <div class="setNewPwd_contbox" style="display: none;">
+        <div class="loginbox">
+            <div class="surfaceA">
+                <h5>设置新密码</h5>
+                <p class="close" title="关闭"><img
+                        src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                        onclick="setNewPwd_close()"></p>
+            </div>
+            <div class="surfaceC">
+                <div class="lfm">
+                    <input type="text" autocomplete="off" name="setNewPwd_pwd" id="setNewPwd_pwd" placeholder="请输入新密码"
+                           onclick="setNewPwd_pwd();">
+                </div>
+            </div>
+            <div class="registerBtn" id="setNewPwd_true" onclick="clickResetPwdSure();">确定</div>
+        </div>
+    </div>
+    <!--支付警告-->
+    <div class="payWarn_contbox" style="display: none">
+        <div class="loginbox">
+            <div class="surfaceA">
+                <h5>支付警示信息</h5>
+                <p class="close" title="关闭"><img
+                        src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                        onclick="payWarn_close()"></p>
+            </div>
+            <div class="surfaceD">
+                <i><img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/icon01.png"></i>
+                <p>您当前为<span>游客身份</span>还没有绑定用户，如果
+                    不绑定用户可能会导致您的玩家信息丢失
+                    平台</p>
+            </div>
+            <div class="loginBtn" onclick="showSeleBindingPop();" id="payWarn_nowBind">立即绑定</div>
+            <div class="exitBtn" onclick="PlaceAnOrder(sinaWebSdk.data.payData);" id="payWarn_nowPay">老子有钱直接支付</div>
+        </div>
+    </div>
+
+    <!--手机绑定页面-->
+    <div class="register_Photo_contbox" id="bindPhone" style="display: none;">
+        <div class="loginbox">
+            <div class="surfaceA">
+                <h5>手机号绑定</h5>
+                <p class="close" title="关闭"><img
+                        src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                        onclick="bindPhone_close()"></p>
+            </div>
+            <div class="surfaceB">
+                <div class="lfm">
+                    <input type="number" autocomplete="off" name="bindPhone_info" id="bindPhone_info"
+                           placeholder="请输入您的手机号码" onclick="bindPhone_info();">
+                </div>
+                <div class="yzmbox">
+                    <div class="yzm">
+                        <input type="text" name="bindPhone_code" value="" id="bindPhone_code" placeholder="请输入验证码"
+                               onclick="bindPhone_infoCode();">
+                    </div>
+                    <button class="hqyzm" id="bindPhone_sendCode" value="获取验证码" onclick="bindPhone_code(this)">获取验证码
+                    </button>
+                </div>
+            </div>
+            <div class="loginBtn" id="bindPhoneBtn" onclick="clickMobileBind();"> 立即绑定</div>
+        </div>
+    </div>
+
+    <!--手机号绑定错误-->
+    <div class="bingding_Photo_contbox" id="bindError" style="display: none">
+        <div class="loginbox">
+            <div class="surfaceA">
+                <h5>手机绑定错误</h5>
+                <p class="close" title="关闭"><img
+                        src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                        onclick="bindError_close()"></p>
+            </div>
+            <div class="surfaceD">
+                <i><img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/icon02.png"></i>
+                <p>系统检测到该手机号已经绑定过小浪游戏
+                    平台</p>
+            </div>
+            <div class="loginBtn" id="exchangePhoneBtn" onclick="clickChangeMobileBing();">换个手机号绑定</div>
+            <div class="exitBtn" id="exchangeWay" onclick="clickChangeBing();">选择其他方式绑定</div>
+        </div>
+    </div>
+
+    <!--绑定方式-->
+    <div class="bingdingB" style="display: none">
+        <div class="bingdingC">
+            <h5>选择绑定用户方式</h5>
+            <p class="bingdingclose" title="关闭"><img
+                    src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/close.png"
+                    onclick="bindWay_close()"/></p>
+        </div>
+        <div class="bingdingD">
+            <ul>
+                <li><img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/mobile_icon.png"
+                         onclick="showMobileBindPop();"><i style="color:#ffae00">手机</i></li>
+                <li style="display: none"><img
+                        src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/qq_icon.png"
+                        onclick="qqAuthorization();"><i style="color:#60acec">QQ</i></li>
+                <li><img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/weibo_icon.png"
+                         onclick="sinaAuthorizationBing();"><i style="color:#e7675c">微博</i></li>
+            </ul>
+        </div>
+    </div>
+    <!--绑定成功-->
+    <div class="bdcg" style="display: none"><a href="#">绑定成功</a></div>
+
+</div>
+
+
+<!-- 分享 -->
+<div class="share-box-main" style="display: none" onclick=""></div>
+<!--微信分享-->
+<div class="share-box-wx" style="display: none"><img
+        src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/wx_share.png"
+        onclick="hideWeiXinShareDiv();" alt="">
+</div>
+<div class="share-box" style="display: none" id="share-box">
+    <div class="share-box-back"></div>
+    <div class="share-box-content">
+        <div class="share-box-contbox">
+            <strong id="share-cancel" class="share-cancel">取消</strong>
+
+            <div class="clear"></div>
+            <ul>
+                <!--
+                <li><img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/weixin.png" alt=""><i>微信</i></li>
+                <li><img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/pengyouquan.png" alt=""><i>朋友圈</i></li>
+            -->
+                <li><img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/weibo.png"
+                         id="weibo-share" onclick="weiboShare()"
+                         alt=""><i>新浪微博</i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 添加到主屏幕     -->
+<div class="add-home" style="display: none">
+    <div class="window-box">
+        <p href="" id="return-btn" class="return-btn"><em class="arrow-inner"></em>返回</p>
+
+        <div class="add-home-logo">
+            <img src="<?php echo $game_icon;?>" alt="">
+            <strong><?php echo $game_name;?></strong>
+        </div>
+        <!--其他浏览器添加到主屏幕页面-->
+        <div id="add-home-other" class="add-home-text btns">
+            <p>添加游戏到主屏幕</p>
+
+            <p>点击<img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/home.png" class="home-btn"
+                      alt=""></p>
+
+            <p>然后选择“添加到主屏幕”</p>
+            <img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/arrow_bottom.png"
+                 class="arrow-bottom bounce" alt="">
+        </div>
+        <!--微信添加到主屏幕页面-->
+        <div id="add-home-wechat" class="add-home-text-wx btns">
+            <p>添加游戏到主屏幕</p>
+
+            <p>点击右上角<img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/wx_more.png"
+                         class="wx_more-btn" alt=""></p>
+
+            <p>选择"在Safari中打开"</p>
+
+            <p>点击<img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/home.png" class="wx_home-btn"
+                      alt=""></p>
+
+            <p>然后选择“添加到主屏幕”</p>
+        </div>
+        <!--360极速 / 360浏览器 / 搜狗搜索 / 猎豹 / 绿茶 / QQ浏览器 / 2345浏览器版存桌面-->
+        <div id="add-home-type1" class="add-home-text btns1">
+            <p>添加游戏到主屏幕</p>
+
+            <p>点击下方<img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/btn_hamburger.png"
+                        class="type1-btn" alt=""></p>
+
+            <p>选择"添加书签"或"添加收藏"</p>
+
+            <p>然后选择“添加到手机桌面”</p>
+        </div>
+        <!--遨游版存书签-->
+        <div id="add-home-type2" class="add-home-text btns2">
+            <p>添加游戏到主屏幕</p>
+
+            <p>点击地址栏右侧<img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/btn_star.png"
+                           class="type2-btn" alt=""></p>
+
+            <p>然后选择"添加到桌面"</p>
+        </div>
+        <!--谷歌浏览器存桌面-->
+        <div id="add-home-type3" class="add-home-text btns3">
+            <p>添加游戏到主屏幕</p>
+
+            <p>点击右上角<img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/btn_point.png"
+                         class="type3-btn" alt=""></p>
+
+            <p>然后选择“添加到主屏幕”</p>
+        </div>
+        <!--火狐浏览器存桌面-->
+        <div id="add-home-type4" class="add-home-text btns4">
+            <p>添加游戏到主屏幕</p>
+
+            <p>点击右上角<img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/btn_point.png"
+                         class="type4-btn" alt=""></p>
+
+            <p>选择"页面"</p>
+
+            <p>然后选择“添加到主屏幕”</p>
+        </div>
+        <!--欧朋浏览器存桌面-->
+        <div id="add-home-type5" class="add-home-text btns5">
+            <p>添加游戏到主屏幕</p>
+
+            <p>点击<img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/btn_opera.png"
+                      class="type5-btn" alt=""></p>
+
+            <p>选择"收藏"</p>
+
+            <p>然后选择“手机桌面”</p>
+        </div>
+        <!--搜狗浏览器存桌面-->
+        <div id="add-home-type6" class="add-home-text btns6">
+            <p>添加游戏到书签</p>
+
+            <p>点击下方<img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/btn_hamburger.png"
+                        class="type6-btn" alt=""></p>
+
+            <p>选择"添加收藏"</p>
+
+            <p>然后选择“添加到收藏”</p>
+        </div>
+        <!--UC浏览器存桌面-->
+        <div id="add-home-type7" class="add-home-text btns7">
+            <p>添加游戏到主屏幕</p>
+
+            <p>点击下方<img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/btn_hamburger.png"
+                        class="type7-btn" alt=""></p>
+
+            <p>选择"收藏网址"</p>
+
+            <p>然后选择“手机桌面”</p>
+        </div>
+    </div>
+</div>
+
+<!--扫描二维码-->
+<div class="add-barcode">
+    <div class="barcode-box">
+        <p onclick="hideBarcodePage()" class="return-barcode-btn"><em class="arrow-inner"></em>返回</p>
+
+        <div class="add-barcode-logo">
+            <img src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/barcode.png" alt="">
+        </div>
+        <!--其他浏览器添加到主屏幕页面-->
+        <div class="add-barcode-text btns">
+            <p>打开微信扫描上方二维码</p>
+
+            <p>关注“小浪游戏”</p>
+
+            <p>or</p>
+
+            <p>加入小浪游戏玩家交流群</p>
+
+            <p>群号:182321886</p>
+
+            <p>领超值游戏福利</p>
+        </div>
+    </div>
+</div>
+
+<!-- 遮罩层 -->
+<div id="h5-modal-overlay" style="display: none; opacity: 0;"></div>
+<div id="h5-modal-closeBtn" style="display: none; opacity: 0;"></div>
+<div id="h5-modal-prompt" style="display: none; opacity: 0;"></div>
+<div id="announcement-box" class="announcement-box" style="display: none;">
+    <p id="announcement-box-title" style="position: relative; top: 40px; font-size: 60px; color: #ff6161;"></p>
+    <hr style="position: relative; border:1px solid; top: 70px; color: #ff6161;"/>
+    <p id="announcement-content-box"
+       style="max-height: 1000px; width: 90%; margin:0 auto; text-align: center; font-size: 48px; overflow:scroll; position: relative; top: 100px;">
+    </p>
+    <img class="btn_close" id="btn_close"
+         src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/btn_close.png" alt="关闭"
+         style="position: relative; top: 140px;" onclick="sinaWebSdk.tool.hideAnnouncement()"/>
+    <img class="btn_return" id="btn_return"
+         src="http://auv2.game.weibo.cn/auv/api/server/platform/images/v1_0_5/btn_return.png" alt="返回"
+         style="position: relative; top: 140px; display: none;" onclick="sinaWebSdk.tool.hidePayFailed()"/>
+</div>
+
+<!-- 游戏界面 iframe -->
+<iframe src="" frameborder="no" scrolling="no" id="game-iframe" class="game-iframe" name="gameframe"></iframe>
+
+
+
+
+
+
+
+
+
+<script src="http://auv2.game.weibo.cn/auv/api/server/platform/js/jquery_1.7.2.min.js"></script>
+<script src="http://auv2.game.weibo.cn/auv/api/server/platform/js/v1_0_8/sinah5websdk.js"></script>
+<script src="http://auv2.game.weibo.cn/auv/api/server/platform/js/v1_0_8/sinah5websdk_login.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" async="async"></script>
+<script type='text/javascript'>
+
+    function loading(percent) {
+        $('.loading-bor').children('em').animate({width: percent}, 1000, function () {
+            if (percent == '100%') {
+                console.log('end')
+            }
+        });
+    }
+</script>
+<!-手机登录页面代码-->
+<script>
+
+    /*手机号登录页面 注册新用户按钮*/
+    var registerUse = $("#registerUse");
+    registerUse[0].addEventListener("touchend", photoEvent, false);
+
+    /*手机号登录页面 登录按钮*/
+    var loginBtn = $(".loginBtn");
+    loginBtn[0].addEventListener("touchstart", photoEvent, false);
+    loginBtn[0].addEventListener("touchmove", photoEvent, false);
+    loginBtn[0].addEventListener("touchend", photoEvent, false);
+
+    /*手机号登录页面 退出按钮*/
+    var exitBtn = $(".exitBtn");
+    exitBtn[0].addEventListener("touchstart", photoEvent, false);
+    exitBtn[0].addEventListener("touchmove", photoEvent, false);
+    exitBtn[0].addEventListener("touchend", photoEvent, false);
+
+    /*手机号注册页面 注册按钮*/
+    var registerBtn = $("#registerBtn");
+    registerBtn[0].addEventListener("touchstart", photoEvent, false);
+    registerBtn[0].addEventListener("touchmove", photoEvent, false);
+    registerBtn[0].addEventListener("touchend", photoEvent, false);
+
+    /*找回密码页面 下一步按钮*/
+    var find_next = $("#find_next");
+    find_next[0].addEventListener("touchstart", photoEvent, false);
+    find_next[0].addEventListener("touchmove", photoEvent, false);
+    find_next[0].addEventListener("touchend", photoEvent, false);
+
+    /*设置新密码 确定按钮*/
+    var setNewPwd_true = $("#setNewPwd_true");
+    setNewPwd_true[0].addEventListener("touchstart", photoEvent, false);
+    setNewPwd_true[0].addEventListener("touchmove", photoEvent, false);
+    setNewPwd_true[0].addEventListener("touchend", photoEvent, false);
+
+    /* 登录点击事件 */
+    $('#login_icon_mobile')[0].addEventListener("touchend", photoEvent, false);
+    $('#login_icon_qq')[0].addEventListener("touchend", photoEvent, false);
+    $('#login_icon_sina')[0].addEventListener("touchend", photoEvent, false);
+
+    function photoEvent(evt) {
+        PhotoLoginEvent(evt);
+    }
+    /*忘记密码事件处理*/
+    function forgetPwd() {
+        alert("forgetPwd");
+
+    }
+    /*手机号输入事件*/
+    function photoUseEvent() {
+        $('.hint').hide();
+    }
+    /*密码输入事件*/
+    function photoPwdEvent() {
+        $('.hint').hide();
+    }
+    /*手机号注册 手机号输入事件*/
+    function register_num(a) {
+
+    }
+    /*手机号注册 验证码输入事件*/
+    function register_Pwd() {
+
+    }
+    /*手机号注册 发送手机验证码事件*/
+    var countdown = 60;
+    var isregister_touch = false;
+    function register_Sendcode(val) {
+        if (isregister_touch == false) {
+            clickSendMobileCaptcha("register_Num");
+            isregister_touch = true;
+        }
+        if (countdown == 0) {
+            val.disabled = false;
+            val.innerText = "获取验证码";
+            val.style.background = "#ff6161";
+            countdown = 60;
+            isregister_touch = false;
+            return;
+        } else {
+
+            val.disabled = true;
+            val.style.background = "#a5c6ea";
+            val.innerText = "重新发送(" + countdown + ")";
+            countdown--;
+        }
+        setTimeout(function () {
+            register_Sendcode(val)
+        }, 1000)
+    }
+    /*手机号注册 关闭页面*/
+    function register_close() {
+        $('.login_Photo_Black').hide();
+        $('.login_Photo').hide();
+        $('#register_use').hide();
+    }
+    /*找回密码 手机号输入事件*/
+    function findPwd_num() {
+
+    }
+    /*找回密码 验证码输入事件*/
+    function findPwd_Pwd() {
+
+    }
+    /*找回密码 关闭按钮事件*/
+    function closeFind() {
+        $('.login_Photo_Black').hide();
+        $('.login_Photo').hide();
+        $('#find_pwd').hide();
+    }
+    /*找回密码 获取验证码按钮事件*/
+    var find_countdown = 60;
+    var isfind_touch = false;
+    function findPwd_code(val) {
+        if (isfind_touch == false) {
+            clickSendMobileCaptcha("findPwd_Num");
+            isfind_touch = true;
+        }
+        if (find_countdown == 0) {
+            val.disabled = false;
+            val.innerText = "获取验证码";
+            val.style.background = "#ff6161";
+            find_countdown = 60;
+            isfind_touch = false;
+            return;
+        } else {
+            val.disabled = true;
+            val.style.background = "#a5c6ea";
+            val.innerText = "重新发送(" + countdown + ")";
+            find_countdown--;
+        }
+        setTimeout(function () {
+            findPwd_code(val);
+        }, 1000)
+    }
+    /*设置新密码 密码输入事件*/
+    function setNewPwd_pwd() {
+    }
+    /*设置新密码 关闭按钮*/
+    function setNewPwd_close() {
+        $('.login_Photo_Black').hide();
+        $('.login_Photo').hide();
+        $('.setNewPwd_contbox').hide();
+    }
+
+    /*支付警告 关闭按钮*/
+    function payWarn_close() {
+        $('.login_Photo_Black').hide();
+        $('.login_Photo').hide();
+        $('.payWarn_contbox').hide();
+    }
+    /*手机绑定 关闭按钮*/
+    function bindPhone_close() {
+        $('.login_Photo_Black').hide();
+        $('.login_Photo').hide();
+        $('.register_Photo_contbox').hide();
+    }
+    /*手机绑定 手机号输入事件*/
+    function bindPhone_info() {
+
+    }
+    /*手机绑定 验证码输入事件*/
+    function bindPhone_infoCode() {
+
+    }
+    /*手机绑定 验证码发送事件*/
+    var bindPhone_countdown = 60;
+    var isBindPhone = false;
+    function bindPhone_code(val) {
+        if (isBindPhone == false) {
+            clickSendMobileCaptcha("bindPhone_info");
+            isBindPhone = true;
+        }
+        if (bindPhone_countdown == 0) {
+            val.disabled = false;
+            val.innerText = "获取验证码";
+            val.style.background = "#ff6161";
+            bindPhone_countdown = 60;
+            isBindPhone = false;
+            return;
+        } else {
+            val.disabled = true;
+            val.style.background = "#a5c6ea";
+            val.innerText = "重新发送(" + bindPhone_countdown + ")";
+            bindPhone_countdown--;
+        }
+        setTimeout(function () {
+            bindPhone_code(val)
+        }, 1000)
+    }
+    /*手机号绑定错误页面 关闭按钮*/
+    function bindError_close() {
+        $('.login_Photo_Black').hide();
+        $('.login_Photo').hide();
+        $('#bindError').hide();
+    }
+    /*绑定方式页面 关闭按钮*/
+    function bindWay_close() {
+        $('.login_Photo_Black').hide();
+        $('.login_Photo').hide();
+        $('.bingdingB').hide();
+    }
+
+
+</script>
+
+<!--异步代码-->
+<script>
+    jQuery.getScript("http://auv2.game.weibo.cn/auv/api/server/platform/js/jquery.scrollLoading.js")
+            .done(function () {
+                /* 耶，没有问题，这里可以干点什么 */
+                //滚动异步加载图片
+                var ani_index = 0;
+                var ani_target = [".", "..", "..."];
+                $(document).ready(function () {
+                    setInterval(function () {
+                        ani_index++;
+                        ani_index = ani_index % 3;
+                        $('.smallsina-prompt').html("正在努力加载中" + ani_target[ani_index]);
+                    }, 150);
+                });
+                $(".scrollLoading").scrollLoading();
+                jQuery.getScript("http://auv2.game.weibo.cn/auv/api/server/platform/js/jquery-ui.min.js")
+                        .done(function () {
+                            /* 耶，没有问题，这里可以干点什么 */
+                            console.log("Current window width: " + document.body.offsetWidth);
+                            var currentRatio = document.body.offsetWidth / 1080;
+                            console.log("Current ratio: " + currentRatio);
+                            document.getElementById("announcement-box").style.zoom = currentRatio;
+                            if (sinaWebSdk.tool.getEnvironment() == "sina") {
+                                var currentUA = navigator.userAgent;
+                                if (currentUA.indexOf("iPhone") != -1 || currentUA.indexOf("iphone") != -1) {
+                                    document.getElementById("announcement-box-title").style.fontSize = (60 * currentRatio) + "px";
+                                    document.getElementById("announcement-content-box").style.fontSize = (48 * currentRatio) + "px";
+                                }
+                            }
+
+                            document.getElementById("add-home-other").style.fontSize = (48 * currentRatio) + "px";
+
+                            document.getElementById("add-home-type7").style.fontSize = (48 * currentRatio) + "px";
+
+                            document.getElementById("add-home-type6").style.fontSize = (48 * currentRatio) + "px";
+
+                            document.getElementById("add-home-type5").style.fontSize = (48 * currentRatio) + "px";
+
+                            document.getElementById("add-home-type4").style.fontSize = (48 * currentRatio) + "px";
+
+                            document.getElementById("add-home-type3").style.fontSize = (48 * currentRatio) + "px";
+
+                            document.getElementById("add-home-type2").style.fontSize = (48 * currentRatio) + "px";
+
+                            document.getElementById("add-home-type1").style.fontSize = (48 * currentRatio) + "px";
+                            document.getElementById("announcement-box").style.height = document.getElementById("announcement-box").offsetHeight + document.getElementById("announcement-content-box").offsetHeight + "px";
+                            document.getElementById("btn_return").style.bottom = document.getElementById("btn_return").offsetHeight + "px";
+                            $("#announcement-box").hide();
+
+                            showPayFailed = function (payFailedText) {
+                                $("#btn_close").hide();
+                                $("#btn_return").show();
+                                $("#announcement-box").show();
+                                document.getElementById("announcement-box").style.height = "370px";
+                                document.getElementById("announcement-box-title").innerHTML = sinaWebSdk.data.payFailedTitle;
+                                document.getElementById("announcement-content-box").innerHTML = payFailedText;
+                                document.getElementById("announcement-box").style.height = document.getElementById("announcement-box").offsetHeight + document.getElementById("announcement-content-box").offsetHeight + "px";
+                            };
+                            jQuery.getScript("http://auv2.game.weibo.cn/auv/api/server/platform/js/CFInstall.min.js")
+                                    .done(function () {
+                                        /* 耶，没有问题，这里可以干点什么 */
+                                        /* 获取用户信息 */
+                                        pay = function (data) {
+                                            sinaWebSdk.data.payData = data;
+                                            //判断游客
+                                            if (sinaWebSdk.data.userInfo.userName == "visitor") {
+                                                //显示浮球状态
+                                                $('.login_Photo_Black').show();
+                                                $('.login_Photo').show();
+                                                $('.payWarn_contbox').show();
+                                            } else {
+                                                PlaceAnOrder(sinaWebSdk.data.payData);
+                                            }
+                                        };
+                                        /* 跨域传送数据 */
+                                        window.addEventListener('message', function (e) {
+                                            try {
+                                                var jsObj = JSON.parse(e.data);
+                                                if (jsObj.type == "pay") {
+                                                    pay(jsObj);
+                                                }
+                                            } catch (e) {
+
+                                            }
+                                        }, false);
+
+                                        /* 监测横竖屏 */
+                                        window.addEventListener("orientationchange", function () {
+                                            // 宣布新方向的数值
+                                            if (Math.abs(window.orientation) == 90) {
+                                                //横屏
+                                                if (sinaWebSdk.data.playGameType == "1") {
+                                                    $('.screen-prompt').show();
+                                                    document.getElementById("h5-modal-prompt").style.display = "block";
+                                                }
+
+                                            } else {
+                                                //竖屏
+                                                $('.screen-prompt').hide();
+                                                document.getElementById("h5-modal-prompt").style.display = "none";
+                                            }
+
+                                            document.getElementById("game-iframe").style.width = window.screen.availWidth + "px";
+                                            document.getElementById("game-iframe").style.height = (document.body.scrollHeight - document.body.scrollTop) + "px";
+                                        }, false);
+                                        jQuery.getScript("http://auv2.game.weibo.cn/auv/api/server/platform/js/ext-core.js")
+                                                .done(function () {
+                                                    /* 耶，没有问题，这里可以干点什么 */
+                                                    //滚动异步加载图片
+                                                    jQuery.getScript("http://auv2.game.weibo.cn/auv/api/server/platform/js/mootools-yui-compressed.js")
+                                                            .done(function () {
+                                                                /* 耶，没有问题，这里可以干点什么 */
+                                                                //滚动异步加载图片
+                                                                jQuery.getScript("http://auv2.game.weibo.cn/auv/api/server/platform/js/dojo.xd.js")
+                                                                        .done(function () {
+                                                                            /* 耶，没有问题，这里可以干点什么 */
+                                                                            //滚动异步加载图片
+                                                                            var oDrag = $(".sider_menu");
+                                                                            oDrag[0].addEventListener('touchstart', div_touches, false);
+                                                                            oDrag[0].addEventListener('touchmove', div_touches, false);
+                                                                            oDrag[0].addEventListener('touchend', div_touches, false);
+                                                                            loadOver();
+
+
+                                                                        })
+                                                                        .fail(function () {
+                                                                            console.log('js加载出错了');
+                                                                        });
+                                                            })
+                                                            .fail(function () {
+                                                                console.log('js加载出错了');
+                                                            });
+                                                })
+                                                .fail(function () {
+                                                    console.log('js加载出错了');
+                                                });
+                                    })
+                                    .fail(function () {
+                                        console.log('js加载出错了');
+                                    });
+                        })
+                        .fail(function () {
+                            console.log('js加载出错了');
+                        });
+            })
+            .fail(function () {
+                console.log('js加载出错了');
+            });
+</script>
+
+
+
+
+<!--浮球脚本部分内容-->
+<script>
+    var oDrag = $(".sider_menu");
+    var winWidth = 0;
+    var moveX, moveY;
+    var isOpen = false;      // true 不用执行  false执行移动
+    var is_redPoint_display = false; //最外层小红点是否显示
+
+    var array_ui_li_btn_redPoint = ["more", "attention", "desktop"];//内层小红点数组
+    var array_ui_li_btn = ["more", "attention", "desktop"]; //内层显示数组
+
+    var url_more = "http://auv.game.weibo.cn/auv/api/server/platform/index.php/WxGame/";//跳转地址
+    var url_base_more = "http://auv.game.weibo.cn/auv/api/server/platform/index.php/WxGame/";//默认跳转地址
+
+    var loginInitNum = ["sina", "QQ", "visitor"]; //一共的登录模式
+
+    var check_loadingstate = 2;//1.红色默认，2.白色,   其他.均为红色默认
+    var array_login_modestate = {"weixin": "", "sina": "", "other": ["visitor", "sina", "QQ"]};//登陆方式(默认)
+
+
+    $('document').ready(function () {
+                var buttonsInfo = $(".buttons")[0].getAttribute("content").split("_");
+
+                if (buttonsInfo.length != 0) {
+                    array_ui_li_btn = buttonsInfo;
+                }
+                // alert(aaa[0].getAttribute("content").split("_"));
+
+                var loading_style = $(".loading_style")[0].getAttribute("content");
+                if (loading_style.length != 0) {
+                    check_loadingstate = loading_style;
+                }
+
+
+                var red_buttons = $(".red_buttons")[0].getAttribute("content").split("_");
+                if (red_buttons.length != 0) {
+                    array_ui_li_btn_redPoint = red_buttons;
+                }
+
+                var login_style = $(".login_style")[0].getAttribute("content").split("_");
+
+                if (login_style.length != 0) {
+                    array_login_modestate = login_style;
+                }
+
+
+                var obj_share_cancel = document.getElementById("share-cancel");
+                var obj_save_return_btn = document.getElementById("return-btn");
+
+                var closeBtnLayer = document.getElementById("h5-modal-closeBtn");
+                var blackTouch = document.getElementsByClassName("share-box-main")[0];
+
+                closeBtnLayer.addEventListener("touchend", div_touches, false);
+                obj_share_cancel.addEventListener('touchend', div_touches, false);
+                obj_save_return_btn.addEventListener('touchend', div_touches, false);
+                blackTouch.addEventListener('touchend', div_touches, false);
+
+                receive_ui_btn(array_ui_li_btn);
+                receive_ui_li_redPoint(array_ui_li_btn_redPoint);
+                check_menu_btn_redPoint();
+                check_loadingstyle(check_loadingstate);
+                check_login_mode(array_login_modestate);
+            }
+    );
+    //触摸开始
+    var winWidth = null;
+    var winHeight = null;
+    var posX = null;
+    var posY = null;
+    var curX = null;
+    var curY = null;
+    var menuPos = 1;
+
+
+    function clicn(i) {
+        click_float_btn(i);
+        check_menu_btn_redPoint();
+
+    }
+
+    function div_touches(ev) {
+        switch (ev.type) {
+            case "touchstart":
+                var evt = ev.changedTouches[0];
+                curX = evt.pageX;
+                curY = evt.pageY;
+                posX = curX - oDrag.position().left;
+                posY = curY - oDrag.position().top;
+                winWidth = $(window).width();
+                winHeight = $(window).height();
+                menuPos = 1;
+                break;
+            case "touchmove":
+                var evt = ev.changedTouches[0];
+                menuPos = 0;
+
+                if (!isOpen) {
+                    moveX = evt.pageX - posX;
+                    moveY = evt.pageY - posY;
+
+                    if (moveX < 0) {
+                        moveX = 0;
+                    }
+                    if (moveX > winWidth - oDrag.width()) {
+                        moveX = winWidth - oDrag.width();
+                    }
+                    if (moveY < 0) {
+                        moveY = 0;
+                    }
+                    if (moveY > winHeight - oDrag.height()) {
+                        moveY = winHeight - oDrag.height();
+                    }
+
+                    oDrag.attr('style', '');
+                    oDrag.css({'left': moveX, 'top': moveY});
+                }
+                ev.preventDefault();
+                ev.stopPropagation();
+                break;
+            case "touchend":
+                var evt = ev.changedTouches[0];
+
+                var closeBtnLayer = document.getElementById("h5-modal-closeBtn");
+                var boxshare1 = document.getElementsByClassName("share-box")[0];
+
+
+                /*检测点击是item 还是外面大按钮*/
+                if (evt.target.className.indexOf("m1") != -1) {
+                    clicn(parseInt(evt.target.id));
+                }
+
+                if (evt.target.className.indexOf("share-box-main") != -1) {
+                    hideWeiXinShareDiv();
+                }
+
+                if (ev.target.id == "h5-modal-closeBtn" && (boxshare1.style.display == "none" || boxshare1.style.display == "")) {
+                    closeBtnLayer.style.display = "none";
+                    if ($(".sider_menu").hasClass('on')) {
+                        $(".sider_menu").removeClass('on');
+                        isOpen = false;
+                    }
+                }
+                if (ev.target.id == "menu_btn" || ev.target.id == "1" || ev.target.id == "2" || ev.target.id == "3" || ev.target.id == "4" || ev.target.id == "5" || ev.target.id == "6" || ev.target.id == "7") {
+                    if (menuPos == 1) {
+                        if ($(this).hasClass('on')) {
+                            $(this).removeClass('on');
+                            closeBtnLayer.style.display = "none";
+                            isOpen = false;
+                        }
+                        else {
+                            $(this).addClass('on');
+                            closeBtnLayer.style.display = "block";
+                            isOpen = true;
+                        }
+                    }
+                }
+                if (!isOpen) {
+                    endFn();
+                }
+
+                /*处理分享页面 和 二维码页面*/
+                if (evt.target.className.indexOf("share-cancel") != -1) {
+                    $(".share-box").hide();
+                }
+
+                if (evt.target.id.indexOf("return-btn") != -1) {
+                    $(".add-home").hide();
+                }
+
+                if (evt.target.id.indexOf("return-barcode-btn") != -1) {
+                    $(".add-barcode").hide();
+                }
+        }
+    }
+    hideBarcodePage = function () {
+        $(".add-barcode").hide();
+    };
+    //触摸结束
+    function endFn() {
+        var dragLeft = oDrag.position().left;
+        var dragTop = oDrag.position().top;
+        var dragBottom = oDrag.position().bottom;
+        var half = winWidth / 2;
+
+        if (dragLeft < half) {  // 去左边
+            oDrag.animate({left: 0}, 0).removeClass("sider_right").addClass("sider_left");
+        }
+        else {  //去右边
+            oDrag.attr('style', '');
+            oDrag.animate({top: dragTop, right: 0}, 0).removeClass("sider_left").addClass("sider_right");
+        }
+    }
+
+    //检测menu最外层小红点显示
+    function check_menu_btn_redPoint() {
+        for (var i = 1; i <= $(".ui_li li").length; i++) {
+            if (document.getElementById("m" + i + "-red").style.display == "block") {
+                is_redPoint_display = true;
+                break;
+            }
+        }
+        //如果有小红点，那么最外层就显示小红点
+        if (is_redPoint_display) {
+            document.getElementById("menu-red").style.display = "block";
+        } else {
+            document.getElementById("menu-red").style.display = "none";
+            is_redPoint_display = false;
+        }
+
+    }
+
+    //接收显示UI浮动窗口内容,用于展示li的内容都显示什么
+    function receive_ui_btn(array_ui_btn) {
+        //array_ui_btn为传递进来的显示数组
+        for (i = 0; i < array_ui_btn.length; i++) {
+            switch (array_ui_btn[i]) {
+                case "more":
+                    //因为li没有style样式，只能转化为块结构才可以
+                    document.getElementsByClassName("m1").item(0).style.display = "block";
+                    break;
+                case "attention":
+                    document.getElementsByClassName("m2").item(0).style.display = "block";
+                    break;
+                case "desktop":
+                    document.getElementsByClassName("m3").item(0).style.display = "block";
+                    break;
+                case "welfare":
+                    document.getElementsByClassName("m4").item(0).style.display = "block";
+                    break;
+                case "strategy":
+                    document.getElementsByClassName("m5").item(0).style.display = "block";
+                    break;
+                case "share":
+                    document.getElementsByClassName("m6").item(0).style.display = "block";
+                    break;
+                case "bingding":
+                    document.getElementsByClassName("m7").item(0).style.display = "block";
+                    break;
+            }
+        }
+    }
+
+    //接收显示UI浮动窗口小红点,用于展示li的小红点都在哪里显示
+    function receive_ui_li_redPoint(array_ui_li_btn_redPoint) {
+        //array_ui_li_btn_redPoint为传递进来的小红点
+        for (var i = 0; i < array_ui_li_btn_redPoint.length; i++) {
+            switch (array_ui_li_btn_redPoint[i]) {
+                case "more":
+                    document.getElementById("m1-red").style.display = "block";
+                    is_redPoint_display = true;
+                    break;
+                case "attention":
+                    document.getElementById("m2-red").style.display = "block";
+                    is_redPoint_display = true;
+                    break;
+                case "desktop":
+                    document.getElementById("m3-red").style.display = "block";
+                    is_redPoint_display = true;
+                    break;
+                case "welfare":
+                    document.getElementById("m4-red").style.display = "block";
+                    is_redPoint_display = true;
+                    break;
+                case "strategy":
+                    document.getElementById("m5-red").style.display = "block";
+                    is_redPoint_display = true;
+                    break;
+                case "share":
+                    document.getElementById("m6-red").style.display = "block";
+                    is_redPoint_display = true;
+                    break;
+                case "bingding":
+                    document.getElementById("m7-red").style.display = "block";
+                    is_redPoint_display = true;
+                    break;
+            }
+        }
+    }
+
+    //点击“更多”的按键处理
+    function click_more_btn() {
+        document.getElementById("m1-red").style.display = "none";
+        is_redPoint_display = false;
+        if (url_more == "") {
+            window.open(url_base_more);
+        }
+        else {
+            window.open(url_more);
+        }
+
+    }
+
+    //点击“关注公众号”的按键处理
+    function click_follow_WX_btn() {
+        document.getElementById("m2-red").style.display = "none";
+        is_redPoint_display = false;
+        $(".add-barcode").show();
+        $(".add-home").hide();
+        $(".share-box").hide();
+    }
+
+    //点击“存桌面”的按键处理
+    function click_save_btn() {
+        document.getElementById("m3-red").style.display = "none";
+        is_redPoint_display = false;
+        $(".add-home").show();
+        $(".share-box").hide();
+        $(".add-barcode").hide();
+    }
+
+    //点击“领福利”的按键处理
+    function click_gift_btn() {
+        document.getElementById("m4-red").style.display = "none";
+    }
+
+    //点击“攻略”的按键处理
+    function click_guides_btn() {
+        document.getElementById("m5-red").style.display = "none";
+        is_redPoint_display = false;
+    }
+
+    //点击“分享”的按键处理
+    function click_share_btn() {
+        document.getElementById("m6-red").style.display = "none";
+        is_redPoint_display = false;
+        if (sinaWebSdk.tool.getEnvironment() == "weixin") {
+            $(".share-box-wx").show();
+            $(".share-box-main").show();
+        } else {
+            $(".share-box-wx").hide();
+            $(".share-box-main").hide();
+            $(".share-box").show();
+        }
+        // 测试
+        // $(".share-box").show();
+        $(".add-home").hide();
+        $(".add-barcode").hide();
+    }
+
+    //点击“绑定用户”的按键处理
+    function click_binding_btn() {
+        document.getElementById("m7-red").style.display = "none";
+        is_redPoint_display = false;
+
+        showSeleBindingPop();
+    }
+    //展开浮动窗后的，按键处理情况
+    function click_float_btn(i) {
+        switch (i) {
+            case 1:
+                //更多
+                click_more_btn();
+                break;
+            case 2:
+                //关注公众号
+                click_follow_WX_btn();
+                break;
+            case 3:
+                //存桌面
+                click_save_btn();
+                break;
+            case 4:
+                //领福利
+                click_gift_btn();
+                break;
+            case 5:
+                //攻略
+                click_guides_btn();
+                break;
+            case 6:
+                //分享
+                click_share_btn();
+                break;
+            case 7:
+                //绑定用户
+                click_binding_btn();
+                break;
+        }
+    }
+    function loadworkinghard() {
+        $('.loading-smallsina').show();
+        $('.loading-wd').hide();
+        var ani_index = 0;
+        var ani_target = [".", "..", "..."];
+
+        setInterval(function () {
+            ani_index++;
+            ani_index = ani_index % 3;
+            $('.smallsina-prompt').html("正在努力加载中" + ani_target[ani_index]);
+        }, 150);
+    }
+
+    //loading----普通样式-图标-loading条-游戏名称----加载方式2
+    function loadingstyle_normal() {
+        $('.loading-smallsina').hide();
+        $('.loading-wd').show();
+        var ani_index = 0;
+        var ani_target = [".", "..", "..."];
+
+        setInterval(function () {
+            ani_index++;
+            ani_index = ani_index % 3;
+            $('.wd-prompt').html("加载中" + ani_target[ani_index]);
+        }, 150);
+    }
+    ;
+    //loading---检测使用哪种方式进行加载
+    function check_loadingstyle(state) {
+        switch (state) {
+            case 1:
+            case "1":
+                loadworkinghard();//红色
+                break;
+            case 2:
+            case "2":
+                loadingstyle_normal();//白色
+                break;
+            default:
+                loadworkinghard();
+        }
+    }
+    //检测有哪几种登录方式:
+    function check_login_mode(array_login_mode) {
+        var moveDefault = checkDefaultShow();
+        if (moveDefault == "weixin") {
+            //显示微信的样式
+            // $('.loading-smallsina').hide();
+            // $('.loading-wd').show();
+        } else if (moveDefault == "sina") {
+            //显示微博的样式
+            // $('.loading-smallsina').show();
+            // $('.loading-wd').hide();
+        } else {
+            if (array_login_mode.length == 2 || array_login_mode.length == "2") {
+                for (var i = 0; i < loginInitNum.length; i++) {
+                    document.getElementsByClassName("login-mode-contbox-new").item(0).getElementsByTagName("li").item(i).style.marginLeft = "15%";
+                    document.getElementsByClassName("login-mode-contbox").item(0).getElementsByTagName("li").item(i).style.width = "50%";
+                }
+            }
+            if (array_login_mode.length == 1 || array_login_mode.length == "1") {
+                for (var i = 0; i < loginInitNum.length; i++) {
+                    document.getElementsByClassName("login-mode-contbox-new").item(0).getElementsByTagName("li").item(i).style.marginLeft = "36%";
+                    document.getElementsByClassName("login-mode-contbox").item(0).getElementsByTagName("li").item(i).style.marginLeft = "25%";
+                    document.getElementsByClassName("login-mode-contbox").item(0).getElementsByTagName("li").item(i).style.width = "50%";
+                }
+            }
+            /*先隐藏*/
+            for (var j = 0; j < loginInitNum.length; j++) {
+                document.getElementsByClassName("login-mode-contbox-new").item(0).getElementsByTagName("li").item(j).style.display = "none";
+                document.getElementsByClassName("login-mode-contbox").item(0).getElementsByTagName("li").item(j).style.display = "none";
+            }
+
+            for (var i = 0; i < array_login_mode.length; i++) {
+                switch (array_login_mode[i]) {
+                    case "visitor":
+                        document.getElementsByClassName("login_li_user").item(0).style.display = "block";
+                        break;
+                    case "sina":
+                        document.getElementsByClassName("login_li_wb").item(0).style.display = "block";
+                        document.getElementsByClassName("login_li_wb_new").item(0).style.display = "block";
+                        break;
+                    case "QQ":
+                        document.getElementsByClassName("login_li_qq").item(0).style.display = "block";
+                        document.getElementsByClassName("login_li_qq_new").item(0).style.display = "block";
+                        break;
+                    case "mobile":
+                        document.getElementsByClassName("login_li_user_new").item(0).style.display = "block";
+                        break;
+
+
+                }
+            }
+
+        }
+
+
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">loading('5%');</script>
+<script type="text/javascript">loading('20%');</script>
+<script type="text/javascript">loading('40%');</script>
+<script type="text/javascript">loading('70%');</script>
+<script type="text/javascript">loading('100%');</script>
+
+
+<script>
+    $(document).ready(function () {
+
+        hideWeiXinShareDiv = function () {
+            $(".share-box-wx").hide();
+            $(".share-box-main").hide();
+        };
+
+        weiboShare = function () {
+            var urlStr = window.location.href;
+            if (urlStr.indexOf("&login_suid") != -1) {
+                urlStr = urlStr.substring(0, urlStr.indexOf("&login_suid"));
+                urlStr = urlStr + "&channel=" + sinaWebSdk.data.channel;
+            }
+            window.open("javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=2268486964',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&source=',e(r),'&sourceUrl=',e(l),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','','','" + urlStr + "','utf-8'));");
+        };
+
+        $(".share-box-main").hide();
+        $(".share-box-wx").hide();
+        if (sinaWebSdk.tool.getEnvironment() == "weixin") {
+            $("#add-home-other").hide();
+            $("#add-home-type1").hide();
+            $("#add-home-type2").hide();
+            $("#add-home-type3").hide();
+            $("#add-home-type4").hide();
+            $("#add-home-type5").hide();
+            $("#add-home-type6").hide();
+            $("#add-home-type7").hide();
+            $("#add-home-wechat").show();
+            sinaWebSdk.tool.initWeixinJSSDK();
+        }
+        else if (sinaWebSdk.tool.getEnvironment() == "QHBrowser" ||
+                sinaWebSdk.tool.getEnvironment() == "SogouMobileBrowser" ||
+                sinaWebSdk.tool.getEnvironment() == "Liebao" ||
+                sinaWebSdk.tool.getEnvironment() == "Lenovo" ||
+                sinaWebSdk.tool.getEnvironment() == "MQQBrowser" ||
+                sinaWebSdk.tool.getEnvironment() == "2345") {
+            $("#add-home-other").hide();
+            $("#add-home-type1").show();
+            $("#add-home-type2").hide();
+            $("#add-home-type3").hide();
+            $("#add-home-type4").hide();
+            $("#add-home-type5").hide();
+            $("#add-home-type6").hide();
+            $("#add-home-type7").hide();
+            $("#add-home-wechat").hide();
+        }
+        else if (sinaWebSdk.tool.getEnvironment() == "MxBrowser") {
+            $("#add-home-other").hide();
+            $("#add-home-type1").hide();
+            $("#add-home-type2").show();
+            $("#add-home-type3").hide();
+            $("#add-home-type4").hide();
+            $("#add-home-type5").hide();
+            $("#add-home-type6").hide();
+            $("#add-home-type7").hide();
+            $("#add-home-wechat").hide();
+        }
+        else if (sinaWebSdk.tool.getEnvironment() == "Chrome") {
+            $("#add-home-other").hide();
+            $("#add-home-type1").hide();
+            $("#add-home-type2").hide();
+            $("#add-home-type3").show();
+            $("#add-home-type4").hide();
+            $("#add-home-type5").hide();
+            $("#add-home-type6").hide();
+            $("#add-home-type7").hide();
+            $("#add-home-wechat").hide();
+        }
+        else if (sinaWebSdk.tool.getEnvironment() == "Gecko") {
+            $("#add-home-other").hide();
+            $("#add-home-type1").hide();
+            $("#add-home-type2").hide();
+            $("#add-home-type3").hide();
+            $("#add-home-type4").show();
+            $("#add-home-type5").hide();
+            $("#add-home-type6").hide();
+            $("#add-home-type7").hide();
+            $("#add-home-wechat").hide();
+        }
+        else if (sinaWebSdk.tool.getEnvironment() == "Oupeng") {
+            $("#add-home-other").hide();
+            $("#add-home-type1").hide();
+            $("#add-home-type2").hide();
+            $("#add-home-type3").hide();
+            $("#add-home-type4").hide();
+            $("#add-home-type5").show();
+            $("#add-home-type6").hide();
+            $("#add-home-type7").hide();
+            $("#add-home-wechat").hide();
+        }
+        else if (sinaWebSdk.tool.getEnvironment() == "SogouMobileBrowser") {
+            $("#add-home-other").hide();
+            $("#add-home-type1").hide();
+            $("#add-home-type2").hide();
+            $("#add-home-type3").hide();
+            $("#add-home-type4").hide();
+            $("#add-home-type5").hide();
+            $("#add-home-type6").show();
+            $("#add-home-type7").hide();
+            $("#add-home-wechat").hide();
+        }
+        else if (sinaWebSdk.tool.getEnvironment() == "UCBrowser") {
+            $("#add-home-other").hide();
+            $("#add-home-type1").hide();
+            $("#add-home-type2").hide();
+            $("#add-home-type3").hide();
+            $("#add-home-type4").hide();
+            $("#add-home-type5").hide();
+            $("#add-home-type6").hide();
+            $("#add-home-type7").show();
+            $("#add-home-wechat").hide();
+        }
+        else {
+            $("#add-home-other").show();
+            $("#add-home-type1").hide();
+            $("#add-home-type2").hide();
+            $("#add-home-type3").hide();
+            $("#add-home-type4").hide();
+            $("#add-home-type5").hide();
+            $("#add-home-type6").hide();
+            $("#add-home-type7").hide();
+            $("#add-home-wechat").hide();
+        }
+
+        sinaWebSdk.tool.getAnnouncement();
+//         alert(sinaWebSdk.tool.getEnvironment());
+
+    });
+
+</script>
+<script>
+
+</script>
+<script>
+    $(document).onload = initialWebSDK();
+    //    $(window).load(function() {
+    //       console.log('hahaah')
+    //    });
+
+    var a = $('.icon').css('background-position');
+    console.log(a)
+</script>
+<script>
+
+</script>
+</body>
+</html>
