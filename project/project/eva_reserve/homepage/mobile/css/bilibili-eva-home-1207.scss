@@ -1,0 +1,191 @@
+//colors
+$white: white;
+$color_mountain_mist_approx: #959595;
+$color_valencia_approx: #cd4536;
+
+//urls
+$url_0: url(../img/section_mid_bg.png);
+$url_1: url(../img/left_btn.png);
+$url_2: url(../img/right_btn.png);
+
+
+
+@mixin radius($num) {
+  -moz-border-radius: $num;
+  -webkit-border-radius: $num;
+  border-radius: $num;
+}
+
+
+.content {
+  background: $white;
+}
+.reserve-content {
+  margin: 5% 0;
+  img {
+    width: 100%;
+  }
+}
+.popup-video {
+  background: none;
+  .content-popup {
+    background: $white;
+    padding: 0 .5rem;
+    margin: 0 !important;
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 25%;
+  }
+}
+.close-btn {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 30px;
+}
+.modal-input-title {
+  margin: 1em;
+  text-align: center;
+  font-size: .9em;
+}
+.bg-top {
+  display: block;
+}
+.section_mid_bg {
+  display: block;
+}
+.section_bottom_bg {
+  display: block;
+  width: 100%;
+}
+.section_3_bg {
+  display: block;
+  width: 100%;
+}
+.section_3 {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+.android_download {
+  position: absolute;
+  width: 45%;
+  height: 47%;
+  background: none;
+  left: 4%;
+  top: 25%;
+}
+.apple_download {
+  position: absolute;
+  width: 45%;
+  height: 47%;
+  background: none;
+  right: 4%;
+  top: 25%;
+}
+.download_btn{
+  position: absolute;
+  width: 45%;
+  //background: yellow;
+  height: 47%;
+  background: none;
+  left: 27%;
+  top: 25%;
+}
+.search-input {
+  width: 90%;
+  margin: 0 auto;
+  input {
+    @include radius(.1em);
+  }
+}
+.reserve-now-btn {
+  width: 30%;
+  margin: 1em auto;
+}
+.button-reserve {
+  @include radius(.1em);
+  background: $color_mountain_mist_approx !important;
+  &.available {
+    background: $color_valencia_approx !important;
+  }
+}
+.button-reserve-back {
+  @include radius(.1em);
+  background: $color_valencia_approx !important;
+}
+.warning {
+  font-size: .7em;
+  text-align: center;
+  display: none;
+}
+.memo {
+  font-size: .7em;
+  text-align: center;
+}
+.video-control {
+  position: absolute;
+  top: 33%;
+  width: 30%;
+  right: 12%;
+  cursor: pointer;
+  img {
+    width: 100%;
+  }
+}
+#videoPlayer {
+  width: 100%;
+  padding-top: .5em;
+}
+.section_mid {
+  background: $url_0 no-repeat;
+  height: 12px;
+  background-size: cover;
+}
+.section_2 {
+  position: relative;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  position: absolute !important;
+  top: 15% !important;
+}
+.swiper-wrapper {
+  height: 400px;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+  }
+}
+.swiper-button-prev {
+  background-image: $url_1 !important;
+}
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 44px;
+  margin-top: -20px;
+  z-index: 2000;
+  cursor: pointer;
+}
+.prev-btn {
+  background: $url_1 no-repeat;
+  background-size: contain;
+  left: 5%;
+}
+.next-btn {
+  background: $url_2 no-repeat;
+  background-size: contain;
+  right: 5%;
+}
+.scroll {
+  position: absolute; }

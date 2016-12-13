@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EVA官网</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <link rel="stylesheet" href="css/light7.min.css">
+    <link rel="stylesheet" href="css/bilibili-eva-home-1207.css">
+    <link rel="stylesheet" href="css/swiper-3.4.0.min.css">
+
+
+</head>
+<body>
+
+<!-- body -->
+<div class="page-group">
+    <!--禁止横屏操作，现在已经无效-->
+    <div class="page" id="page-lanscape" style="display: none">
+        <!-- 这里是横竖屏内容 -->
+        <div class="content">
+            <div class="screen-down">
+                <img src="http://mg.games.sina.com.cn/kjava/auvpics/promote_1118/screen_prompt.png" alt="">
+                <strong>请使用竖屏进行游戏</strong>
+            </div>
+        </div>
+    </div>
+
+    <!--页面起始-->
+    <div class="page page-current" id="page-draw">
+
+        <div class="content drawing">
+            <div class="scroll">
+                <img border="0" src="img/section_1_bg.png" class="bg-top" width="100%" alt="">
+
+
+                <!--视频按钮-->
+                <div class="video-control">
+                    <img src="img/play_btn.png" alt="">
+                </div>
+
+
+                <!--中段分割线-->
+                <img border="0" src="img/section_mid_bg.png" class="section_mid_bg" width="100%" alt="">
+
+
+                <!--轮播图-->
+                <div class="section_2">
+                    <img src="img/section_2_bg_new.png" width="100%" style="vertical-align: bottom;" alt="">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/img_1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/img_2.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/img_3.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/img_4.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/img_5.png" alt="">
+                            </div>
+                        </div>
+                        <div class="arrow-btn prev-btn"></div>
+                        <div class="arrow-btn next-btn"></div>
+                    </div>
+                </div>
+
+                <!--下段分割线-->
+                <!--<img src="img/section_bottom_bg.png" class="section_bottom_bg" alt="">-->
+
+
+                <!--下载按钮-->
+                <div class="section_3">
+                    <img src="img/float-download-btn.png" class="section_3_bg" alt="">
+                    <!--<a href="" class="android_download"></a>-->
+                    <!--<a href="" class="apple_download"></a>-->
+                    <a href="" class="download_btn"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- video Popup -->
+    <div class="popup popup-video">
+        <div class="content-padded content-popup">
+
+            <img src="img/close-btn.png" class="close-btn closeVideo" alt="">
+
+            <video id="videoPlayer" >
+                <source src="video/eva.mp4" preload type="video/mp4">
+                <!--<source src="/i/movie.ogg" type="video/ogg">-->
+                您的浏览器不支持 video 标签。
+            </video>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<script type='text/javascript' src='js/jquery-2.1.0.min.js'></script>
+<script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/swiper-3.4.0.jquery.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/bilibili-eva-home-1207.js' charset='utf-8'></script>
+
+</body>
+</html>

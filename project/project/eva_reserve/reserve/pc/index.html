@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
+    <link rel="stylesheet" href="default/css/bilibili-reserve/idangerous.swiper2.7.6.css">
+    <link rel="stylesheet" href="default/css/bilibili-reserve/idangerous.swiper.3dflow.css">
+
+    <link rel="stylesheet" href="default/css/bilibili-reserve/bilibili-eva-reserve-pc-1207.css">
+</head>
+<body>
+
+<div class="section section-1">
+
+    <div class="bg" style="width: 100%">
+        <img src="default/image/bilibili-reserve/section_1_bg.png" width="100%" alt="">
+    </div>
+
+
+    <div class="top-logo-group">
+        <!--logo & 进入官网 & QQ群-->
+        <img src="default/image/bilibili-reserve/game-logo.png" class="game-logo" alt="">
+        <div class="share_group">
+            <div class="global-nav-game">
+                <img src="default/image/bilibili-reserve/btn-group.png" alt="">
+                <a href="#" class="qq_group"></a>
+                <a href="#" class="go2index"></a>
+                <a href="#" class="kefu"></a>
+                <a href="#" class="forum"></a>
+            </div>
+
+            <!--鼠标悬浮-->
+            <div class="qq_group_hove share_hove">
+                <div class="triangle-up triangle-qq"></div>
+                <div class="hove_content">
+                    bilibili 官方玩家群1群：547644862
+                </div>
+            </div>
+            <div class="kefu_hove share_hove">
+                <div class="triangle-up triangle-kefu"></div>
+                <div class="hove_content">
+                    客服QQ：800059038；<br>
+                    客服邮箱：gamehelp@bilibili.com；<br>
+                    客服电话：400-178-2233；
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--视频播放-->
+    <div class="video-control">
+        <img src="default/image/bilibili-reserve/play_btn.png" alt="">
+    </div>
+
+
+    <!--弹出层时背景层DIV-->
+    <div id="fade" class="black_overlay">
+    </div>
+
+
+    <div id="MyDiv" class="white_content">
+        <img src="default/image/bilibili-reserve/close-btn.png" onclick="CloseDiv('MyDiv','fade')" class="close-btn" alt="">
+        <div class="modal-with-close-btn">
+            <div class="modal-input-title">
+                请选择设备类型
+            </div>
+            <!--设备类型-->
+            <div class="row device-icon-group choose-device">
+                <div class="small-6 large-6 columns apple-device">
+                    <img src="default/image/bilibili-reserve/apple.png" class="apple-icon" data-check="none" alt="">
+                    <img src="default/image/bilibili-reserve/apple-active.png" class="apple-icon-active" data-check="apple" alt="">
+                </div>
+                <div class="small-6 large-6 columns android-device">
+                    <img src="default/image/bilibili-reserve/android.png" class="android-icon" data-check="none" alt="">
+                    <img src="default/image/bilibili-reserve/android-active.png" class="android-icon-active" data-check="android" alt="">
+                </div>
+            </div>
+            <!--输入框-->
+            <!--<div class="search-input">-->
+            <!--<input type="text" id="phone_num" class="phone_num_insert" placeholder='请输入手机号'/>-->
+            <!--</div>-->
+            <!--警告-->
+            <p class="warning">手机号有误，请重新输入</p>
+            <!--按钮-->
+            <p class="reserve-now-btn"><a href="#" class="button button-reserve button-fill disabled">下一步</a></p>
+            <!--提示-->
+            <p class="memo">
+                游戏上线时会通过短信第一时间通知你 <br>
+                我们保证将对手机号码完全保密
+            </p>
+        </div>
+    </div>
+
+    <!--分享组-->
+    <div class="reserve-group">
+        <div class="reserve-btn">
+            <img src="default/image/bilibili-reserve/reserv-btn.png"  class="reserve-btn-bg" alt="">
+            <h3 class="reserve-now-h3">立即预约</h3>
+            <p class="reserve-num-p">已有<span class="reserve-num">454545</span>人预约</p>
+        </div>
+    </div>
+
+
+    <!-- loading的弹窗 -->
+    <div class="tiny reveal" id="loading" data-reveal>
+        <div class="modal-input-title">
+            请稍候
+        </div>
+    </div>
+
+
+    <!-- video的弹窗 -->
+    <div class="reveal large" id="playvideo" data-reveal data-close-on-click="false" data-close-on-esc="false">
+        <button class="closeVideo close-button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <video id="videoPlayer" >
+            <source src="http://mg.games.sina.com.cn/kjava/auvpics/eva_reserve_1130/video/eva.mp4" preload type="video/mp4">
+            <source src="http://mg.games.sina.com.cn/kjava/auvpics/eva_reserve_1130/video/eva.ogg" type="video/ogg">
+            <source src="http://mg.games.sina.com.cn/kjava/auvpics/eva_reserve_1130/video/eva.webm" type="video/webm">
+            <object data="http://mg.games.sina.com.cn/kjava/auvpics/eva_reserve_1130/video/eva.mp4" width="320" height="240">
+                <embed src="http://mg.games.sina.com.cn/kjava/auvpics/eva_reserve_1130/video/eva.swf" width="320" height="240">
+            </object>
+            您的浏览器不支持 video 标签。
+        </video>
+    </div>
+
+
+
+
+    <!-- 成功 tanchuan -->
+    <div class="reveal" id="successModal" data-reveal data-close-on-click="false" data-close-on-esc="false">
+        <div class="modal-input-title">
+            预约成功
+        </div>
+
+
+        <p class="memo memo-success">
+            恭喜您预约成功！
+        </p>
+
+        <p class="reserve-now-btn"><a href="#" data-close class="button close-popup button-reserve-back button-fill">返回</a></p>
+    </div>
+
+
+
+</div>
+
+
+<!--中段分割线-->
+<div class="section section-mid"></div>
+
+
+<!--轮播图-->
+<div class="section section-2">
+    <div class="main-container">
+        <div class="title-2" style="width: 100%">
+            <img src="default/image/bilibili-reserve/title_2.png" width="100%" alt="">
+        </div>
+        <div class="swiper-container swiper-container-horizonal">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide desc-slide slide1" ></div>
+                <div class="swiper-slide desc-slide slide2"></div>
+                <div class="swiper-slide desc-slide slide3"></div>
+                <div class="swiper-slide desc-slide slide4"></div>
+            </div>
+            <div class="arrow-btn prev-btn" style="left: 12%" onclick="swiperH.swipePrev()"></div>
+            <div class="arrow-btn next-btn" style="right: 12%" onclick="swiperH.swipeNext()"></div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="default/js/bilibili-reserve/idangerous.swiper2.7.6.min.js"></script>
+<script src="default/js/bilibili-reserve/idangerous.swiper.3dflow.js"></script>
+<script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+
+<script type="text/javascript">
+    //弹出隐藏层
+    function ShowDiv(show_div, bg_div) {
+        document.getElementById(show_div).style.display = 'block';
+        document.getElementById(bg_div).style.display = 'block';
+        var bgdiv = document.getElementById(bg_div);
+        bgdiv.style.width = document.body.scrollWidth;
+        $("#" + bg_div).height($(document).height());
+    }
+    ;
+    //关闭弹出层
+    function CloseDiv(show_div, bg_div) {
+        document.getElementById(show_div).style.display = 'none';
+        document.getElementById(bg_div).style.display = 'none';
+    }
+    ;
+</script>
+
+<script>
+    $(function () {
+        // 导航
+        $(".kefu,.kefu_hove").mouseenter(function(){
+            $(".kefu_hove").show();
+        });
+        $(".kefu,.kefu_hove").mouseleave(function(){
+            $(".kefu_hove").hide();
+        });
+        $(".qq_group,.qq_group_hove").mouseenter(function(){
+            $(".qq_group_hove").show();
+        });
+        $(".qq_group,.qq_group_hove").mouseleave(function(){
+            $(".qq_group_hove").hide();
+        });
+
+
+        //初始化大小
+        var documentW = $(window).width();
+        var documentH = $(window).height();
+
+
+        $(window).load(function(){
+            //获取modal弹窗的高度，+的32是padding距离
+            var modal1H = documentH - ($('#reserveModal').height() + 32);
+            var modal1W = documentW - ($('#reserveModal').width() + 32);
+            //有些许的误差，top减去的值为关闭按钮本身的高度，1为误差高度
+            var closeIconImageTop = modal1H / 2 - 31;
+            var closeIconImageRight = modal1W / 2 -1;
+
+            $('.white_content').css({'left':(documentW-600)/2})
+
+//            $('.close-btn').css({'top':closeIconImageTop,'right':closeIconImageRight});
+        });
+
+
+
+        //弹出隐藏层
+        function ShowDiv(show_div, bg_div) {
+            document.getElementById(show_div).style.display = 'block';
+            document.getElementById(bg_div).style.display = 'block';
+            var bgdiv = document.getElementById(bg_div);
+            bgdiv.style.width = document.body.scrollWidth;
+// bgdiv.style.height = $(document).height();
+            $("#" + bg_div).height($(document).height());
+        }
+        ;
+        //关闭弹出层
+        function CloseDiv(show_div, bg_div) {
+            document.getElementById(show_div).style.display = 'none';
+            document.getElementById(bg_div).style.display = 'none';
+        }
+        ;
+
+
+        //输入框
+        $(document).on('click','.reserve-btn', function () {
+            ShowDiv('MyDiv','fade')
+//            $('#reserveModal').foundation('open');
+        });
+
+        //选择设备
+        $(document).on('click','.apple-icon,.android-icon', function () {
+            console.log($(this));
+            //隐藏其他 有可能出现的红色icon
+            $('.apple-icon-active,.android-icon-active').hide();
+            $('.apple-icon,.android-icon').show();
+            //显示出来红色的icon
+            $(this).next().show();
+            //隐藏灰色自己
+            $(this).hide();
+            var checker = $(this).next().attr('data-check');
+            $('.choose-device').attr('device-select',checker);
+            $('.button-reserve').addClass('available').removeClass('disabled')
+        });
+
+
+        //预约
+        $(document).on('click','.button-reserve', function () {
+            //console.log($(this));
+//            var phone_num = $('.phone_num_insert').val();
+            //console.log(phone_num);
+//            var reg = /^0?1[3|4|5|8][0-9]\d{8}$/;
+            var device_select = $('.choose-device').attr('device-select');
+            if(device_select == 'android' || device_select == 'apple'){
+                $('#reserveModal .warning').hide();
+//                $('#reserveModal').foundation('close');
+                CloseDiv('MyDiv','fade')
+                //添加预约信息
+                $('#loading').foundation('open');
+                setTimeout(function () {
+                    $('#loading').foundation('close');
+                    $('#successModal').foundation('open');
+                }, 2000);
+
+            }else{
+                $('#reserveModal .warning').text('请选择正确的设备').show()
+            }
+
+        });
+
+
+        //如果苹果亮则安卓灭
+        $(document).on('click','.apple-icon-active,.android-icon-active', function () {
+            console.log($(this));
+            $(this).prev().show();
+            $(this).hide()
+        });
+
+
+
+        $(document).on('click','.video-control', function () {
+            console.log($(this));
+            $('#playvideo').foundation('open');
+            var x = document.getElementById("videoPlayer");
+            console.log(x);
+            x.play();
+        });
+
+        $(document).on('click','.closeVideo', function () {
+            var x = document.getElementById("videoPlayer");
+            console.log(x);
+            x.pause();
+            $('#playvideo').foundation('close');
+        });
+
+
+
+        $("#phone_num").bind("input propertychange", function () {
+
+            if($(this).val().length>10){
+                $('.button-reserve').addClass('available').removeClass('disabled')
+            }else{
+                $('.button-reserve').removeClass('available').addClass('disabled')
+            }
+            console.log($(this).val().length);//打印输入框字符长度
+
+        });
+
+    });
+
+
+    //输入框实时获取值，有值则红色按钮
+    function change_available(x)
+    {
+        var y=document.getElementById(x).value;
+        console.log(y);
+        if(y != ''){
+            $('.button-reserve').addClass('available').removeClass('disabled')
+        }else{
+            $('.button-reserve').removeClass('available').addClass('disabled')
+        }
+
+    }
+
+    //轮播图
+    var swiperH = new Swiper('.swiper-container-horizonal', {
+        speed: 500,
+        nextButton: '.next-btn',
+        prevButton: '.prev-btn',
+        grabCursor: 1,
+        centeredSlides: 1,
+        loop: 1,
+        slidesPerView: 'auto',
+        loopedSlides: 4,
+        tdFlow: {
+            rotate: 0,
+            stretch: 6,
+            depth: 200,
+            modifier: 2,
+            shadow: false
+        },
+        onInit: function () {
+            $(".arrow-btn").css("top", 108 + $(".swiper-container-horizonal").height() / 2)
+        }
+    });
+
+
+    $(document).foundation();
+
+
+</script>
+</body>
+</html>

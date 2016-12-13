@@ -1,0 +1,191 @@
+.qq_group, .kefu, .forum {
+  background: none;
+  position: absolute;
+  width: 3rem;
+  padding: .5rem;
+  height: 2rem; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none;
+    outline: none; }
+  a:focus {
+    text-decoration: none;
+    outline: none; }
+
+:focus {
+  outline: 0; }
+
+.section.section-1 {
+  position: relative; }
+.section.section-mid {
+  background: url(../../image/bilibili-home/section_mid_bg.png);
+  background-position: top center;
+  height: 40px; }
+.section.section-2 {
+  height: 838px;
+  background: url(../../image/bilibili-home/section_2_bg.png);
+  background-position: top center; }
+
+.top-logo-group {
+  position: absolute;
+  top: 0;
+  height: 9rem;
+  width: 75%;
+  left: 12.5%; }
+  .top-logo-group .share_group {
+    position: absolute;
+    top: 2rem;
+    width: 11rem;
+    right: 0; }
+
+.qq_group {
+  top: 0;
+  left: 1rem; }
+
+.kefu {
+  top: 0;
+  left: 4.2rem; }
+
+.forum {
+  top: 0;
+  left: 7.4rem; }
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid white;
+  position: absolute;
+  top: 0; }
+
+.share_hove {
+  position: relative;
+  top: 0;
+  height: initial;
+  display: none; }
+
+.hove_content {
+  position: relative;
+  background: white;
+  font-size: .7rem;
+  color: #595959;
+  top: 9px;
+  padding: .2rem; }
+
+.android-download {
+  background: none;
+  position: absolute;
+  bottom: 25.2%;
+  right: 22.2%;
+  height: 8%;
+  width: 11%; }
+
+.apple-download {
+  background: none;
+  position: absolute;
+  bottom: 17.2%;
+  right: 22.2%;
+  height: 7%;
+  width: 11%; }
+
+.package-download {
+  background: none;
+  position: absolute;
+  bottom: 9.2%;
+  right: 22.2%;
+  height: 7%;
+  width: 11%; }
+
+.qchar-download {
+  background: none;
+  position: absolute;
+  bottom: 8.7%;
+  right: 33.6%;
+  height: 24%;
+  width: 8%; }
+
+.play_video {
+  position: absolute;
+  top: 44%;
+  left: 33%; }
+  .play_video img {
+    width: 75%; }
+
+#videoPlayer {
+  width: 100%;
+  margin-top: 32px; }
+
+.main-container {
+  position: relative;
+  margin: 0 auto;
+  height: 100%; }
+
+.swiper-wrapper {
+  position: relative; }
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  margin-top: -39px;
+  height: 78px;
+  width: 70px;
+  z-index: 2000;
+  cursor: pointer; }
+  .arrow-btn.prev-btn {
+    left: 0;
+    background: url(../../image/bilibili-home/prev_arrow.png) no-repeat;
+    background-size: 100%; }
+  .arrow-btn.next-btn {
+    right: 0;
+    background: url(../../image/bilibili-home/next_arrow.png) no-repeat;
+    background-size: 100%; }
+
+.slide1 {
+  background: url(../../image/bilibili-home/img_1.png);
+  background-size: 100%; }
+
+.slide2 {
+  background: url(../../image/bilibili-home/img_2.png);
+  background-size: 100%; }
+
+.slide3 {
+  background: url(../../image/bilibili-home/img_3.png);
+  background-size: 100%; }
+
+.slide4 {
+  background: url(../../image/bilibili-home/img_4.png);
+  background-size: 100%; }
+
+.global-nav-game img {
+  width: 100%; }
+
+.qq_group_hove .triangle-qq {
+  left: 1.5rem; }
+
+.kefu_hove .triangle-qq {
+  left: 4.5rem; }
+
+.section-2 .title-2 {
+  text-align: center;
+  padding: 3rem 0; }
+  .section-2 .title-2 img {
+    width: 30%; }
+
+.swiper-container.swiper-container-horizonal {
+  position: absolute;
+  width: 80%;
+  height: 560px;
+  top: 10rem;
+  left: 10%; }
+
+.swiper-slide.desc-slide {
+  height: 515px;
+  width: 772px;
+  opacity: 0.75; }
+  .swiper-slide.desc-slide.swiper-slide-active {
+    opacity: 1; }
+
+/*# sourceMappingURL=bilibili-eva-home-pc-1207.css.map */

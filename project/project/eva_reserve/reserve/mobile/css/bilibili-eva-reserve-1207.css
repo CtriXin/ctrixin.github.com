@@ -1,0 +1,282 @@
+.popup-insert-num .content-popup, .popup-success .content-popup, .popup-video .content-popup {
+  background: white;
+  padding: 0 .5rem;
+  margin: 0 !important;
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  top: 25%; }
+
+.apple-icon, .android-icon {
+  padding: 10px;
+  width: 40%;
+  border: 1px solid #959595;
+  border-radius: 50%; }
+
+.apple-icon-active, .android-icon-active {
+  padding: 10px;
+  width: 40%;
+  border: 1px solid #cd4536;
+  border-radius: 50%;
+  display: none; }
+
+.content {
+  background: white; }
+
+.logo {
+  position: absolute;
+  top: 2.5%;
+  width: 43%;
+  left: 6%; }
+  .logo img {
+    width: 100%; }
+
+.go2index {
+  position: absolute;
+  top: 2.5%;
+  width: 36%;
+  right: 6%; }
+  .go2index img {
+    width: 100%;
+    cursor: pointer; }
+
+.reserve {
+  position: absolute;
+  top: 72%;
+  width: 100%;
+  text-align: center; }
+  .reserve img {
+    width: 55%; }
+  .reserve .reserv-btn-group {
+    cursor: pointer;
+    position: relative;
+    height: 5em; }
+  .reserve .reserve-now {
+    color: white;
+    font-size: 1.5em;
+    position: absolute;
+    width: 60%;
+    left: 20%;
+    top: .5em;
+    margin: 0;
+    line-height: 1.5em;
+    height: 1.5em; }
+  .reserve .reserve-now-btn-bg {
+    position: absolute;
+    top: 0;
+    height: 4rem;
+    width: 60%;
+    left: 20%; }
+  .reserve .reserve-num {
+    color: white;
+    font-size: .7em;
+    margin: 0;
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    height: 1.5em;
+    line-height: 1.5em;
+    top: 4em; }
+    .reserve .reserve-num span {
+      color: #ded84f; }
+
+.agreement-check {
+  width: 12em;
+  text-align: left;
+  color: white;
+  font-size: .65em;
+  height: 20px;
+  line-height: 20px;
+  margin: 0 auto 2.5em; }
+
+.piaochecked {
+  width: 20px;
+  height: 20px;
+  float: left;
+  cursor: pointer;
+  text-align: center;
+  background-image: url(../img/checkbox_01.png);
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+
+.on_check {
+  background-position: 0 -21px; }
+
+.radioclass {
+  opacity: 0;
+  cursor: pointer;
+  filter: alpha(opacity=0); }
+
+.reserve-content {
+  margin: 5% 0; }
+  .reserve-content img {
+    width: 100%; }
+
+.ad-promote {
+  background: #221117;
+  margin: 0 0 2%; }
+  .ad-promote img {
+    width: 100%; }
+
+.go2index-bottom {
+  margin: 0 0 2%; }
+  .go2index-bottom img {
+    cursor: pointer;
+    width: 48%; }
+
+.end-logo {
+  margin: 0 0 5%; }
+  .end-logo img {
+    width: 12%; }
+
+.popup-insert-num {
+  background: none; }
+
+.popup-success {
+  background: none; }
+
+.popup-video {
+  background: none; }
+
+.close-btn {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 30px; }
+
+.modal-input-title {
+  margin: 1em;
+  text-align: center;
+  font-size: .9em; }
+
+.android-device {
+  text-align: left;
+  padding-left: .5em; }
+
+.apple-device {
+  text-align: right;
+  padding-right: .5em; }
+
+.bg-top {
+  display: block; }
+
+.section_mid {
+  display: block;
+  background: url(../img/section_mid_bg.png) no-repeat;
+  height: 21px;
+  background-size: contain; }
+
+.section_2_bg {
+  display: block; }
+
+.search-input {
+  width: 90%;
+  margin: 0 auto; }
+  .search-input input {
+    border-radius: 0.1em; }
+
+.reserve-now-btn {
+  width: 50%;
+  margin: 1em auto; }
+
+.button-reserve {
+  border-radius: 0.1em;
+  background: url("../img/uncomfirm-bg.png") no-repeat !important;
+  background-size: cover !important;
+  height: 1.5rem !important;
+  line-height: 1.5rem !important;
+  font-size: .6rem; }
+  .button-reserve.available {
+    background: url("../img/comfirm-bg.png") no-repeat !important;
+    background-size: cover !important;
+    height: 1.5rem !important;
+    line-height: 1.5rem !important; }
+
+.button-reserve-back {
+  border-radius: 0.1em;
+  background: url("../img/comfirm-bg.png") no-repeat !important;
+  background-size: cover !important;
+  height: 1.5rem !important;
+  line-height: 1.5rem !important; }
+
+.warning {
+  font-size: .7em;
+  text-align: center;
+  display: none; }
+
+.memo {
+  font-size: .7em;
+  text-align: center;
+  padding: 0 1rem; }
+
+.video-control {
+  position: absolute;
+  top: 27%;
+  width: 24%;
+  right: 10%;
+  cursor: pointer; }
+  .video-control img {
+    width: 100%; }
+
+#videoPlayer {
+  width: 100%;
+  padding-top: .5em; }
+
+.sina_terms {
+  color: white; }
+
+.section_2 {
+  position: relative; }
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  position: absolute !important;
+  top: 15% !important; }
+
+.swiper-wrapper {
+  height: 400px; }
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .swiper-slide img {
+    width: 100%; }
+
+.swiper-button-prev {
+  background-image: url(../img/left_btn.png) !important; }
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 44px;
+  margin-top: -20px;
+  z-index: 2000;
+  cursor: pointer; }
+
+.prev-btn {
+  background: url(../img/left_btn.png) no-repeat;
+  background-size: contain;
+  left: 5%; }
+
+.next-btn {
+  background: url(../img/right_btn.png) no-repeat;
+  background-size: contain;
+  right: 5%; }
+
+.popup-bg {
+  background: url("../img/popup-modal.png") no-repeat !important;
+  background-size: cover !important; }
+
+.popup-success-bg {
+  background: url("../img/popup-success-modal.png") no-repeat !important;
+  background-size: 100% 100% !important; }
+
+.scroll {
+  position: absolute; }
+
+/*# sourceMappingURL=bilibili-eva-reserve-1207.css.map */

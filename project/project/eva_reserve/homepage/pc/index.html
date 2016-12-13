@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EVA官网</title>
+    <link rel="stylesheet" href="default/css/bilibili-home/foundation.min.css">
+    <link rel="stylesheet" href="default/css/bilibili-home/idangerous.swiper2.7.6.css">
+    <link rel="stylesheet" href="default/css/bilibili-home/idangerous.swiper.3dflow.css">
+    <link rel="stylesheet" href="default/css/bilibili-home/bilibili-eva-home-pc-1207.css">
+</head>
+<body>
+
+<div class="section section-1">
+
+    <img src="default/image/bilibili-home/section_1_bg.png" alt="">
+
+
+
+    <!--下载按钮 修改这里@！-->
+    <a href="#" class="android-download"></a>
+    <a href="#" class="apple-download"></a>
+    <a href="#" class="package-download"></a>
+    <a href="#" class="qchar-download"></a>
+
+    <!--播放视频按钮-->
+    <a class="play_video"><img src="default/image/bilibili-home/play_btn.png" alt=""></a>
+
+    <!--顶部鼠标悬浮-->
+    <div class="top-logo-group">
+        <div class="share_group">
+            <div class="global-nav-game">
+                <img src="default/image/bilibili-home/share_btn_group.png" alt="">
+                <a href="#" class="qq_group"></a>
+                <a href="#" class="kefu"></a>
+                <a href="#" class="forum"></a>
+            </div>
+
+            <div class="qq_group_hove share_hove">
+                <div class="triangle-up triangle-qq"></div>
+                <div class="hove_content">
+                    bilibili 官方玩家群1群：547644862
+                </div>
+            </div>
+            <div class="kefu_hove share_hove">
+                <div class="triangle-up triangle-qq"></div>
+                <div class="hove_content">
+                    客服QQ：800059038；<br>
+                    客服邮箱：gamehelp@bilibili.com；<br>
+                    客服电话：400-178-2233；
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- video的弹窗 -->
+    <div class="reveal large" id="playvideo" data-reveal data-close-on-click="false" data-close-on-esc="false">
+        <button class="closeVideo close-button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+        <video id="videoPlayer" >
+            <source src="http://mg.games.sina.com.cn/kjava/auvpics/eva_reserve_1130/video/eva.mp4" preload type="video/mp4">
+            <source src="http://mg.games.sina.com.cn/kjava/auvpics/eva_reserve_1130/video/eva.ogg" type="video/ogg">
+            <source src="http://mg.games.sina.com.cn/kjava/auvpics/eva_reserve_1130/video/eva.webm" type="video/webm">
+            <object data="http://mg.games.sina.com.cn/kjava/auvpics/eva_reserve_1130/video/eva.mp4" width="320" height="240">
+                <embed src="http://mg.games.sina.com.cn/kjava/auvpics/eva_reserve_1130/video/eva.swf" width="320" height="240">
+            </object>
+            您的浏览器不支持 video 标签。
+        </video>
+    </div>
+
+
+
+</div>
+
+
+<!--中段分割-->
+<div class="section section-mid"></div>
+
+
+<!--轮播图-->
+<div class="section section-2">
+    <div class="main-container">
+        <div class="title-2">
+            <img src="default/image/bilibili-home/title_2.png" alt="">
+        </div>
+        <div class="swiper-container swiper-container-horizonal">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide desc-slide slide1" ></div>
+                <div class="swiper-slide desc-slide slide2"></div>
+                <div class="swiper-slide desc-slide slide3"></div>
+                <div class="swiper-slide desc-slide slide4"></div>
+            </div>
+            <div class="arrow-btn prev-btn" style="left: 12%" onclick="swiperH.swipePrev()"></div>
+            <div class="arrow-btn next-btn" style="right: 12%" onclick="swiperH.swipeNext()"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="default/js/bilibili-home/jquery-2.1.0.min.js"></script>
+<script src="default/js/bilibili-home/foundation.js"></script>
+<script src="default/js/bilibili-home/idangerous.swiper2.7.6.min.js"></script>
+<script src="default/js/bilibili-home/idangerous.swiper.3dflow.js"></script>
+
+
+<script>
+    //因为数据可能页面渲染较好，所以没有写再.js文件里
+    $(function () {
+        // 导航
+        $(".kefu,.kefu_hove").mouseenter(function(){
+            $(".kefu_hove").show();
+        });
+        $(".kefu,.kefu_hove").mouseleave(function(){
+            $(".kefu_hove").hide();
+        });
+
+        $(".qq_group,.qq_group_hove").mouseenter(function(){
+            $(".qq_group_hove").show();
+        });
+        $(".qq_group,.qq_group_hove").mouseleave(function(){
+            $(".qq_group_hove").hide();
+        });
+
+
+
+        //初始化大小
+        var documentW = $(window).width();
+        var documentH = $(window).height();
+
+
+        //视频播放
+        $(document).on('click','.play_video', function () {
+            console.log($(this));
+            $('#playvideo').foundation('open');
+            var x = document.getElementById("videoPlayer");
+            console.log(x);
+            x.play();
+        });
+        //视频停止
+        $(document).on('click','.closeVideo', function () {
+            var x = document.getElementById("videoPlayer");
+            console.log(x);
+            x.pause();
+            $('#playvideo').foundation('close');
+        });
+    });
+
+
+
+
+    //轮播图
+    var swiperH = new Swiper('.swiper-container-horizonal', {
+        speed: 500,
+        nextButton: '.next-btn',
+        prevButton: '.prev-btn',
+        grabCursor: 1,
+        centeredSlides: 1,
+        loop: 1,
+        slidesPerView: 'auto',
+        loopedSlides: 4,
+        tdFlow: {
+            rotate: 0,
+            stretch: 6,
+            depth: 200,
+            modifier: 2,
+            shadow: false
+        },
+        onInit: function () {
+            $(".arrow-btn").css("top", 108 + $(".swiper-container-horizonal").height() / 2)
+        }
+    });
+
+
+    $(document).foundation();
+</script>
+</body>
+</html>

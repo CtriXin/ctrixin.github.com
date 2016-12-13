@@ -1,0 +1,486 @@
+//colors
+$color_mountain_mist_approx: #959595;
+$color_valencia_approx: #cd4536;
+$white:  white;
+$color_chicago_approx: #595959;
+$color_wattle_approx: #ded84f;
+$color_ironside_gray_approx: #676767;
+$color_seashell_approx: #f2f1f1;
+$color_alizarin_crimson_approx: #df2029;
+
+//urls
+$url_0: url(../../image/bilibili-reserve/section_mid_bg.png);
+$url_1: url(../../image/bilibili-reserve/section_2_bg.png);
+$url_3: url(../../image/bilibili-reserve/checkbox_01.png);
+$url_4: url(../../image/bilibili-reserve/prev_arrow.png);
+$url_5: url(../../image/bilibili-reserve/next_arrow.png);
+$url_6: url(../../image/bilibili-reserve/img_1.png);
+$url_7: url(../../image/bilibili-reserve/img_2.png);
+$url_8: url(../../image/bilibili-reserve/img_3.png);
+$url_9: url(../../image/bilibili-reserve/img_4.png);
+
+//@extend-elements
+//original selectors
+//.apple-icon, .android-icon
+%extend_1 {
+  padding: 10px;
+  width: 35%;
+  border: 1px solid $color_mountain_mist_approx;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+}
+
+//original selectors
+//.apple-icon-active, .android-icon-active
+%extend_2 {
+  padding: 10px;
+  width: 35%;
+  border: 1px solid $color_valencia_approx;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  display: none;
+}
+
+
+.apple-icon {
+  @extend %extend_1;
+}
+.android-icon {
+  @extend %extend_1;
+}
+.apple-icon-active {
+  @extend %extend_2;
+}
+.android-icon-active {
+  @extend %extend_2;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    outline: none;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}
+:focus {
+  outline: 0;
+}
+.section {
+  &.section-1 {
+    background-position: top center;
+    position: relative;
+  }
+  &.section-mid {
+    background: $url_0;
+    background-position: top center;
+    height: 42px;
+  }
+  &.section-2 {
+    height: 838px;
+    background: $url_1;
+    background-position: top center;
+  }
+}
+.top-logo-group {
+  position: absolute;
+  top: 0;
+  height: 9rem;
+  width: 100%;
+  .game-logo {
+    left: 15%;
+    position: absolute;
+    top: 10%;
+    width: 13%;
+  }
+  .share_group {
+    position: absolute;
+    top: 21%;
+    width: 20%;
+    right: 15%;
+  }
+}
+.qq_group {
+  background: none;
+  position: absolute;
+  width: 13%;
+  height: 39%;
+  top: 28%;
+  right: 30%;
+}
+.kefu {
+  background: none;
+  position: absolute;
+  width: 10%;
+  height: 39%;
+  top: 28%;
+  right: 18%;
+}
+.forum {
+  background: none;
+  position: absolute;
+  width: 10%;
+  height: 39%;
+  top: 28%;
+  right: 6%;
+}
+.go2index {
+  background: none;
+  position: absolute;
+  width: 42%;
+  height: 50%;
+  top: 23%;
+  left: 4.5%;
+}
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid $white;
+  position: absolute;
+  top: 0;
+}
+.share_hove {
+  position: absolute;
+  top: 70%;
+  left: 53%;
+  height: 5rem;
+  width: 10rem;
+  display: none;
+}
+.hove_content {
+  position: relative;
+  background: $white;
+  font-size: .7rem;
+  color: $color_chicago_approx;
+  top: 9px;
+  padding: .2rem;
+}
+.video-control {
+  position: absolute;
+  top: 26%;
+  width: 9%;
+  left: 56%;
+  cursor: pointer;
+}
+#videoPlayer {
+  width: 100%;
+  margin-top: 32px;
+}
+.reserve-group {
+  position: absolute;
+  top: 79%;
+  width: 100%;
+  text-align: center;
+}
+.reserve-btn {
+  position: relative;
+  width: 20%;
+  margin: 0 auto;
+  .reserve-btn-bg {
+    width: 100%;
+    height: 7.5rem;
+    cursor: pointer;
+  }
+  .reserve-now-h3 {
+    color: $white;
+    position: absolute;
+    top: 1.5rem;
+    text-align: center;
+    font-size: 2.4rem;
+    width: 90%;
+    left: 5%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+  }
+  .reserve-num-p {
+    color: $white;
+    font-size: 1.1rem;
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    top: 4.5rem;
+    .reserve-num {
+      color: $color_wattle_approx;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+  }
+}
+.close-btn {
+  position: absolute;
+  width: 30px;
+  top: 0;
+  right: 0;
+
+}
+.modal-input-title {
+  margin: .5rem 0 0;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.device-icon-group {
+  margin: 2rem 0;
+}
+.android-device {
+  text-align: left;
+  padding-left: 2em;
+}
+.apple-device {
+  text-align: right;
+  padding-right: 2em;
+}
+.phone_num_insert {
+  width: 90%;
+  margin: 0 auto 1rem;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0.1em;
+}
+.reserve-now-btn {
+  width: 30%;
+  margin: 2.5em auto 1em;
+}
+.button-reserve {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0.1em;
+  background: url("../../image/bilibili-reserve/uncomfirm-bg.png") !important;
+  width: 100%;
+  background-size: cover !important;
+  &.available {
+    background: url("../../image/bilibili-reserve/comfirm-bg.png") !important;
+    width: 100%;
+    background-size: cover !important;
+  }
+}
+.button-reserve-back {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0.1em;
+  background: url("../../image/bilibili-reserve/comfirm-bg.png") !important;
+  width: 100%;
+  background-size: cover !important;
+}
+.warning {
+  font-size: 0.9em;
+  text-align: center;
+  display: none;
+}
+.memo {
+  font-size: 0.9em;
+  text-align: center;
+}
+.global-nav-box {
+  position: relative;
+  .global-nav-game {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 120px;
+    text-align: center;
+    color: $color_ironside_gray_approx;
+    font-size: 14px;
+    line-height: 48px;
+    height: 48px;
+    cursor: pointer;
+
+  }
+
+}
+.global-ng-on {
+  background-color: $color_seashell_approx;
+  color: $color_alizarin_crimson_approx;
+  border-bottom: 2px solid $color_alizarin_crimson_approx;
+}
+.global-list {
+  position: absolute;
+  display: none;
+  top: 3rem;
+  right: 10%;
+  z-index: 10;
+  margin-left: 310px;
+  background-color: $white;
+  filter: alpha(opacity=97);
+  opacity: 0.97;
+  width: 290px;
+  padding: 0 20px 10px;
+  strong {
+    display: block;
+    line-height: 35px;
+    border-bottom: 1px solid $color_ironside_gray_approx;
+  }
+  ul {
+    width: 250px;
+    margin-bottom: 0;
+  }
+  li {
+    overflow: hidden;
+    margin-top: 10px;
+    width: 250px;
+    font-size: 12px;
+    list-style: none;
+    span {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+  img {
+    float: left;
+    margin-right: 12px;
+    width: 52px;
+    height: 52px;
+  }
+  p {
+    padding-top: 5px;
+    a {
+      color: $color_ironside_gray_approx;
+    }
+  }
+}
+.agreement-check {
+  width: 12em;
+  text-align: left;
+  color: $white;
+  font-size: .8em;
+  margin: 1rem auto 2em;
+}
+.piaochecked {
+  width: 20px;
+  height: 20px;
+  float: left;
+  cursor: pointer;
+  text-align: center;
+  background-image: $url_3;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.on_check {
+  background-position: 0 -21px;
+}
+.radioclass {
+  opacity: 0;
+  cursor: pointer;
+  filter: alpha(opacity=0);
+}
+.main-container {
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+}
+.swiper-wrapper {
+  position: relative;
+}
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  margin-top: -39px;
+  height: 78px;
+  width: 70px;
+  z-index: 2000;
+  cursor: pointer;
+  &.prev-btn {
+    left: 0;
+    background: $url_4 no-repeat;
+    background-size: 100%;
+  }
+  &.next-btn {
+    right: 0;
+    background: $url_5 no-repeat;
+    background-size: 100%;
+  }
+}
+.slide1 {
+  background: $url_6;
+  background-size: 100%;
+}
+.slide2 {
+  background: $url_7;
+  background-size: 100%;
+}
+.slide3 {
+  background: $url_8;
+  background-size: 100%;
+}
+.slide4 {
+  background: $url_9;
+  background-size: 100%;
+}
+.global-nav-game img {
+  width: 100%;
+}
+.qq_group_hove .triangle-qq {
+  left: 15%;
+}
+.kefu_hove .triangle-kefu {
+  left: 48%;
+}
+.section-2 .title-2 {
+  text-align: center;
+  padding: 3rem 0;
+  img {
+    width: 30%;
+  }
+}
+.swiper-container.swiper-container-horizonal {
+  position: absolute;
+  width: 80%;
+  height: 560px;
+  top: 10rem;
+  left: 10%;
+}
+.swiper-slide.desc-slide {
+  height: 515px;
+  width: 772px;
+  opacity: 0.75;
+  &.swiper-slide-active {
+    opacity: 1;
+  }
+}
+
+#reserveModal{
+  padding: 0;
+  background: none;
+  border:none;
+}
+.modal-with-close-btn{
+  background: url(../../image/bilibili-reserve/popup-modal.png) no-repeat !important;
+  background-size: 100% 100% !important;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  margin-top: 30px;
+}
+#successModal{
+  background: url("../../image/bilibili-reserve/popup-success-modal.png") no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.memo-success{
+margin-top: 2rem;
+}
+.black_overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  background-color: hsla(0,0%,4%,.45);
+}
+
+.white_content {
+  max-width: 75rem;
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  width: 600px;
+  /*height: 45%;*/
+  z-index: 1002;
+  overflow: auto;
+}
