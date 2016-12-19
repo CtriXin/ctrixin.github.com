@@ -8,11 +8,25 @@
 <body>
 
 <div id="app">
-    {{ name }}
-    <input type="text" v-model="name">
-    {{ fullname }}
-</div>
+    姓名
+    <input type="text" v-model="person.name" placeholder="">
+    <br>
+    性别
+    <input type="radio" id="male" value="1" v-model="person.sex">
+    <label for="male">男</label>
+    <input type="radio" id="female" value="2" v-model="person.sex">
+    <label for="female">女</label>
+    <br>
+    <input type="checkbox" id="book" value="book" v-model="person.inter">
+    <label for="book">阅读</label>
+    <input type="checkbox" id="game" value="game" v-model="person.inter">
+    <label for="game">游戏</label>
+    <input type="checkbox" id="video" value="video" v-model="person.inter">
+    <label for="video">电影</label>
+    <input type="checkbox" id="sport" value="sport" v-model="person.inter">
+    <label for="sport">运动</label>
 
+</div>
 
 
 
@@ -21,20 +35,13 @@
     var vm = new Vue({
         el: '#app',
         data:{
-            name: 'David Beckham'
-        },
-        computed:{
-            fullname:{
-                get: function () {
-                    return this.name + this.firstName +  ' ' + this.lastName
-                },
-                set:function (data) {
-                    var names = data.split(' ');
-                    this.firstName = names[0];
-                    this.lastName = names[names.length - 1];
-                }
+            person:{
+                name: 'aa',
+                sex: '',
+                inter:[]
             }
         }
+
     })
 
 
