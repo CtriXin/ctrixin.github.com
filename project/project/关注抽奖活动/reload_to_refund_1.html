@@ -79,7 +79,7 @@
             var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
             var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
             if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-                $(".page").css({'width': '100%', 'left': '0'});
+                $(".page").css({'width': '100%', 'left': '0'}); //移动pc判定
             } else {
                 $(".page").css({'width': documentH / 1.775, 'left': (documentW - documentH / 1.775) / 2});
             }
