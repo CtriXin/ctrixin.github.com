@@ -6,8 +6,8 @@
     <title>yugi</title>
     <script>
         var interval, reg = /^\d$/,
-                sleep = 17,
-                sum = 760;
+                sleep = 20,
+                sum = 500;
         onload = function() {
             oA.onclick = function() {
                 if (!interval) {
@@ -25,7 +25,7 @@
                         s = reg.test(s) ? "0" + s : s;
                         oT.value = h + m + s;
                     }, sleep);
-                    this.innerHTML = "停止计时";
+                    this.innerHTML = "暂停计时";
                 } else {
                     clearInterval(interval);
                     interval = null;
