@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7528637f-8f58-4de0-86cf-274728a0f588" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/css/bootstrap-responsive.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/img/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/img/glyphicons-halflings-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/img/glyphicons-halflings.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/js/aria2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/js/jquery-1.7.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/js/jquery.Storage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/js/jquery.base64.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/js/jquery.jsonrpc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/js/mustache.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/js/peerid.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduyun/js/yaaw.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-module/计时器-2.html" afterPath="$PROJECT_DIR$/test-module/计时器-2.html" />
-    </list>
+    <list default="true" id="7528637f-8f58-4de0-86cf-274728a0f588" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -204,7 +185,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-614" width="1080" height="1897" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24929178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
