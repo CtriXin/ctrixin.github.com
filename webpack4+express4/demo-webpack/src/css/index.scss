@@ -1,0 +1,101 @@
+@import '../base/defaultBase.scss';
+
+#header {
+    background: #838485;
+    #banner {
+        height: rem(100);
+        
+        background: #adadad;
+    }
+    #time {
+        width: 40vw;
+        height: rem(30);
+        background: cadetblue;
+    }
+    #rules {
+        width: 20vw;
+        margin-left: 80vw;
+        height: rem(17);
+        background: #5f60a0;
+        position: absolute;
+        bottom: rem(9);
+        right: rem(16);
+        .rules-group {
+            border-bottom: rem(1) solid #82fff1;
+            color: #82fff1;
+            height: rem(17);
+            .zoom {
+                height: rem(17);
+                line-height: rem(17);
+                margin-right: rem(2);
+                svg {
+                    width: rem(12);
+                    height: rem(12);
+                    path {
+                        stroke: #82fff1;
+                    }
+                }
+            }
+            .rules-txt {
+                height: rem(17);
+                line-height: rem(17);
+            }
+        }
+    }
+}
+
+#summary {
+    width: rem(331);
+    .anchor-avatar {
+        img {
+            width: rem(87);
+            border: rem(3) solid gray;
+        }
+    }
+    .anchor-info-group {
+        width: rem(328);
+        position: absolute;
+        height: rem(87);
+        top: 50%;
+        margin-top: rem(-43.5);
+        right: 0;
+        border-radius: 39.5px;
+        @include border-radius(rem(80));
+        border: solid rem(1) #ffffff;
+        .anchor-info {
+            position: absolute;
+            width: rem(170);
+            right: rem(60);
+            top: 50%;
+            margin-top: rem(-40);
+            height: rem(80);
+        }
+    }
+}
+
+#mainnav {
+    width: 70vw;
+    height: rem(30);
+    background: #6ceedd;
+}
+
+#main {
+    background: #ccc;
+    #ranknav {
+        width: 90vw;
+        height: rem(30);
+        background: #6c6cee;
+    }
+    #rankcolumn {
+        width: 90vw;
+        height: rem(300);
+        background: #f7fdd4;
+        #subnav {
+            width: 70vw;
+            height: rem(30);
+            background: #ff706b;
+        }
+    }
+}
+
+///END OF DEFAULT

@@ -1,0 +1,368 @@
+"use strict";
+
+var _vue2Path = require("vue2Path");
+
+var _vue2Path2 = _interopRequireDefault(_vue2Path);
+
+var _gaPath = require("gaPath");
+
+var _vueLazyload = require("vue-lazyload");
+
+var _vueLazyload2 = _interopRequireDefault(_vueLazyload);
+
+var _modal = require("../../vue/modal.vue");
+
+var _modal2 = _interopRequireDefault(_modal);
+
+var _nameClipNew3x = require("../../vue/nameClipNew@3x.vue");
+
+var _nameClipNew3x2 = _interopRequireDefault(_nameClipNew3x);
+
+require("../../css/defaultTable.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Vue组件
+/*
+ * @Author: xin.song 
+ * @Date: 2018-02-08 10:41:30
+ * @Last Modified by: xin.song
+ * @Last Modified time: 2018-03-20 16:02:04
+ */
+
+// 基础组件
+var indexPage = {
+    el: "#vm",
+    data: {
+        //start 默认
+        GAID: "", //谷歌分享id
+        env: "", //环境变量
+        allData: "", //controller传输过来的所有数据
+        header: "", //通信header
+        UID: "",
+        platform: "", //客户端
+        version: "", //版本
+        documentH: $(window).height(),
+        documentW: $(window).width(),
+        deviceType: null,
+        isMobile: false,
+        shareUrl: "https://web.meme.chat/misc/mbean?external=1",
+        isIOS: /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream,
+        isAndroid: /Android/.test(navigator.userAgent) && !window.MSStream,
+        inApp: true,
+        region: "Default", //分区
+        ratio: window.devicePixelRatio //屏幕比率
+        //end 默认
+    },
+    created: function created() {
+        var self = this;
+        //获取设备信息
+        self.initDeviceType();
+
+        //rem处理方案
+        var dpr = window.devicePixelRatio || 1; //分辨率比例值
+        dpr = dpr >= 3 ? 3 : dpr >= 2 ? 2 : 1;
+        var width = document.documentElement.clientWidth / dpr; //得到宽度
+        $("html").css("font-size", width / 10 * dpr); //设置字体大小为屏幕宽度/10  1rem = 屏幕宽度/10
+
+        //执行方法
+        self.getMemeInfo();
+    },
+    mounted: function mounted() {
+        var self = this;
+        $("#loader-container").hide();
+        $("#vm").show();
+    },
+    computed: {
+        zIndex: function zIndex() {
+            var index_highest = 0;
+            Array.prototype.forEach.call(document.querySelectorAll("*"), function (item) {
+                var index_current = parseInt(item.style.zIndex, 10);
+                if (index_current > index_highest) index_highest = index_current;
+            });
+            return index_highest;
+        }
+    },
+    methods: {
+        getMemeInfo: function getMemeInfo() {
+            var self = this;
+            console.log("start to get meme user info");
+            self.allData = $("#AllData").text().trim("&nbsp;");
+            var _ref = [JSON.parse(self.allData), self.GetQueryString("test"), self.GetQueryString("external"), self.GetQueryString("isapp")],
+                allData = _ref[0],
+                testENV = _ref[1],
+                external = _ref[2],
+                isApp = _ref[3];
+
+            self.env = allData.env;
+            self.GAID = allData.GA_ID;
+            // console.log('传输数据为：', allData);
+            self.header = JSON.stringify(allData.authObj);
+            self.UID = allData.authObj.token.split(";")[0];
+            self.platform = allData.authObj.platform;
+            self.version = allData.authObj.version;
+            if (self.platform == undefined || self.platform == "default" || self.platform == "default-testing" || self.platform == "") {
+                self.inApp = false;
+            }
+
+            // 這裡只是for 本地測試
+            if (testENV == 1 || external == 1) {
+                console.log("test 或者 外部访问");
+                self.creatAction();
+                return;
+            }
+            // END 這裡只是for 本地測試
+
+            if (self.isIOS) {
+                //如果客户端访问，旧版本会得到版本号，新版本则得不到
+                //外部访问 默认自己登陆
+                if (self.version == "" || self.version >= "590") {
+                    setupWebViewJavascriptBridge(function (bridge) {
+                        bridge.callHandler("getUserInfo", null, function (response) {
+                            console.log(response);
+                            var token = response.token || "",
+                                authObj = {
+                                uid: token.split(";")[0],
+                                token: token,
+                                anchorId: response.anchorId,
+                                streamId: response.streamId,
+                                platform: response["X-MeMe-Platform"],
+                                version: response["X-MeMe-Version"]
+                            };
+                            allData.authObj = authObj;
+                            self.header = JSON.stringify(authObj);
+                            self.UID = token.split(";")[0];
+                            self.platform = response["X-MeMe-Platform"];
+                            self.version = response["X-MeMe-Version"];
+                            self.inApp = true;
+                            console.log("call得到的token", response.token, "call得到的version", response["X-MeMe-Version"]);
+                            console.log("总数据为：", allData);
+                            console.log("新版本ios信息獲取完畢,結束callhandler");
+                            self.creatAction();
+                            return;
+                        });
+                    });
+                } else {
+                    //下面的方法for 旧版本和测试
+                    self.creatAction();
+                    return;
+                }
+            } else {
+                self.creatAction();
+            }
+        },
+        initDeviceType: function initDeviceType() {
+            var self = this;
+            if (self.isIOS) {
+                self.deviceType = "iOS";
+                self.isMobile = true;
+            } else if (self.isAndroid) {
+                self.deviceType = "Android";
+                self.isMobile = true;
+            } else {
+                self.deviceType = "default";
+                self.isMobile = false;
+                console.log("web端登录");
+            }
+        },
+        indexPrefix: function indexPrefix(index, classname) {
+            if (index < 3) {
+                return classname + parseInt(index + 1);
+            } else {
+                return;
+            }
+        },
+        genderPrefix: function genderPrefix(gender) {
+            if (gender == 0) return "gender-nosex";
+            if (gender == 1) return "gender-male";
+            if (gender == 2) return "gender-female";
+        },
+        levelPrefix: function levelPrefix(lvl, classname) {
+            var num = void 0;
+            if (lvl >= 0 && lvl <= 10) num = 1;
+            if (lvl >= 11 && lvl <= 20) num = 2;
+            if (lvl >= 21 && lvl <= 30) num = 3;
+            if (lvl >= 31 && lvl <= 45) num = 4;
+            if (lvl >= 46 && lvl <= 60) num = 5;
+            if (lvl >= 61 && lvl <= 75) num = 6;
+            if (lvl >= 76 && lvl <= 90) num = 7;
+            if (lvl >= 91 && lvl <= 110) num = 8;
+            if (lvl >= 111 && lvl <= 130) num = 9;
+            if (lvl >= 131) num = 10;
+            return classname + num;
+        },
+        formatNum: function formatNum(num) {
+            return num.toString().replace(/\B(?=(?:\d{3})+\b)/g, ",");
+        },
+        showmodal: function showmodal(modal) {
+            var self = this;
+            var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            document.body.style.cssText += "position:fixed;width:100%;top:-" + scrollTop + "px;";
+            $(".content").addClass("blur");
+            self[modal] = true;
+        },
+        closemodal: function closemodal(modal) {
+            var self = this;
+            var body = document.body;
+            body.style.position = "";
+            var top = body.style.top;
+            document.body.scrollTop = document.documentElement.scrollTop = -parseInt(top);
+            body.style.top = "";
+            $(".content").removeClass("blur");
+            self[modal] = false;
+        },
+        GetQueryString: function GetQueryString(str) {
+            var LocString = String(window.document.location.href);
+            var rs = new RegExp("(^|)" + str + "=([^&]*)(&|$)", "gi").exec(LocString),
+                tmp = void 0;
+            if (tmp = rs) return tmp[2];
+            return null;
+        },
+        follow: function follow(uid, event) {
+            var self = this;
+            var el = event.target;
+            var gaAnalysis = {};
+            gaAnalysis.to_uid = uid.toString();
+            if (!self.UID) {
+                //没有登录
+            }
+            if ($(el).hasClass("disabled") || self.UID == uid) {
+                return;
+            }
+            if ($(el).hasClass("followed") || $(el).hasClass("follow")) {
+                console.log("用户已经关注");
+                $(el).removeClass("follow followed").addClass("unfollowed disabled");
+                //准备去取消关注
+                if (self.isIOS) {
+                    console.log("ios准备取消关注");
+                    setupWebViewJavascriptBridge(function (bridge) {
+                        bridge.callHandler("unfollowUser", uid.toString(), function (response) {
+                            // window.unfollowSuccess(response);
+                            $(el).removeClass("disabled");
+                        });
+                    });
+                } else {
+                    console.log("安卓准备取消关注");
+                    MeMeApp.callHandler("unfollowUser", uid.toString(), "window.unfollowSuccess");
+                    $(el).removeClass("disabled");
+                }
+
+                //测试用，上线隐藏
+                // $(el).removeClass('disabled')
+            } else {
+                $(el).removeClass("unfollow unfollowed").addClass("followed disabled");
+                //准备去关注
+                if (self.isIOS) {
+                    console.log("ios准备关注");
+                    setupWebViewJavascriptBridge(function (bridge) {
+                        bridge.callHandler("followUser", JSON.stringify(gaAnalysis), function (response) {
+                            // window.followSuccess(response);
+                            $(el).removeClass("disabled");
+                        });
+                    });
+                } else {
+                    console.log("安卓准备关注");
+                    MeMeApp.callHandler("followUser", JSON.stringify(gaAnalysis), "window.followSuccess");
+                    $(el).removeClass("disabled");
+                }
+                //测试用，上线隐藏
+                // $(el).removeClass('disabled')
+            }
+        },
+        lzload: function lzload(url, data) {
+            if (data) {
+                if (!data.error) {
+                    return {
+                        src: url,
+                        loading: data.loading,
+                        error: data.loading
+                    };
+                }
+                return {
+                    src: url,
+                    loading: data.loading,
+                    error: data.error
+                };
+            } else {
+                return {
+                    src: url,
+                    loading: "",
+                    error: ""
+                };
+            }
+        },
+        gotoProfile: function gotoProfile(id, livestus) {
+            var self = this;
+            if (livestus) {
+                self.openLive(id);
+            } else {
+                self.openProfile(id);
+            }
+        },
+        openProfile: function openProfile(id) {
+            var self = this;
+            console.log("准备打开用户详情页");
+            if (self.isIOS) {
+                console.log("is ios");
+                setupWebViewJavascriptBridge(function (bridge) {
+                    bridge.callHandler("viewProfile", id.toString(), function (response) {});
+                });
+            } else if (self.isAndroid) {
+                console.log("is android");
+                MeMeApp.callHandler("viewProfile", id.toString());
+            }
+            console.log(id);
+        },
+        openLive: function openLive(id) {
+            var self = this;
+            console.log("准备打开用户直播间");
+            if (self.isIOS) {
+                console.log("is ios");
+                setupWebViewJavascriptBridge(function (bridge) {
+                    bridge.callHandler("viewProfile", id.toString(), function (response) {});
+                });
+            } else if (self.isAndroid) {
+                console.log("is android");
+                MeMeApp.callHandler("viewProfile", id.toString());
+            }
+            console.log(id);
+        },
+
+        //TODO: START FROM HERE
+        creatAction: function creatAction() {
+            var self = this;
+
+            //地区
+            var region = self.GetQueryString("region");
+            if (region != null) {
+                self.region = region;
+            }
+        }
+
+        //FIXME: END HERE
+
+    }
+};
+
+// 项目组件
+
+
+$(function () {
+    //lazyload
+    _vue2Path2.default.use(_vueLazyload2.default, {
+        error: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAYFBMVEX/pKX/wOL/u9n/ts3/ssL/rLf/qK3/9vf/7e7/4eT/ztL/ssT/wOP/s8X/u9j/rbn/t8//7e7/4eT/8/X/v+L/p67/5+n/+vr/o6T/2t7/zdX/xND/n6v/09n/vsX/o7fOGySvAAAADXRSTlPx8vHy8vHx8fHx8ePj+txq4QAAAcZJREFUOMtl04ty6yAMBNC0dXv7uAQDNS4GO///l9VaUgTpBiaZ4cxmEqPL/yfLs+XFMiFfl6dvy7XPjDjNBKiMIPZ8vpjNDtY730FmiDpW1mh9qsCs0EujOcbcNxYqHAv5eD6X9Hn/yhBKYd0QwRyD9rV75BRQLXQGta+cKOJtB5M+hnC85i3He3L13IhKhvZDmAiMXSEgKa6TQpMHQe4TKL/j6kruEzYoDsFnuwQuhgEWAigUaA9kzmFI5LIFC1CfsHN0mPvFhXCA6q6uhofcGwXqI45pdGlflC5vBKHIElzTkJWgNp5Q73N9cAEGe1mkkSygL+sAawNDTmgT4l1au8S2MNJGm7hbpfMke/VNv1igTZK/FSus5gTaCJOM6kpbwHrYj/Ctbey21uQf5FwuL+xkkNxRY0gpxHqgi7ZBHWFidS8xFt374ZuwH4ZSWIsOVtQPR2tgtBg6ZM/xMTlvpEBPyMMeQ/wbXF70CaTY5R5DkjoZolBvWA6SjC13jRhDVJYkB5mX0bTd4ZktJbJ/klIFs0bvaqC78JB1zcePQTDsnQ5GFujf6SFTTzQP93HzIAq/Js0rZfr8eP9Hef/4nN4ufX4BedxmI8EGb7gAAAAASUVORK5CYII=",
+        loading: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAYFBMVEX/pKX/wOL/u9n/ts3/ssL/rLf/qK3/9vf/7e7/4eT/ztL/ssT/wOP/s8X/u9j/rbn/t8//7e7/4eT/8/X/v+L/p67/5+n/+vr/o6T/2t7/zdX/xND/n6v/09n/vsX/o7fOGySvAAAADXRSTlPx8vHy8vHx8fHx8ePj+txq4QAAAcZJREFUOMtl04ty6yAMBNC0dXv7uAQDNS4GO///l9VaUgTpBiaZ4cxmEqPL/yfLs+XFMiFfl6dvy7XPjDjNBKiMIPZ8vpjNDtY730FmiDpW1mh9qsCs0EujOcbcNxYqHAv5eD6X9Hn/yhBKYd0QwRyD9rV75BRQLXQGta+cKOJtB5M+hnC85i3He3L13IhKhvZDmAiMXSEgKa6TQpMHQe4TKL/j6kruEzYoDsFnuwQuhgEWAigUaA9kzmFI5LIFC1CfsHN0mPvFhXCA6q6uhofcGwXqI45pdGlflC5vBKHIElzTkJWgNp5Q73N9cAEGe1mkkSygL+sAawNDTmgT4l1au8S2MNJGm7hbpfMke/VNv1igTZK/FSus5gTaCJOM6kpbwHrYj/Ctbey21uQf5FwuL+xkkNxRY0gpxHqgi7ZBHWFidS8xFt374ZuwH4ZSWIsOVtQPR2tgtBg6ZM/xMTlvpEBPyMMeQ/wbXF70CaTY5R5DkjoZolBvWA6SjC13jRhDVJYkB5mX0bTd4ZktJbJ/klIFs0bvaqC78JB1zcePQTDsnQ5GFujf6SFTTzQP93HzIAq/Js0rZfr8eP9Hef/4nN4ufX4BedxmI8EGb7gAAAAASUVORK5CYII="
+    });
+
+    // 注册组件姓名组
+    _vue2Path2.default.component("modal", _modal2.default);
+    _vue2Path2.default.component("nameClip", _nameClipNew3x2.default);
+
+    // Start
+    var VM = new _vue2Path2.default(indexPage);
+    console.log(VM);
+
+    _gaPath.GoogleAnalytics.init();
+    ga("create", VM.GAID, "auto");
+    ga("send", "pageview");
+});

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include includes/header.html %>
+</head>
+
+
+<body>
+	<div id="vm">
+
+		<div id="bones" v-if="!showContent">
+
+			<!-- 这里显示骨骼框架 -->
+
+		</div>
+
+
+		<div id="main-container" style="display: none;">
+
+			<!-- TODO: CONTENT START HERE -->
+			<div class="content">
+
+				<div id="header">
+					<div id="banner">
+					</div>
+					<div id="rules">
+						<div class="rules-group" @click="showmodal('rulesModal')">
+							<div class="zoom">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+									<path fill="none" fill-rule="evenodd" d="M9.006 8.32l2.116 2.084-.702.712-2.123-2.09a4.5 4.5 0 1 1 .71-.705z" />
+								</svg>
+							</div>
+							<div class="rules-txt">
+								test
+							</div>
+						</div>
+					</div>
+					<div id="time">
+						aa啊啊aaaaaa
+					</div>
+				</div>
+
+
+				<img src="../img/banner.jpg" alt="">
+				<img src="../img/te4ee/banner.jpg" alt="">
+
+
+				<div id="mainnav">
+					主导航
+				</div>
+
+				<div id="main">
+					<div id="ranknav">
+						滚动导航
+					</div>
+					<div id="rankcolumn">
+						<div id="subnav">
+							副导航
+						</div>
+						排行榜
+					</div>
+				</div>
+
+
+
+
+
+			</div>
+			<!-- FIXME: CONTENT END HERE -->
+
+		</div>
+
+
+
+	</div>
+</body>
+
+</html>

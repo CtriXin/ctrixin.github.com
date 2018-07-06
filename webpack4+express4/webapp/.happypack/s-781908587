@@ -1,0 +1,7 @@
+"use strict";
+
+var _vue2Path = require("vue2Path");
+
+var _vue2Path2 = _interopRequireDefault(_vue2Path);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
