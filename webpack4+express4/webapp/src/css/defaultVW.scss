@@ -1,0 +1,190 @@
+@import 'base/base.scss';
+//colors
+$bgColor: #c92a3e;
+$fontColor: #feaa4e;
+$pink: #FF7687;
+$yellow: #FFC91A;
+$blue: #1a569c;
+
+$vw_fontsize: 37.5; // iPhone 6尺寸的根元素大小基准值
+@function vw($px) {
+     @return ($px / $vw_design ) * 100vw;
+}
+// 根元素大小使用 vw 单位
+$vw_design: 375;
+
+html,
+body,
+div,
+span,
+canvas {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: ($vw_fontsize / ($vw_design)) * 100vw; //就是相当于20vw
+}
+
+body {
+    // font-size: 26.6666vw;//(12px/375px)*100vw
+    // font-size: ($vw_fontsize / ($vw_design / 2)) * 100vw; //就是相当于20vw
+    font-size: vw(12);
+    background: $bgColor;
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+
+h1 {
+    font-size: vw(24)
+}
+
+.blur {
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+}
+
+.name-group {
+    height: vw(16);
+    line-height: vw(16);
+    color: $fontColor;
+    .name-group-clip {
+        font-size: vw(13);
+        .name-group-icon {
+            height: vw(16);
+            line-height: vw(16);
+            .gender-icon {
+                width: vw(20);
+                height: vw(14);
+            }
+            .level-icon {
+                width: vw(34);
+                height: vw(14);
+                margin-left: vw(5);
+                .name-group-level-num {
+                    font-size: vw(9);
+                    height: vw(14);
+                    line-height: vw(14);
+                    width: vw(19);
+                    padding-left: vw(12);
+                }
+            }
+        }
+    }
+}
+
+
+#header {
+    width: 100vw;
+    background: #838485;
+    text-align: center;
+    position: relative;
+    #banner {
+        background: #adadad;
+        height: vw(100);
+        img{
+            width: 100%;
+        }
+    }
+    #time {
+        width: 40vw;
+        height: vw(30);
+        text-align: center;
+        margin: 0 auto;
+        background: cadetblue;
+    }
+    #rules {
+        width: 20vw;
+        margin-left: 80vw;
+        height: vw(20);
+        text-align: center;
+        background: #5f60a0;
+    }
+}
+
+#summary {
+    margin: 0 auto;
+    position: relative;
+    width: vw(331);
+    .anchor-avatar {
+        position: relative;
+        z-index: 99;
+        img {
+            width: vw(87);
+            @include border-radius(50%);
+            border: vw(3) solid gray;
+            display: block;
+        }
+    }
+    .anchor-info-group {
+        width: vw(328);
+        position: absolute;
+        height: vw(87);
+        top: 50%;
+        margin-top: vw(-43.5);
+        right: 0;
+        border-radius: 39.5px;
+        @include border-radius(vw(80));
+        box-shadow: inset 0px 0px vw(2) vw(1) #e2934a,0 0 vw(4) 0 #ffffff;
+        border: solid vw(1) #ffffff;
+        .anchor-info {
+            width: vw(170);
+            position: absolute;
+            right: vw(60);
+            top: 50%;
+            margin-top: vw(-40);
+            height: vw(80);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: $fontColor;
+        }
+    }
+}
+
+
+#mainnav {
+    width: 70vw;
+    height: vw(30);
+    text-align: center;
+    background: #6ceedd;
+    margin: 0 auto;
+    position: relative;
+}
+
+#main {
+    width: 100vw;
+    background: #ccc;
+    position: relative;
+    #ranknav {
+        width: 90vw;
+        height: vw(30);
+        text-align: center;
+        background: #6c6cee;
+        margin: 0 auto;
+    }
+    #rankcolumn {
+        width: 90vw;
+        height: vw(300);
+
+        text-align: center;
+        background: #f7fdd4;
+        margin: 0 auto;
+        #subnav {
+            width: 70vw;
+            height: vw(30);
+            background: #ff706b;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+}
+
+///END OF DEFAULT
+
+#bones{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+}

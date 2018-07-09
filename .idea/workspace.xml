@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7528637f-8f58-4de0-86cf-274728a0f588" name="Default" comment="" />
+    <list default="true" id="7528637f-8f58-4de0-86cf-274728a0f588" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/access.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/build/webpack.test.conf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/src/base/base.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/src/base/defaultBase.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/src/css/activity_test.js.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/src/css/login.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/src/include/header.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/src/pages/includes/header.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/app.js" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/build/webpack.base.conf.js" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/build/webpack.base.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/build/webpack.dev.conf.js" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/build/webpack.dev.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/build/webpack.rules.conf.js" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/build/webpack.rules.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/package.json" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/pm2.json" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/pm2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/routes/index.js" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/src/css/index.scss" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/src/css/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/src/entry/index.js" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/src/entry/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/src/pages/activity_test.html" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/src/pages/activity_test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/src/pages/includes/error.html" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/src/pages/includes/error.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/src/pages/index.html" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/src/pages/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack4+express4/webapp/yarn.lock" afterPath="$PROJECT_DIR$/webpack4+express4/webapp/yarn.lock" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -21,7 +45,7 @@
       <file leaf-file-name="vue-demo-12.19.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue.js实践/vue-demo-12.19.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="784">
+            <state relative-caret-position="735">
               <caret line="49" column="7" lean-forward="false" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
               <folding />
             </state>
@@ -31,18 +55,28 @@
       <file leaf-file-name="reload_to_refund_1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/project/关注抽奖活动/reload_to_refund_1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1296">
+            <state relative-caret-position="1215">
               <caret line="81" column="72" lean-forward="false" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
+            <state relative-caret-position="0">
               <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="defaultBase.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webpack4+express4/webapp/src/css/base/defaultBase.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,10 +114,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
-    <option name="y" value="-614" />
-    <option name="width" value="1080" />
-    <option name="height" value="1897" />
+    <option name="x" value="1600" />
+    <option name="y" value="23" />
+    <option name="width" value="80" />
+    <option name="height" value="22" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -100,8 +134,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -184,6 +216,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -271,17 +305,18 @@
       <workItem from="1482285181416" duration="583000" />
       <workItem from="1482370496444" duration="595000" />
       <workItem from="1482375011516" duration="1121000" />
+      <workItem from="1531131028402" duration="41000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9286000" />
+    <option name="totallyTimeSpent" value="9327000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-614" width="1080" height="1897" extended-state="6" />
-    <editor active="true" />
+    <frame x="1600" y="23" width="80" height="22" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24929178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -312,6 +347,14 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/vue.js实践/vue-demo-12.19.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="7" lean-forward="false" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue.js实践/vue-demo-12.19.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -325,39 +368,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/tec-platform-application/modules/notice/controllers/AppController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/tec-platform-application/modules/notice/controllers/ActiveController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/tec-platform-application/modules/notice/views/scripts/index/booking_eva_detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="822">
-          <caret line="281" column="43" lean-forward="true" selection-start-line="281" selection-start-column="43" selection-end-line="281" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/tec-platform-application/modules/notice/controllers/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="4052" column="13" lean-forward="true" selection-start-line="4052" selection-start-column="13" selection-end-line="4052" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/tec-platform-application/modules/notice/controllers/AppController.php" />
+    <entry file="file://$USER_HOME$/tec-platform-application/modules/notice/controllers/ActiveController.php" />
+    <entry file="file://$USER_HOME$/tec-platform-application/modules/notice/views/scripts/index/booking_eva_detail.php" />
+    <entry file="file://$USER_HOME$/tec-platform-application/modules/notice/controllers/IndexController.php" />
     <entry file="file://$PROJECT_DIR$/project/project/eva_reserve/reserve/mobile/js/bilibili-eva-reserve-1207.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -365,13 +383,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1624">
           <caret line="184" column="59" lean-forward="false" selection-start-line="184" selection-start-column="59" selection-end-line="184" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vue.js实践/vue-demo-12.19.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="784">
+        <state relative-caret-position="735">
           <caret line="49" column="7" lean-forward="false" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
           <folding />
         </state>
@@ -379,7 +396,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/project/关注抽奖活动/reload_to_refund_1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
+        <state relative-caret-position="1215">
           <caret line="81" column="72" lean-forward="false" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
           <folding />
         </state>
@@ -387,8 +404,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
+        <state relative-caret-position="0">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack4+express4/webapp/src/css/base/defaultBase.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

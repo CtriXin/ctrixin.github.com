@@ -3,22 +3,22 @@ var app = express();
 var router = express.Router();
 
 var myLogger = function (req, res, next) {
-  console.log('LOGGED');
+  console.log('LOGGED lol');
   next();
 };
 
 // router.use(myLogger)
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  console.log('LOGGED');
-  next();
-}, function (req, res, next) {
+router.get('/', myLogger, function (req, res, next) {
   // console.log(req.query.token, req.query.uid);
+  console.log('用戶端語系：' + req.acceptsLanguages()[0], req.language);
   res.render('index', {
-    title: 'try me',
+    // title: req.t('lang'),
+    title: '首页',
     test: '/dist/images'
   });
 });
+
 
 module.exports = router;

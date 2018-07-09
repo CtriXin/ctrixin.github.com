@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <% include includes/header.html %>
+	<% include includes/remHeader.html %>
 </head>
 
 
@@ -17,7 +17,6 @@
 
 
 		<div id="main-container" style="display: none;">
-
 			<!-- TODO: CONTENT START HERE -->
 			<div class="content">
 
@@ -32,14 +31,29 @@
 								</svg>
 							</div>
 							<div class="rules-txt">
-								test
+								活动规则
 							</div>
 						</div>
 					</div>
 					<div id="time">
-						aa啊啊aaaaaa
+						这里是时间
 					</div>
 				</div>
+
+
+
+				<h1 class="my-lang">
+					<%= t('hello') %>
+				</h1>
+
+				<br>
+
+				<div class="changelang">
+					<div @click="changeLang('zh-CN')">中文</div>
+					<div @click="changeLang('zh-TW')">繁体</div>
+					<div @click="changeLang('en')">英文</div>
+				</div>
+
 
 
 				<img src="../img/banner.jpg" alt="">

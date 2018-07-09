@@ -2,14 +2,17 @@
  * @Author: xin.song 
  * @Date: 2018-07-04 17:39:03 
  * @Last Modified by: xin.song
- * @Last Modified time: 2018-07-09 17:46:37
+ * @Last Modified time: 2018-07-09 14:57:24
  */
 import Vue from 'vue';
 
 
 
+// vue组件
+import nameClip from "../../vue/nameClip.vue";
 
-import "../css/index.scss";
+
+import "../../css/index.scss";
 
 let indexPage = {
     el: "#vm",
@@ -34,6 +37,9 @@ let indexPage = {
         //end 默认
         showContent: false,
     },
+    beforeCreate() {
+        let self = this;
+    },
     created: function () {
         let self = this;
         //获取设备信息
@@ -49,6 +55,8 @@ let indexPage = {
         self.ratio = dpr;
         let width = document.documentElement.clientWidth / dpr; //得到宽度
         $("html").css("font-size", width / 10 * dpr); //设置字体大小为屏幕宽度/10  1rem = 屏幕宽度/10
+
+
 
         //显示主界面 隐藏骨骼
         $("#main-container").show();
@@ -292,18 +300,6 @@ let indexPage = {
                 self.userInfo(queryUID);
             }
         },
-        changeLang(s){
-            $.ajax({
-                url: '/changelang?lng=' + s,
-                type: 'get'
-            })
-            .done(function(data) {
-                location.reload();
-            })
-            .fail(function() {
-                console.log('error');
-            })
-        }
 
         //FIXME: END HERE
     }
@@ -313,10 +309,14 @@ let indexPage = {
 
 
 $(() => {
+    //注册vue组件
+    Vue.component("nameClip", nameClip);
+
+
+    $('.lds-css').hide();
+
     // Start
     let VM = new Vue(indexPage);
     console.log(VM);
-    
-
 
 });

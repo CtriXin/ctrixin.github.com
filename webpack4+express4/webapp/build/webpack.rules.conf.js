@@ -23,7 +23,11 @@ const rules = [{
 		exclude: /node_modules/
 	},
 	{
-		test: /\.(png|jpg|gif)$/,
+		test: /\.vue$/,
+		use: 'vue-loader'
+	},
+	{
+		test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
 		use: process.env.NODE_ENV === 'testing' ? [{
 			loader: "url-loader",
 			options: {

@@ -2,14 +2,17 @@
  * @Author: xin.song 
  * @Date: 2018-07-04 17:39:03 
  * @Last Modified by: xin.song
- * @Last Modified time: 2018-07-09 17:46:37
+ * @Last Modified time: 2018-07-09 15:09:01
  */
 import Vue from 'vue';
 
 
+// vue组件
+import Vuelazyload from "vue-lazyload";
+import nameClip from "../../vue/nameClip.vue";
 
 
-import "../css/index.scss";
+import "../../css/defaultVW.scss";
 
 let indexPage = {
     el: "#vm",
@@ -34,6 +37,9 @@ let indexPage = {
         //end 默认
         showContent: false,
     },
+    beforeCreate() {
+        let self = this;
+    },
     created: function () {
         let self = this;
         //获取设备信息
@@ -50,17 +56,18 @@ let indexPage = {
         let width = document.documentElement.clientWidth / dpr; //得到宽度
         $("html").css("font-size", width / 10 * dpr); //设置字体大小为屏幕宽度/10  1rem = 屏幕宽度/10
 
-        //显示主界面 隐藏骨骼
+        //显示主界面
         $("#main-container").show();
-        self.showContent = true;
-
 
 
         //执行方法
-        // self.getMemeInfo();
+
     },
     mounted: function () {
         let self = this;
+        // 隐藏骨骼
+        self.showContent = true;
+
     },
     methods: {
         initDeviceType() {
@@ -292,18 +299,6 @@ let indexPage = {
                 self.userInfo(queryUID);
             }
         },
-        changeLang(s){
-            $.ajax({
-                url: '/changelang?lng=' + s,
-                type: 'get'
-            })
-            .done(function(data) {
-                location.reload();
-            })
-            .fail(function() {
-                console.log('error');
-            })
-        }
 
         //FIXME: END HERE
     }
@@ -313,10 +308,20 @@ let indexPage = {
 
 
 $(() => {
+    //注册vue组件
+    Vue.component("nameClip", nameClip);
+    //lazyload
+    Vue.use(Vuelazyload, {
+        error: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAYFBMVEX/pKX/wOL/u9n/ts3/ssL/rLf/qK3/9vf/7e7/4eT/ztL/ssT/wOP/s8X/u9j/rbn/t8//7e7/4eT/8/X/v+L/p67/5+n/+vr/o6T/2t7/zdX/xND/n6v/09n/vsX/o7fOGySvAAAADXRSTlPx8vHy8vHx8fHx8ePj+txq4QAAAcZJREFUOMtl04ty6yAMBNC0dXv7uAQDNS4GO///l9VaUgTpBiaZ4cxmEqPL/yfLs+XFMiFfl6dvy7XPjDjNBKiMIPZ8vpjNDtY730FmiDpW1mh9qsCs0EujOcbcNxYqHAv5eD6X9Hn/yhBKYd0QwRyD9rV75BRQLXQGta+cKOJtB5M+hnC85i3He3L13IhKhvZDmAiMXSEgKa6TQpMHQe4TKL/j6kruEzYoDsFnuwQuhgEWAigUaA9kzmFI5LIFC1CfsHN0mPvFhXCA6q6uhofcGwXqI45pdGlflC5vBKHIElzTkJWgNp5Q73N9cAEGe1mkkSygL+sAawNDTmgT4l1au8S2MNJGm7hbpfMke/VNv1igTZK/FSus5gTaCJOM6kpbwHrYj/Ctbey21uQf5FwuL+xkkNxRY0gpxHqgi7ZBHWFidS8xFt374ZuwH4ZSWIsOVtQPR2tgtBg6ZM/xMTlvpEBPyMMeQ/wbXF70CaTY5R5DkjoZolBvWA6SjC13jRhDVJYkB5mX0bTd4ZktJbJ/klIFs0bvaqC78JB1zcePQTDsnQ5GFujf6SFTTzQP93HzIAq/Js0rZfr8eP9Hef/4nN4ufX4BedxmI8EGb7gAAAAASUVORK5CYII=",
+        loading: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAYFBMVEX/pKX/wOL/u9n/ts3/ssL/rLf/qK3/9vf/7e7/4eT/ztL/ssT/wOP/s8X/u9j/rbn/t8//7e7/4eT/8/X/v+L/p67/5+n/+vr/o6T/2t7/zdX/xND/n6v/09n/vsX/o7fOGySvAAAADXRSTlPx8vHy8vHx8fHx8ePj+txq4QAAAcZJREFUOMtl04ty6yAMBNC0dXv7uAQDNS4GO///l9VaUgTpBiaZ4cxmEqPL/yfLs+XFMiFfl6dvy7XPjDjNBKiMIPZ8vpjNDtY730FmiDpW1mh9qsCs0EujOcbcNxYqHAv5eD6X9Hn/yhBKYd0QwRyD9rV75BRQLXQGta+cKOJtB5M+hnC85i3He3L13IhKhvZDmAiMXSEgKa6TQpMHQe4TKL/j6kruEzYoDsFnuwQuhgEWAigUaA9kzmFI5LIFC1CfsHN0mPvFhXCA6q6uhofcGwXqI45pdGlflC5vBKHIElzTkJWgNp5Q73N9cAEGe1mkkSygL+sAawNDTmgT4l1au8S2MNJGm7hbpfMke/VNv1igTZK/FSus5gTaCJOM6kpbwHrYj/Ctbey21uQf5FwuL+xkkNxRY0gpxHqgi7ZBHWFidS8xFt374ZuwH4ZSWIsOVtQPR2tgtBg6ZM/xMTlvpEBPyMMeQ/wbXF70CaTY5R5DkjoZolBvWA6SjC13jRhDVJYkB5mX0bTd4ZktJbJ/klIFs0bvaqC78JB1zcePQTDsnQ5GFujf6SFTTzQP93HzIAq/Js0rZfr8eP9Hef/4nN4ufX4BedxmI8EGb7gAAAAASUVORK5CYII="
+    });
+
+
+    $('.lds-css').hide();
+
+
     // Start
     let VM = new Vue(indexPage);
     console.log(VM);
-    
-
 
 });

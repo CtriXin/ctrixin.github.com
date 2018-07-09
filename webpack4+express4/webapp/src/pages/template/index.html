@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../includes/remHeader.html %>
+</head>
+
+
+<body>
+    <div class="lds-css">
+        <div class="lds-facebook">
+            <div style="background: #f08d43"></div>
+            <div style="background: #f6eddc"></div>
+            <div style="background: #f9d887"></div>
+        </div>
+    </div>
+    <div id="vm">
+
+        <div id="bones" v-if="!showContent">
+
+            <!-- 这里显示骨骼框架 -->
+
+        </div>
+
+
+        <div id="main-container" style="display: none;">
+
+            <!-- TODO: CONTENT START HERE -->
+            <div class="content">
+
+                <div class="group">
+                    <name-clip my-name="gatgagd" my-level="169" my-gender="1"></name-clip>
+                </div>
+
+
+                <div id="header">
+                    <div id="banner">
+                    </div>
+                    <div id="rules">
+                        <div class="rules-group" @click="showmodal('rulesModal')">
+                            <div class="zoom">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+                                    <path fill="none" fill-rule="evenodd" d="M9.006 8.32l2.116 2.084-.702.712-2.123-2.09a4.5 4.5 0 1 1 .71-.705z" />
+                                </svg>
+                            </div>
+                            <div class="rules-txt">
+                                活动规则
+                            </div>
+                        </div>
+                    </div>
+                    <div id="time">
+                        这里是时间
+                    </div>
+                </div>
+
+
+
+
+                <div id="mainnav">
+                    主导航
+                </div>
+
+                <div id="main">
+                    <div id="ranknav">
+                        滚动导航
+                    </div>
+                    <div id="rankcolumn">
+                        <div id="subnav">
+                            副导航
+                        </div>
+                        排行榜
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+            <!-- FIXME: CONTENT END HERE -->
+
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

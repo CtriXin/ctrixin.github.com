@@ -24,6 +24,8 @@ const rules = require("./webpack.rules.conf.js");
 //限时进度
 const chalk = require('chalk');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+// vue
+const { VueLoaderPlugin } = require('vue-loader');
 // 获取html-webpack-plugin参数的方法
 var getHtmlConfig = function (name, chunks) {
 	return {
@@ -106,7 +108,8 @@ module.exports = {
 		}),
 		new ProgressBarPlugin({
 			format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)'
-		})
+		}),
+		new VueLoaderPlugin()
 
 	],
 	// webpack4里面移除了commonChunksPulgin插件，放在了config.optimization里面,提取js， vendor名字可改
@@ -159,11 +162,19 @@ var htmlArray = [];
 let arr = glob.sync(resolve('src/entry/**/*.js'));
 arr.forEach(function (file) {
 	let [filename, entry, module] = folderFile(file);
+	// console.log(filename,entry,module);
 	let obj = {};
-	obj._html = entry;
-	obj.chunks = [];
-	obj.chunks.push(entry)
+	if (module == 'entry') {
+		obj._html = entry;
+		obj.chunks = [];
+		obj.chunks.push(entry)
+	} else {
+		obj._html = module + '/' + entry;
+		obj.chunks = [];
+		obj.chunks.push(module + '_' + entry)
+	}
 	htmlArray.push(obj)
+
 })
 htmlArray.forEach((element) => {
 	module.exports.plugins.push(new htmlWebpackPlugin(getHtmlConfig(element._html, element.chunks)));
@@ -178,9 +189,19 @@ function getEntries() {
 	arr.forEach(function (file) {
 		let [filename, entry, module] = folderFile(file), //文件名，文件名（去后缀），入口
 			path = file.substring(file.indexOf('src')); //路径
-		entries[entry] = entries[entry] || [];
-		entries[entry].push('./' + path);
+
+		// console.log(path, entry, filename, module);
+		if (module == 'entry') {
+			entries[entry] = entries[entry] || [];
+			entries[entry].push('./' + path);
+
+		} else {
+			entries[module + '_' + entry] = entries[module + '_' + entry] || [];
+			entries[module + '_' + entry].push('./' + path);
+
+		}
 	})
+	// console.log(entries);
 	return entries;
 }
 

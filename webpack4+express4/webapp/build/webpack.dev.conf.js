@@ -9,11 +9,17 @@ const webpackConfigDev = {
 	output: {
 		path: path.resolve(__dirname, '../dist/'),
 		// 打包多出口文件
-		filename: './js/[name].[hash:3].js',
+		// 生成 a.bundle.[hash].js  b.bundle.[hash].js
+		filename: './js/[name].[hash:5].js',
 		publicPath: '/dist',
 
 	},
-
+	// watch: true,
+	// watchOptions: {
+	// 	ignored: /node_modules/,
+	// 	aggregateTimeout: 300,
+	// 	poll: 1
+	// },
 	devServer: {
 		contentBase: path.join(__dirname, "../"),
 		publicPath: '/',
@@ -21,6 +27,8 @@ const webpackConfigDev = {
 		port: "8089",
 		inline: true,//自用刷新
 		overlay: true, // 浏览器页面上显示错误
+		// open: true, // 开启浏览器
+		// stats: "errors-only", //stats: "errors-only"表示只打印错误：
 		hot: false // 开启热更新
 	},
 	plugins: [
